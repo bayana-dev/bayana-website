@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { Download, Inbox, Lock, LogOut, Mail, Phone, RefreshCw, Search, Trash2, X } from 'lucide-react'
+import { Link, useNavigate } from 'react-router-dom'
+import { Download, Eye, EyeOff, Inbox, Lock, LogOut, Mail, Phone, RefreshCw, Search, Trash2, X } from 'lucide-react'
 import SEO from '../components/SEO'
 import { WhatsAppIcon } from '../components/Icons'
 import logo from '../assets/bayana-logo.png'
@@ -28,8 +28,9 @@ function toCSV(rows) {
 }
 
 function Login({ onLogin, error, busy }) {
-  const [email, setEmail] = useState(ADMIN_EMAIL)
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [show, setShow] = useState(false)
   return (
     <div className="relative isolate flex min-h-screen items-center justify-center overflow-hidden bg-brand-950 px-5">
       <div className="bg-grid-light mask-fade absolute inset-0 -z-10" />
@@ -42,10 +43,30 @@ function Login({ onLogin, error, busy }) {
         <h1 className="flex items-center gap-2 text-2xl"><Lock className="h-5 w-5 text-brand-600" /> Admin login</h1>
         <p className="mt-1 text-sm text-body/70">Website enquiries · Bayana Global</p>
         <label className="mt-6 grid gap-1.5 text-[13px] font-semibold uppercase tracking-wide text-ink/70">Email
-          <input type="email" required autoComplete="username" className="input normal-case tracking-normal" value={email} onChange={(e) => setEmail(e.target.value)} />
+          <input type="email" required autoComplete="username" placeholder="Enter your email" className="input normal-case tracking-normal" value={email} onChange={(e) => setEmail(e.target.value)} />
         </label>
         <label className="mt-4 grid gap-1.5 text-[13px] font-semibold uppercase tracking-wide text-ink/70">Password
-          <input type="password" required autoComplete="current-password" className="input normal-case tracking-normal" value={password} onChange={(e) => setPassword(e.target.value)} />
+          <span className="relative">
+            <input
+              type={show ? 'text' : 'password'}
+              required
+              autoComplete="current-password"
+              placeholder="Enter your password"
+              className="input pr-12 normal-case tracking-normal"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            {/* Show / hide password */}
+            <button
+              type="button"
+              onClick={() => setShow(!show)}
+              className="absolute right-2 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-lg text-body/60 hover:bg-gray-100 hover:text-ink"
+              aria-label={show ? 'Hide password' : 'Show password'}
+              title={show ? 'Hide password' : 'Show password'}
+            >
+              {show ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+            </button>
+          </span>
         </label>
         {error && <p className="mt-4 rounded-xl bg-red-50 p-3 text-sm text-red-700">{error}</p>}
         <button disabled={busy} className="btn-primary mt-6 w-full disabled:opacity-60">{busy ? 'Signing in…' : 'Sign in'}</button>
@@ -56,6 +77,7 @@ function Login({ onLogin, error, busy }) {
 }
 
 function Admin() {
+  const navigate = useNavigate()
   const [ready, setReady] = useState(false)
   const [configured, setConfigured] = useState(true)
   const [session, setSession] = useState(null)
@@ -98,7 +120,13 @@ function Admin() {
     else if (data.user?.email?.toLowerCase() !== ADMIN_EMAIL) { await sb.auth.signOut(); setError('This account has no admin access.') }
     setBusy(false)
   }
-  async function logout() { const sb = await getClient(); await sb.auth.signOut(); setRows([]) }
+  // Log out, then go to the main website home page
+  async function logout() {
+    const sb = await getClient()
+    await sb.auth.signOut()
+    setRows([])
+    navigate('/', { replace: true })
+  }
 
   async function remove(id) {
     if (!window.confirm('Delete this enquiry permanently?')) return
