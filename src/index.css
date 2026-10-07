@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ───────────────────────── Base ───────────────────────── */
+@layer base {
+  html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; scroll-padding-top: 96px; overflow-x: clip; }
+  body { @apply bg-white font-sans text-body antialiased; text-rendering: optimizeLegibility; overflow-x: clip; }
+  h1, h2, h3, h4 { @apply font-display font-bold tracking-tight text-ink; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  ::selection { @apply bg-brand-200 text-brand-950; }
+  :focus-visible { @apply outline-none ring-4 ring-brand-300/60 ring-offset-2; }
+}
+
+/* ───────────────────────── Components ───────────────────────── */
+@layer components {
+  /* Buttons — with a soft light sweep on hover */
+  .btn {
+    @apply relative inline-flex min-h-[48px] items-center justify-center gap-2 overflow-hidden rounded-full px-6 py-3
+      text-[15px] font-semibold transition duration-300 ease-out active:scale-[.98];
+  }
+  .btn::after {
+    content: '';
+    @apply pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-transparent via-white/35 to-transparent opacity-0;
+    transform: translateX(-120%) skewX(-20deg);
+  }
+  .btn:hover::after { @apply opacity-100; animation: shine 1.1s ease-out; }
+  .btn-primary { @apply btn bg-brand-600 text-white shadow-[0_10px_30px_-10px_rgba(22,163,74,.7)] hover:-translate-y-0.5 hover:bg-brand-700; }
+  .btn-dark { @apply btn bg-brand-900 text-white hover:-translate-y-0.5 hover:bg-brand-950; }
+  .btn-outline { @apply btn border border-brand-600/40 bg-white text-brand-800 hover:-translate-y-0.5 hover:border-brand-600 hover:bg-brand-50; }
+  .btn-ghost-light { @apply btn border border-white/30 bg-white/5 text-white backdrop-blur hover:-translate-y-0.5 hover:bg-white/15; }
+  .btn-whatsapp { @apply btn bg-whatsapp text-white shadow-[0_10px_30px_-10px_rgba(37,211,102,.7)] hover:-translate-y-0.5 hover:brightness-95; }
+
+  /* Layout helpers */
+  .section { @apply py-16 md:py-24; }
+  .section-title { @apply text-[1.75rem] leading-tight sm:text-4xl md:text-[2.6rem]; }
+  .eyebrow {
+    @apply mb-4 inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3.5 py-1.5
+      text-xs font-semibold uppercase tracking-[.14em] text-brand-700;
+  }
+  .eyebrow-dark { @apply eyebrow border-white/15 bg-white/5 text-brand-300; }
+  .lead { @apply text-[17px] leading-relaxed text-body md:text-lg; }
+  .prose-bayana p { @apply mb-4 leading-relaxed last:mb-0; }
+
+  /* Cards */
+  .card {
+    @apply relative rounded-3xl border border-gray-200/80 bg-white p-6 shadow-soft transition duration-500 ease-out md:p-7;
+  }
+  .card-hover { @apply hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-lift; }
+  .glass { @apply border border-white/15 bg-white/10 backdrop-blur-xl; }
+
+  .input {
+    @apply w-full rounded-xl border border-gray-200 bg-white px-4 py-3.5 text-ink transition placeholder:text-gray-400
+      hover:border-gray-300 focus:border-brand-600 focus:outline-none focus:ring-4 focus:ring-brand-100;
+  }
+
+  /* Gradient text in the brand greens */
+  .text-gradient { @apply bg-gradient-to-r from-brand-600 via-brand-500 to-brand-800 bg-clip-text text-transparent; }
+  .text-gradient-light { @apply bg-gradient-to-r from-brand-300 via-brand-200 to-white bg-clip-text text-transparent; }
+
+  /* Decorative backgrounds */
+  .bg-grid {
+    background-image: linear-gradient(to right, rgba(3, 79, 50, .06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(3, 79, 50, .06) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+  .bg-grid-light {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, .06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, .06) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+  .mask-fade { mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%); }
+  .noise::before {
+    content: ''; @apply pointer-events-none absolute inset-0 opacity-[.035] mix-blend-overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+}
+
+/* ───────────────────────── Scroll-reveal animations ─────────────────────────
+   Elements with data-reveal fade in when they scroll into view (see components/Reveal.js).
+   The `js` class is added in index.html, so without JavaScript everything is simply visible. */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition: opacity .9s cubic-bezier(.2, .7, .2, 1), transform .9s cubic-bezier(.2, .7, .2, 1);
+  transition-delay: var(--d, 0ms);
+  will-change: opacity, transform;
+}
+.js [data-reveal='left'] { transform: translate3d(-36px, 0, 0); }
+.js [data-reveal='right'] { transform: translate3d(36px, 0, 0); }
+.js [data-reveal='zoom'] { transform: scale(.94); }
+.js [data-reveal='fade'] { transform: none; }
+.js [data-reveal].is-in { opacity: 1; transform: none; }
+
+/* Step timeline line draws itself */
+.js .draw-line { transform: scaleX(0); transform-origin: left; transition: transform 1.6s cubic-bezier(.2, .7, .2, 1) .2s; }
+.js .is-in .draw-line, .js .draw-line.is-in { transform: scaleX(1); }
+
+/* Smooth FAQ accordion (grid-rows trick) */
+.faq-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s cubic-bezier(.2, .7, .2, 1); }
+.faq-panel > div { overflow: hidden; }
+.faq-item[data-open='true'] .faq-panel { grid-template-rows: 1fr; }
+
+/* Mouse-follow spotlight on cards */
+.spotlight { --x: 50%; --y: 50%; }
+.spotlight::before {
+  content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity .4s;
+  background: radial-gradient(420px circle at var(--x) var(--y), rgba(34, 197, 94, .10), transparent 45%);
+}
+.spotlight:hover::before { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .js [data-reveal] { opacity: 1; transform: none; }
+  .js .draw-line { transform: none; }
+}
+
+@keyframes shine { 0% { transform: translateX(-120%) skewX(-20deg); } 100% { transform: translateX(320%) skewX(-20deg); } }
