@@ -17,10 +17,22 @@ function Navbar() {
   const [open, setOpen] = useState(false) // mobile drawer
   const [expanded, setExpanded] = useState(null) // mobile accordion
   const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(null) // desktop dropdown: which one is open
   const headerRef = useRef(null)
+  const navRef = useRef(null)
   const { pathname } = useLocation()
 
-  useEffect(() => { setOpen(false); setExpanded(null) }, [pathname])
+  useEffect(() => { setOpen(false); setExpanded(null); setMenuOpen(null) }, [pathname])
+
+  // Desktop dropdown: close on a click outside the menu or on Escape
+  useEffect(() => {
+    if (!menuOpen) return
+    const onDown = (e) => { if (navRef.current && !navRef.current.contains(e.target)) setMenuOpen(null) }
+    const onKey = (e) => e.key === 'Escape' && setMenuOpen(null)
+    document.addEventListener('mousedown', onDown)
+    document.addEventListener('keydown', onKey)
+    return () => { document.removeEventListener('mousedown', onDown); document.removeEventListener('keydown', onKey) }
+  }, [menuOpen])
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
     const onKey = (e) => e.key === 'Escape' && setOpen(false)
@@ -48,26 +60,44 @@ function Navbar() {
           </Link>
 
           {/* Desktop menu */}
-          <nav className="hidden items-center gap-0.5 xl:flex" aria-label="Main">
-            {menu.map((item) =>
-              item.children ? (
-                <div key={item.label} className="group relative">
-                  <button
-                    className={`flex items-center gap-1 whitespace-nowrap rounded-full px-3 py-2.5 text-[15px] font-medium transition hover:text-brand-700 group-hover:bg-brand-50 group-hover:text-brand-700 group-focus-within:bg-brand-50 ${groupActive(item) ? 'text-brand-700' : 'text-ink'}`}
-                    aria-haspopup="true"
+          <nav ref={navRef} className="hidden items-center gap-0.5 xl:flex" aria-label="Main">
+            {menu.map((item) => {
+              if (!item.children) {
+                return (
+                  <NavLink
+                    key={item.label}
+                    to={item.to}
+                    end
+                    className={({ isActive }) => `relative whitespace-nowrap rounded-full px-3 py-2.5 text-[15px] font-medium transition hover:bg-brand-50 hover:text-brand-700 ${isActive ? 'text-brand-700' : 'text-ink'}`}
                   >
                     {item.label}
-                    <ChevronDown className="h-4 w-4 transition duration-300 group-hover:rotate-180 group-focus-within:rotate-180" />
+                  </NavLink>
+                )
+              }
+              const isOpen = menuOpen === item.label
+              return (
+                <div key={item.label} className="relative">
+                  {/* Click to open, click again to close */}
+                  <button
+                    type="button"
+                    onClick={() => setMenuOpen(isOpen ? null : item.label)}
+                    className={`flex items-center gap-1 whitespace-nowrap rounded-full px-3 py-2.5 text-[15px] font-medium transition hover:bg-brand-50 hover:text-brand-700 ${isOpen ? 'bg-brand-50 text-brand-700' : groupActive(item) ? 'text-brand-700' : 'text-ink'}`}
+                    aria-haspopup="true"
+                    aria-expanded={isOpen}
+                  >
+                    {item.label}
+                    <ChevronDown className={`h-4 w-4 transition duration-300 ${isOpen ? 'rotate-180' : ''}`} />
                   </button>
                   {/* Dropdown panel */}
                   <div
-                    className={`invisible absolute top-full z-50 pt-3 opacity-0 transition duration-300 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 ${item.children.length > 4 ? 'left-1/2 -translate-x-1/2' : 'left-0'}`}
+                    className={`absolute top-full z-50 pt-3 transition duration-300 ${isOpen ? 'visible opacity-100' : 'invisible opacity-0'} ${item.children.length > 4 ? 'left-1/2 -translate-x-1/2' : 'left-0'}`}
                   >
-                    <div className={`translate-y-2 rounded-3xl border border-gray-100 bg-white p-3 shadow-lift transition duration-300 group-hover:translate-y-0 group-focus-within:translate-y-0 ${item.children.length > 4 ? 'grid w-[640px] grid-cols-2 gap-1' : 'w-[360px]'}`}>
+                    <div className={`rounded-3xl border border-gray-100 bg-white p-3 shadow-lift transition duration-300 ${isOpen ? 'translate-y-0' : 'translate-y-2'} ${item.children.length > 4 ? 'grid w-[640px] grid-cols-2 gap-1' : 'w-[360px]'}`}>
                       {itemsOf(item).map((c) => (
                         <NavLink
                           key={c.to}
                           to={c.to}
+                          onClick={() => setMenuOpen(null)}
                           className={({ isActive }) => `group/item flex gap-3 rounded-2xl p-3 transition hover:bg-brand-50 ${isActive ? 'bg-brand-50' : ''}`}
                         >
                           <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-700 ring-1 ring-brand-100 transition group-hover/item:bg-brand-600 group-hover/item:text-white">
@@ -80,7 +110,7 @@ function Navbar() {
                         </NavLink>
                       ))}
                       {item.label === 'Company Setup' && (
-                        <Link to="/uae-free-zone-company-setup" className="col-span-2 mt-1 flex items-center justify-between rounded-2xl bg-brand-950 px-4 py-3 text-sm font-semibold text-white transition hover:bg-brand-900">
+                        <Link to="/uae-free-zone-company-setup" onClick={() => setMenuOpen(null)} className="col-span-2 mt-1 flex items-center justify-between rounded-2xl bg-brand-950 px-4 py-3 text-sm font-semibold text-white transition hover:bg-brand-900">
                           <span>Need mainland, Meydan, Dubai South or Ajman? <span className="text-brand-300">Other UAE free zones</span></span>
                           <ArrowRight className="h-4 w-4" />
                         </Link>
@@ -88,17 +118,8 @@ function Navbar() {
                     </div>
                   </div>
                 </div>
-              ) : (
-                <NavLink
-                  key={item.label}
-                  to={item.to}
-                  end
-                  className={({ isActive }) => `relative whitespace-nowrap rounded-full px-3 py-2.5 text-[15px] font-medium transition hover:bg-brand-50 hover:text-brand-700 ${isActive ? 'text-brand-700' : 'text-ink'}`}
-                >
-                  {item.label}
-                </NavLink>
               )
-            )}
+            })}
           </nav>
 
           <div className="flex shrink-0 items-center gap-2">
