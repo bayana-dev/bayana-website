@@ -27,7 +27,7 @@ function LocationHighlight() {
             title="Bayana Global on Google Maps — 3812 Addax Tower, Al Reem Island"
             src={business.mapEmbed}
             loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
+            referrerPolicy="strict-origin-when-cross-origin" allowFullScreen
             className="absolute inset-0 h-full w-full border-0 grayscale-[30%]"
           />
         </div>
