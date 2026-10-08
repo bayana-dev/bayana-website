@@ -8,6 +8,7 @@ import TrustStrip from '../components/TrustStrip'
 import Services from '../components/Services'
 import HowWeWork from '../components/HowWeWork'
 import SectorsWeServe from '../components/SectorsWeServe'
+import Testimonials from '../components/Testimonials'
 import FAQ from '../components/FAQ'
 import FinalCTA from '../components/FinalCTA'
 import LocationHighlight from '../components/LocationHighlight'
@@ -75,6 +76,7 @@ function Home() {
 
         <HowWeWork />
         <SectorsWeServe />
+        <Testimonials />
 
         {/* Other UAE jurisdictions */}
         <section className="section pb-0" aria-labelledby="other-jurisdictions">
