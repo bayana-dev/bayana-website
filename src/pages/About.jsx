@@ -71,7 +71,7 @@ function About() {
       />
       <Navbar />
       <main id="main">
-                <PageHero crumbs={crumbs} eyebrow="About us" title="About Bayana Global Limited" aside={false}>
+        <PageHero crumbs={crumbs} eyebrow="About us" title="About Bayana Global Limited" aside={false}>
           <p className="lead max-w-2xl">
             An ADGM-registered corporate services firm on Al Reem Island, giving corporate and business support to
             companies, entrepreneurs and investors.
@@ -155,7 +155,7 @@ function About() {
                   height="823"
                   loading="lazy"
                   decoding="async"
-                  className="aspect-[720/823] w-full object-cover transition duration-700 hover:scale-[1.03]"
+                  className="aspect-[720/823] w-full object-cover"
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-950/90 via-brand-950/40 to-transparent p-5 pt-16 text-white">
                   <p className="font-display text-lg font-bold">{director.name}</p>
