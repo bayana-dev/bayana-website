@@ -81,7 +81,7 @@ function Contact() {
 
         <section className="container pb-16 md:pb-24">
           <div {...reveal(0, 'zoom')} className="overflow-hidden rounded-[2rem] shadow-lift ring-1 ring-black/5">
-            <iframe title="Map — Bayana Global, 3812 Addax Tower, Al Reem Island" src={business.mapEmbed} loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="block h-80 w-full border-0 md:h-[440px]" />
+            <iframe title="Map — Bayana Global, 3812 Addax Tower, Al Reem Island" src={business.mapEmbed} loading="lazy" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen className="block h-80 w-full border-0 md:h-[440px]" />
           </div>
         </section>
       </main>
