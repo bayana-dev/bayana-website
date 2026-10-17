@@ -54,7 +54,7 @@ function Hero() {
               Book a consultation <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-          <ul className="mt-10 grid max-w-xl animate-fade-up grid-cols-3 gap-3 border-t border-white/10 pt-8 [animation-delay:320ms]">
+          {/* <ul className="mt-10 grid max-w-xl animate-fade-up grid-cols-3 gap-3 border-t border-white/10 pt-8 [animation-delay:320ms]">
             {[
               ['1000+', 'ADGM Incorporations & Corporate Migration Experience-Including company migration between ADGM and Abu Dhabi DED.'],
               ['3', 'sectors: financial, non-financial, retail'],
@@ -63,6 +63,28 @@ function Hero() {
               <li key={t}>
                 <p className="font-display text-3xl font-extrabold text-white md:text-4xl">{n}</p>
                 <p className="mt-1 text-xs leading-snug text-brand-50/70 md:text-[13px]">{t}</p>
+              </li>
+            ))}
+          </ul> */}
+
+                    <ul className="mt-10 grid max-w-2xl animate-fade-up gap-3 [animation-delay:320ms] sm:grid-cols-3">
+            {[
+              ['1000', '+', 'ADGM Incorporations & Migrations', 'Including company migration between ADGM and Abu Dhabi DED'],
+              ['3', '', 'Sectors Covered', 'Financial, non-financial and retail'],
+              ['1', '', 'Trusted Partner', 'Licences, visas & office solutions — all your business support needs'],
+            ].map(([n, suffix, label, detail]) => (
+              <li
+                key={label}
+                className="group relative flex items-center gap-4 overflow-hidden rounded-2xl border border-white/10 bg-white/[.06] p-4 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-brand-400/40 hover:bg-white/10 sm:flex-col sm:items-start sm:gap-0 sm:p-5"
+              >
+                <span className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-gradient-to-r from-brand-400 to-brand-200 transition duration-500 group-hover:scale-x-100" />
+                <p className="w-20 shrink-0 font-display text-4xl font-extrabold leading-none text-white sm:w-auto md:text-[2.6rem]">
+                  {n}<span className="text-brand-400">{suffix}</span>
+                </p>
+                <div className="sm:mt-3">
+                  <p className="text-sm font-semibold leading-snug text-white">{label}</p>
+                  <p className="mt-1 text-xs leading-relaxed text-brand-50/65">{detail}</p>
+                </div>
               </li>
             ))}
           </ul>
