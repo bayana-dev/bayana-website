@@ -1,12 +1,13 @@
-import { BadgeCheck, Briefcase, Landmark, MapPin, Plane, Stamp } from 'lucide-react'
+import { BadgeCheck, Briefcase, Building2, Landmark, Layers, LifeBuoy, Plane } from 'lucide-react'
 
 const trust = [
-  { icon: Landmark, text: 'Registered in ADGM' },
-  { icon: BadgeCheck, text: '500+ DED-to-ADGM conversions & related cases' },
-  { icon: Briefcase, text: 'Financial, non-financial and retail businesses' },
-  { icon: MapPin, text: 'Office at Addax Tower, Al Reem Island' },
-  { icon: Plane, text: 'Establishment card, visas & work permits' },
-  { icon: Stamp, text: 'ADGM Courts notary & wills coordination' },
+  { icon: Landmark, text: 'ADGM-Registered Company located in Addax Tower' },
+  { icon: BadgeCheck, text: '1,000+ ADGM Incorporations & Migration' },
+  { icon: Building2, text: 'All Types of Company Formation' },
+  { icon: Layers, text: 'SPV & Foundation Formation' },
+  { icon: Briefcase, text: 'Financial Licensing Support' },
+  { icon: Plane, text: 'Office & Visa Solutions' },
+  { icon: LifeBuoy, text: 'Post-Registration Support' },
 ]
 
 const Row = ({ hidden }) => (
