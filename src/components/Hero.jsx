@@ -69,9 +69,9 @@ function Hero() {
 
                     <ul className="mt-10 grid max-w-2xl animate-fade-up gap-3 [animation-delay:320ms] sm:grid-cols-3">
             {[
-              ['1000', '+', 'ADGM Incorporations & Migrations', 'Including company migration between ADGM and Abu Dhabi DED'],
+              ['1000', '+', 'ADGM Incorporations & Migrations Experience', 'Including company migration between ADGM and Abu Dhabi DED'],
               ['3', '', 'Sectors Covered', 'Financial, non-financial and retail'],
-              ['1', '', 'Trusted Partner', 'Licences, visas & office solutions — all your business support needs'],
+              ['1', '', 'Partner for Licences, Visas & Office Solutions', 'One trusted partner. All your business support needs.'],
             ].map(([n, suffix, label, detail]) => (
               <li
                 key={label}
