@@ -38,7 +38,7 @@ export const business = {
     { days: 'Sat – Sun', time: 'Closed' },
   ],
   openingHoursSpec: [
-    { dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'], opens: '08:00', closes: '17:00' },
+    { dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'], opens: '09:00', closes: '17:00' },
     { dayOfWeek: ['Friday'], opens: '08:00', closes: '11:30' },
   ],
   social: {
