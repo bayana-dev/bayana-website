@@ -29,7 +29,7 @@ function PageHero({ crumbs, title, eyebrow, children, aside = true, service }) {
               <a href={whatsappLink(service ? `Hello Bayana, I need help with: ${service}` : undefined)} target="_blank" rel="noopener" className="btn-whatsapp !min-h-[44px] w-full" data-track="whatsapp"><WhatsAppIcon className="h-4 w-4" /> WhatsApp us</a>
               <a href={business.phoneHref} className="btn-outline !min-h-[44px] w-full" data-track="call"><Phone className="h-4 w-4" /> {business.phone}</a>
             </div>
-            <p className="mt-4 flex items-center gap-2 text-xs text-body/70"><Clock className="h-3.5 w-3.5" /> Mon–Thu 8–17 · Fri 8–11:30</p>
+            <p className="mt-4 flex items-center gap-2 text-xs text-body/70"><Clock className="h-3.5 w-3.5" /> Mon–Thu 9 AM – 5 PM · Fri 8–11:30</p>
           </aside>
         )}
       </div>
