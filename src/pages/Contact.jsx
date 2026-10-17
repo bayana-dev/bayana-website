@@ -67,7 +67,7 @@ function Contact() {
             <div {...reveal(1, 'left')} className="rounded-3xl bg-brand-950 p-6 text-brand-50/80 md:p-7">
               <h2 className="mb-2 text-xl text-white">How to Find Us</h2>
               {/* TODO: add parking and entrance details */}
-              <p>We are in Addax Tower on Al Reem Island, 38th floor, office 3812. Take the Addax Tower lifts to the 38th floor.</p>
+              <p>We are in Addax Tower on Al Reem Island, 38th floor, Office No. 01, Room No. 3812. Take the Addax Tower lifts to the 38th floor.</p>
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
                 <a href={whatsappLink()} target="_blank" rel="noopener" className="btn-whatsapp" data-track="whatsapp"><WhatsAppIcon /> WhatsApp</a>
                 <a href={business.phoneHref} className="btn-ghost-light" data-track="call"><Phone className="h-4 w-4" /> Call now</a>
