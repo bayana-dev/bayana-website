@@ -15,7 +15,7 @@ function LocationHighlight() {
             <p className="font-display text-lg font-bold text-ink">{business.name}</p>
             <p className="flex gap-3"><MapPin className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />{business.addressLine}</p>
             <p className="flex gap-3"><Phone className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" /><a href={business.phoneHref} className="font-semibold text-brand-700 hover:underline" data-track="call">{business.phone}</a></p>
-            <p className="flex gap-3"><Clock className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />Mon–Thu 8:00–17:00 · Fri 8:00–11:30 · Sat–Sun closed</p>
+            <p className="flex gap-3"><Clock className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />Mon–Thu 9:00 AM – 5:00 PM · Fri 8:00–11:30 · Sat–Sun closed</p>
           </address>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row lg:mt-auto lg:pt-8">
             <a href={whatsappLink()} target="_blank" rel="noopener" className="btn-whatsapp" data-track="whatsapp"><WhatsAppIcon /> Chat on WhatsApp</a>
