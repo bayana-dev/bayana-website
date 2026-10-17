@@ -33,7 +33,7 @@ export const business = {
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3630.694171631932!2d54.4088597!3d24.4960512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e6700008b6ed5%3A0xf07ebccd7b5f5aa3!2sBAYANA%20GLOBAL%20LIMITED!5e0!3m2!1sen!2sin!4v1791443787084!5m2!1sen!2sin',
   mapLink: 'https://www.google.com/maps/place/BAYANA+GLOBAL+LIMITED/@24.4960512,54.4088597,17z',
   hours: [
-    { days: 'Mon – Thu', time: '8:00 – 17:00' },
+    { days: 'Mon – Thu', time: '9:00 AM – 5:00 PM' },
     { days: 'Fri', time: '8:00 – 11:30' },
     { days: 'Sat – Sun', time: 'Closed' },
   ],
