@@ -43,7 +43,7 @@ function Footer() {
               </a>
             </p>
             <p className="flex items-center gap-2.5"><Mail className="h-3.5 w-3.5 shrink-0 text-brand-400" /><a href={`mailto:${business.email}`} className="hover:text-white">{business.email}</a></p>
-            <p className="flex items-center gap-2.5"><Clock className="h-3.5 w-3.5 shrink-0 text-brand-400" />Mon–Thu 8–17 · Fri 8–11:30 · Sat–Sun closed</p>
+            <p className="flex items-center gap-2.5"><Clock className="h-3.5 w-3.5 shrink-0 text-brand-400" />Mon–Thu 9 AM – 5 PM · Fri 8–11:30 · Sat–Sun closed</p>
           </address>
           <div className="mt-4 flex gap-2">
             {socials.map(([href, Icon, label]) => (
