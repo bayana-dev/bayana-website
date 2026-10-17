@@ -44,8 +44,7 @@ function Hero() {
             ADGM Corporate Services <span className="text-gradient-light">in Abu Dhabi</span>
           </h1>
           <p className="mt-6 max-w-xl animate-fade-up text-[17px] leading-relaxed text-brand-50/85 [animation-delay:160ms] md:text-xl">
-            ADGM corporate services in Abu Dhabi — company formation, licensing, visas, filings and office space for
-            ADGM businesses, handled by one team on Al Reem Island.
+            Your trusted partner for ADGM company formation, licensing, visa processing, regulatory filings and office arrangements. From incorporation to ongoing corporate support, our dedicated team on Al Reem Island helps you manage your business requirements through one convenient point of contact, including office solutions and registered office arrangements.
           </p>
           <div className="mt-9 flex animate-fade-up flex-col gap-3 [animation-delay:240ms] sm:flex-row">
             <a href={whatsappLink()} target="_blank" rel="noopener" className="btn-whatsapp" data-track="whatsapp">
@@ -57,9 +56,9 @@ function Hero() {
           </div>
           <ul className="mt-10 grid max-w-xl animate-fade-up grid-cols-3 gap-3 border-t border-white/10 pt-8 [animation-delay:320ms]">
             {[
-              ['500+', 'DED-to-ADGM conversions & related cases'],
+              ['1000+', 'ADGM Incorporations & Corporate Migration Experience-Including company migration between ADGM and Abu Dhabi DED.'],
               ['3', 'sectors: financial, non-financial, retail'],
-              ['1', 'team for licence, visas & office'],
+              ['1', 'Partner for Licences, Visas & Office Solutions-One trusted partner. All your business support needs.'],
             ].map(([n, t]) => (
               <li key={t}>
                 <p className="font-display text-3xl font-extrabold text-white md:text-4xl">{n}</p>
@@ -92,10 +91,18 @@ function Hero() {
                 </li>
               ))}
             </ol>
-            <div className="mt-7 flex items-center gap-3 rounded-2xl bg-white/10 p-4 text-sm">
-              <MapPin className="h-5 w-5 shrink-0 text-brand-300" />
-              <span>{business.street}, {business.area}, {business.city}</span>
-            </div>
+            <a
+              href={business.mapLink}
+              target="_blank"
+              rel="noopener"
+              className="mt-7 flex items-start gap-3 rounded-2xl bg-white/10 p-4 text-sm transition hover:bg-white/15"
+            >
+              <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-brand-300" />
+              <span>
+                <span className="block font-semibold">{business.unit}</span>
+                <span className="text-brand-50/80">Addax Tower, {business.area}, {business.city}, UAE</span>
+              </span>
+            </a>
           </div>
         </div>
       </div>
