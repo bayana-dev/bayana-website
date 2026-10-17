@@ -9,8 +9,9 @@ import heroImgMobile from '../assets/adgm-corporate-services-al-reem-island-960.
 const journey = [
   { icon: FileCheck2, title: 'Company registered', text: 'ADGM Registration Authority' },
   { icon: BadgeCheck, title: 'Commercial licence issued', text: 'Financial, non-financial or retail' },
-  { icon: Plane, title: 'Establishment card & visas', text: 'Director, employee & dependent' },
   { icon: Building2, title: 'Office & lease on AccessRP', text: 'Via Aegis Coworking, Addax Tower' },
+  { icon: Plane, title: 'Establishment card & visas', text: 'Director, employee & dependent' },
+  
 ]
 
 // Home hero. Hero text and buttons animate with CSS on load (no JS needed → fast LCP)
