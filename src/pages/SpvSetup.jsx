@@ -11,7 +11,7 @@ const service = {
   keyword: 'ADGM SPV setup',
   title: 'ADGM SPV Setup & Registered Agent Services | Bayana',
   description:
-    'Set up an ADGM special purpose vehicle to hold shares, property or investments. Incorporation, registered address, CSP appointment and annual filings.',
+    'Set up an ADGM special purpose vehicle to hold shares, property or investments. Incorporation, registered address, CSP appointment and annual filings, through channel partners.',
   h1: 'ADGM SPV Setup',
   intro: (
     <>
@@ -21,7 +21,7 @@ const service = {
       </p>
       <p>
         An SPV is one of the structures covered by our <L to="adgm-company-formation">ADGM company formation</L>{' '}
-        service.
+       service, provided through our channel partners.
       </p>
     </>
   ),
