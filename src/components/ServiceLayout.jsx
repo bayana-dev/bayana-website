@@ -254,6 +254,8 @@ const THEMES = {
     tile: 'bg-brand-600 text-white shadow-glow',
     ring: 'border-brand-400/40',
     cta: 'btn bg-white text-brand-900 hover:-translate-y-0.5 hover:bg-brand-50',
+    label: 'text-brand-600',
+    audience: 'bg-gradient-to-br from-brand-50 to-white ring-1 ring-brand-100',
     bullets: 'numbered',
     bar: 'bg-brand-500',
     toc: 'border-brand-600 text-brand-800',
@@ -270,6 +272,8 @@ const THEMES = {
     tile: 'bg-brand-50 text-brand-700 ring-1 ring-brand-200',
     ring: 'border-brand-200',
     cta: 'btn-primary',
+    label: 'text-brand-700',
+    audience: 'bg-gradient-to-br from-brand-50/70 to-white ring-1 ring-brand-100',
     bullets: 'list',
     bar: 'bg-brand-700',
     toc: 'border-brand-700 text-brand-800',
@@ -286,6 +290,8 @@ const THEMES = {
     tile: 'bg-white text-brand-700 shadow-lift',
     ring: 'border-white/40',
     cta: 'btn bg-white text-brand-900 hover:-translate-y-0.5 hover:bg-brand-50',
+    label: 'text-brand-600',
+    audience: 'bg-gradient-to-br from-brand-100/60 via-brand-50 to-white ring-1 ring-brand-200',
     bullets: 'chips',
     bar: 'bg-brand-500',
     toc: 'border-brand-500 text-brand-800',
@@ -302,6 +308,8 @@ const THEMES = {
     tile: 'bg-white text-[#b8892d] ring-1 ring-[#b8892d]/30',
     ring: 'border-[#b8892d]/30',
     cta: 'btn bg-brand-900 text-white hover:-translate-y-0.5 hover:bg-brand-950',
+    label: 'text-[#a07624]',
+    audience: 'bg-[#faf7f0] ring-1 ring-[#b8892d]/20',
     bullets: 'gold',
     bar: 'bg-[#b8892d]',
     toc: 'border-[#b8892d] text-[#8a6620]',
@@ -318,6 +326,8 @@ const THEMES = {
     tile: 'bg-brand-600 text-white shadow-glow',
     ring: 'border-brand-300',
     cta: 'btn-primary',
+    label: 'text-brand-600',
+    audience: 'bg-gradient-to-br from-brand-50 to-white ring-1 ring-brand-100',
     bullets: 'cards',
     bar: 'bg-brand-600',
     toc: 'border-brand-600 text-brand-800',
@@ -327,56 +337,75 @@ const THEMES = {
   },
 }
 
-// Bullet lists, drawn differently per theme
+// Bullet lists — a different premium style per service group
 function Bullets({ items, style }) {
+  // Company Setup: white cards with a large faint number and a green line that grows on hover
   if (style === 'numbered') return (
-    <ol className="grid gap-3 sm:grid-cols-2">
+    <ol className="grid gap-4 sm:grid-cols-2">
       {items.map((b, i) => (
-        <li key={b} {...reveal(i % 6, true, 60)} className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-5 shadow-soft transition duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-lift">
-          <span className="font-display text-sm font-extrabold text-brand-400">{String(i + 1).padStart(2, '0')}</span>
-          <p className="mt-1 text-[15px] font-semibold text-ink">{verifyText(b)}</p>
-          <span className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-brand-500 transition duration-500 group-hover:scale-x-100" />
+        <li key={b} {...reveal(i % 6, true, 70)} className="group relative flex items-center gap-4 overflow-hidden rounded-3xl border border-gray-200/80 bg-white p-5 shadow-soft sm:block sm:p-6 transition duration-500 hover:-translate-y-1 hover:border-brand-200 hover:shadow-lift">
+          <span className="pointer-events-none absolute -right-1 -top-3 font-display text-[3.5rem] sm:-right-2 sm:-top-4 sm:text-[5.5rem] font-extrabold leading-none text-brand-50 transition duration-500 group-hover:text-brand-100" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+          <span className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-brand-800 text-white shadow-[0_8px_20px_-8px_rgba(22,163,74,.7)]">
+            <Check className="h-5 w-5" strokeWidth={2.5} />
+          </span>
+          <p className="relative pr-8 text-[16px] sm:mt-5 sm:pr-0 font-semibold leading-snug text-ink">{verifyText(b)}</p>
+          <span className="absolute inset-x-6 bottom-0 h-[3px] origin-left scale-x-0 rounded-full bg-gradient-to-r from-brand-500 to-brand-300 transition duration-500 group-hover:scale-x-100" />
         </li>
       ))}
     </ol>
   )
+  // Corporate Services: one elegant panel with numbered rows
   if (style === 'list') return (
-    <ul className="divide-y divide-gray-100 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-soft">
-      {items.map((b, i) => (
-        <li key={b} {...reveal(i % 6, 'fade', 50)} className="flex items-center gap-4 px-5 py-4 transition hover:bg-brand-50/60">
-          <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-brand-700 text-white"><Check className="h-4 w-4" strokeWidth={3} /></span>
-          <span className="text-[15px] font-medium text-ink">{verifyText(b)}</span>
-        </li>
-      ))}
-    </ul>
+    <div className="overflow-hidden rounded-3xl border border-gray-200/80 bg-gradient-to-br from-white to-brand-50/40 shadow-soft">
+      <ul className="divide-y divide-gray-100">
+        {items.map((b, i) => (
+          <li key={b} {...reveal(i % 8, 'fade', 50)} className="group flex items-center gap-5 px-5 py-4 transition duration-300 hover:bg-white md:px-7 md:py-5">
+            <span className="w-7 shrink-0 font-display text-sm font-bold text-brand-600/70 transition group-hover:text-brand-700">{String(i + 1).padStart(2, '0')}</span>
+            <span className="flex-1 text-[15px] font-medium text-ink md:text-base">{verifyText(b)}</span>
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-brand-200 bg-white text-brand-700 transition duration-300 group-hover:border-brand-600 group-hover:bg-brand-600 group-hover:text-white">
+              <Check className="h-4 w-4" strokeWidth={2.5} />
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
   )
+  // Visa & Office: soft green gradient tiles with a glowing icon
   if (style === 'chips') return (
-    <ul className="flex flex-wrap gap-2.5">
+    <ul className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
       {items.map((b, i) => (
-        <li key={b} {...reveal(i % 6, 'zoom', 50)} className="flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-4 py-2.5 text-[15px] font-medium text-brand-900 transition hover:-translate-y-0.5 hover:border-brand-500 hover:bg-white">
-          <Check className="h-4 w-4 shrink-0 text-brand-600" strokeWidth={3} />{verifyText(b)}
-        </li>
-      ))}
-    </ul>
-  )
-  if (style === 'gold') return (
-    <ul className="grid gap-3 sm:grid-cols-2">
-      {items.map((b, i) => (
-        <li key={b} {...reveal(i % 6, true, 60)} className="flex gap-3 rounded-r-2xl border-l-4 border-[#b8892d] bg-[#faf7f0] p-4 transition hover:bg-[#f4eddc]">
-          <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#b8892d]" strokeWidth={3} />
-          <span className="text-[15px] font-medium text-ink/90">{verifyText(b)}</span>
-        </li>
-      ))}
-    </ul>
-  )
-  return (
-    <ul className="grid gap-3 sm:grid-cols-2">
-      {items.map((b, i) => (
-        <li key={b} {...reveal(i % 6, true, 60)} className="group flex gap-3 rounded-2xl border border-gray-100 bg-white p-4 shadow-soft transition duration-300 hover:border-brand-200 hover:bg-brand-50/50">
-          <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-700 transition group-hover:bg-brand-600 group-hover:text-white">
-            <Check className="h-3.5 w-3.5" strokeWidth={3} />
+        <li key={b} {...reveal(i % 6, 'zoom', 60)} className="group relative flex items-center gap-4 overflow-hidden rounded-2xl bg-gradient-to-br from-brand-50 via-white to-white p-4 ring-1 ring-brand-100 transition duration-300 hover:-translate-y-0.5 hover:shadow-lift hover:ring-brand-300 md:p-5">
+          <span className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-600 text-white ring-[6px] ring-brand-100 transition duration-300 group-hover:ring-brand-200">
+            <Check className="h-5 w-5" strokeWidth={2.5} />
           </span>
-          <span className="text-[15px] font-medium text-ink/90">{verifyText(b)}</span>
+          <span className="text-[15px] font-semibold leading-snug text-brand-950">{verifyText(b)}</span>
+        </li>
+      ))}
+    </ul>
+  )
+  // Legal & Documents: refined cards with gold hairlines
+  if (style === 'gold') return (
+    <ul className="grid gap-4 sm:grid-cols-2">
+      {items.map((b, i) => (
+        <li key={b} {...reveal(i % 6, true, 70)} className="group relative flex items-center gap-4 rounded-2xl border border-[#b8892d]/20 bg-white p-5 shadow-soft transition duration-300 hover:-translate-y-0.5 hover:border-[#b8892d]/50 hover:shadow-lift">
+          <span className="flex h-10 w-10 shrink-0 rotate-45 items-center justify-center rounded-lg border border-[#b8892d]/40 bg-[#faf7f0] transition duration-500 group-hover:rotate-[135deg] group-hover:bg-[#b8892d]">
+            <Check className="h-4 w-4 -rotate-45 text-[#b8892d] transition duration-500 group-hover:-rotate-[135deg] group-hover:text-white" strokeWidth={2.5} />
+          </span>
+          <span className="text-[15px] font-semibold text-ink">{verifyText(b)}</span>
+          <span className="absolute inset-y-4 left-0 w-[3px] rounded-r-full bg-[#b8892d] opacity-0 transition group-hover:opacity-100" />
+        </li>
+      ))}
+    </ul>
+  )
+  // Other: clean cards
+  return (
+    <ul className="grid gap-4 sm:grid-cols-2">
+      {items.map((b, i) => (
+        <li key={b} {...reveal(i % 6, true, 60)} className="group flex items-center gap-4 rounded-2xl border border-gray-200/80 bg-white p-5 shadow-soft transition duration-300 hover:-translate-y-0.5 hover:border-brand-200 hover:shadow-lift">
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-700 ring-1 ring-brand-100 transition group-hover:bg-brand-600 group-hover:text-white">
+            <Check className="h-4 w-4" strokeWidth={2.5} />
+          </span>
+          <span className="text-[15px] font-semibold text-ink">{verifyText(b)}</span>
         </li>
       ))}
     </ul>
@@ -479,20 +508,22 @@ function ServiceLayout({ service }) {
           </aside>
 
           <div className="min-w-0">
-            {s.sections.map((sec) => (
-              <section key={sec.h2} className="border-b border-gray-100 py-10 first:pt-0 last:border-0" aria-labelledby={slugify(sec.h2)}>
-                <h2 id={slugify(sec.h2)} {...reveal(0)} className="mb-6 flex items-start gap-3 text-2xl leading-tight md:text-[2rem]">
-                  <span className={`mt-2 h-6 w-1.5 shrink-0 rounded-full md:h-7 ${t.bar}`} aria-hidden="true" />{sec.h2}
-                </h2>
-                {sec.text && <div {...reveal(1)} className="prose-bayana text-[17px] leading-relaxed">{verifyText(sec.text)}</div>}
+            {s.sections.map((sec, si) => (
+              <section key={sec.h2} className="border-b border-gray-100 py-12 first:pt-0 last:border-0 md:py-14" aria-labelledby={slugify(sec.h2)}>
+                <div {...reveal(0)} className="mb-7">
+                  <p className={`mb-2 flex items-center gap-3 font-display text-xs font-bold uppercase tracking-[.2em] ${t.label}`}>
+                    <span className={`h-px w-8 ${t.bar}`} />{String(si + 1).padStart(2, '0')}
+                  </p>
+                  <h2 id={slugify(sec.h2)} className="text-[1.65rem] leading-tight md:text-[2.15rem]">{sec.h2}</h2>
+                </div>
+                {sec.text && <div {...reveal(1)} className="prose-bayana max-w-3xl text-[17px] leading-relaxed">{verifyText(sec.text)}</div>}
                 {sec.bullets && <Bullets items={sec.bullets} style={t.bullets} />}
                 {sec.defs && (
                   <dl className="grid gap-4 sm:grid-cols-2">
                     {sec.defs.map(([dt, d], i) => (
-                      <div key={dt} {...reveal(i % 4)} className="card card-hover spotlight">
-                        <dt className="mb-2 flex items-center gap-3 font-display text-lg font-bold text-ink">
-                          <span className={`h-2 w-2 rounded-full ${t.bar}`} />{dt}
-                        </dt>
+                      <div key={dt} {...reveal(i % 4)} className="card card-hover spotlight overflow-hidden !rounded-3xl">
+                        <span className={`absolute inset-x-0 top-0 h-1 ${t.bar}`} />
+                        <dt className="mb-2 font-display text-lg font-bold text-ink">{dt}</dt>
                         <dd className="text-[15px] leading-relaxed">{d}</dd>
                       </div>
                     ))}
@@ -538,10 +569,11 @@ function ServiceLayout({ service }) {
 
             {/* 5–6. Who it's for + Why Bayana */}
             <section className="pt-14" aria-labelledby="who-it-is-for">
-              <h2 id="who-it-is-for" {...reveal(0)} className="mb-4 flex items-start gap-3 text-2xl md:text-[2rem]">
-                <span className={`mt-2 h-6 w-1.5 shrink-0 rounded-full md:h-7 ${t.bar}`} aria-hidden="true" />Who It Is For
-              </h2>
-              <p {...reveal(1)} className="mb-12 text-[17px] leading-relaxed">{s.audience}</p>
+              <div {...reveal(0)} className={`relative mb-14 overflow-hidden rounded-3xl p-6 md:p-9 ${t.audience}`}>
+                <p className={`mb-2 font-display text-xs font-bold uppercase tracking-[.2em] ${t.label}`}>Who it is for</p>
+                <h2 id="who-it-is-for" className="mb-3 text-2xl md:text-[2rem]">Is This Service Right for You?</h2>
+                <p className="max-w-3xl text-[17px] leading-relaxed">{s.audience}</p>
+              </div>
               <h2 {...reveal(0)} className="mb-6 text-2xl md:text-[2rem]">Why Bayana</h2>
               <WhyChooseUs />
               {(s.note || s.disclaimer) && (
