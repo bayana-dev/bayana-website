@@ -68,7 +68,7 @@ function Hero() {
             ))}
           </ul> */}
 
-                          <ul className="mt-10 grid max-w-xs animate-fade-up gap-3 [animation-delay:320ms]">
+                                <ul className="no-scrollbar -mx-4 mt-10 flex max-w-2xl animate-fade-up snap-x gap-3 overflow-x-auto px-4 [animation-delay:320ms] sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0">
             {[
               ['1000', '+', 'ADGM Incorporations & Migrations Experience', 'Including company migration between ADGM and Abu Dhabi DED'],
               ['', '', 'Sectors Covered', 'Financial, non-financial and retail'],
@@ -76,15 +76,15 @@ function Hero() {
             ].map(([n, suffix, label, detail]) => (
               <li
                 key={label}
-                className="group relative flex items-center gap-4 overflow-hidden rounded-2xl border border-white/10 bg-white/[.06] p-4 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-brand-400/40 hover:bg-white/10 sm:flex-col sm:items-start sm:gap-0 sm:p-5"
+                               className="group relative flex min-w-[230px] snap-start flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[.06] p-4 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-brand-400/40 hover:bg-white/10 sm:min-w-0 sm:p-5"
               >
                 <span className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-gradient-to-r from-brand-400 to-brand-200 transition duration-500 group-hover:scale-x-100" />
                                 {n && (
-                  <p className="w-20 shrink-0 font-display text-4xl font-extrabold leading-none text-white sm:w-auto md:text-[2.6rem]">
+                                   <p className="font-display text-4xl font-extrabold leading-none text-white md:text-[2.6rem]">
                     {n}<span className="text-brand-400">{suffix}</span>
                   </p>
                 )}
-                <div className={n ? 'sm:mt-3' : ''}>
+                                <div className={n ? 'mt-3' : ''}>
                   <p className="text-sm font-semibold leading-snug text-white">{label}</p>
                   <p className="mt-1 text-xs leading-relaxed text-brand-50/65">{detail}</p>
                 </div>
