@@ -1,5 +1,5 @@
 import ServiceLayout from '../components/ServiceLayout'
-import { L } from '../components/InlineLink'
+import { L, Ext } from '../components/InlineLink'
 
 // Blueprint page 13 — /adgm-csp-registered-office
 // Main keyword: ADGM company service provider
@@ -28,7 +28,7 @@ const service = {
   ),
   sections: [
     { h2: 'Our CSP Services', bullets: ['Registered office address', 'Registered agent', 'Statutory registers', 'UBO records', 'Filings with the Registration Authority', 'Licence renewal'] },
-    { h2: 'Registered Office for Operating Companies', text: <p>Operating companies need a desk or office. We arrange this through Aegis Coworking — see <L to="adgm-office-space-lease">ADGM office space on Al Reem Island</L>.</p> },
+    { h2: 'Registered Office for Operating Companies', text: <p>Operating companies need a desk or office. We arrange this through <Ext href="https://www.aegiscoworking.ae/">Aegis Coworking</Ext> — see <L to="adgm-office-space-lease">ADGM office space on Al Reem Island</L>.</p> },
     { h2: 'Switching Your CSP to Bayana', bullets: ['Review your current CSP agreement and notice terms', 'KYC and onboarding with Bayana', 'Board resolution approving the change', 'Registered address change filed with the Registration Authority', 'Hand-over of registers and records'] },
   ],
   steps: null,
