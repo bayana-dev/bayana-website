@@ -23,7 +23,7 @@ export default function FinalCTA({ service = '' }) {
             <Link to="/contact" className="btn-primary" data-track="contact">
               Contact us <ArrowRight className="h-4 w-4" />
             </Link>
-            <a href={business.phoneHref} className="btn-ghost-light" data-track="call"><Phone className="h-4 w-4" /> Call {business.phone}</a>
+            
           </div>
         </div>
       </div>
