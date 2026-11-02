@@ -10,7 +10,7 @@ const service = {
   keyword: 'ADGM financial services company setup',
   title: 'ADGM Financial Services Company Setup | Bayana',
   description:
-    'Corporate setup support for asset managers, advisers and brokers in ADGM: incorporation, office, visas and coordination with your FSRA consultant.',
+    'Corporate setup support for asset managers, advisers and brokers in ADGM: incorporation, office and visas, through channel partners.',
   h1: 'ADGM Financial Services Company Setup',
   intro: (
     <>
@@ -20,7 +20,7 @@ const service = {
       </p>
       <p>
         Bayana handles the corporate side of your <L to="adgm-company-formation">ADGM company formation</L> while
-        your regulatory adviser handles the FSRA application.
+        your regulatory adviser handles the FSRA application. This service is provided through our channel partners.
       </p>
     </>
   ),
