@@ -97,11 +97,11 @@ export const nav = [
 // ─────────────────────────────────────────────────────────────
 export const services = [
   { id: 6, slug: 'adgm-company-formation', page: 'CompanyFormation', group: 'Company Setup', short: 'ADGM Company Formation', cardText: 'Structure advice, name reservation, documents, KYC and Registration Authority filing.' },
-  { id: 7, slug: 'adgm-financial-services-company-setup', page: 'FinancialSetup', group: 'Company Setup', short: 'Financial Sector Setup', cardText: 'Corporate setup for asset managers, advisers and brokers, alongside your FSRA consultant.' },
+  { id: 7, slug: 'adgm-financial-services-company-setup', page: 'FinancialSetup', group: 'Company Setup', short: 'Financial Sector Setup', cardText: 'Corporate setup for asset managers, advisers and brokers, through channel partners.' },
   { id: 8, slug: 'adgm-non-financial-company-setup', page: 'NonFinancialSetup', group: 'Company Setup', short: 'Non-Financial Setup', cardText: 'Consultancy, technology, holding, trading and professional services companies.' },
   { id: 9, slug: 'adgm-retail-licence', page: 'RetailLicence', group: 'Company Setup', short: 'Retail Licence', cardText: 'Licences for shops, restaurants, cafés and salons on Al Reem Island.' },
   { id: 10, slug: 'ded-to-adgm-licence-conversion', page: 'DedToAdgmConversion', group: 'Company Setup', short: 'DED to ADGM Conversion', cardText: '500+ conversions handled for Al Reem Island businesses.' },
-  { id: 11, slug: 'adgm-spv-setup', page: 'SpvSetup', group: 'Company Setup', short: 'SPV Setup', cardText: 'Special purpose vehicles to hold shares, property or investments.' },
+  { id: 11, slug: 'adgm-spv-setup', page: 'SpvSetup', group: 'Company Setup', short: 'SPV Setup', cardText: 'Special purpose vehicles to hold shares, property or investments, through channel partners.' },
   { id: 12, slug: 'adgm-foundation-setup', page: 'FoundationSetup', group: 'Company Setup', short: 'Foundation Setup', cardText: 'Foundations for asset protection and family succession.' },
   { id: 13, slug: 'adgm-csp-registered-office', page: 'CspRegisteredOffice', group: 'Corporate Services', short: 'CSP & Registered Office', cardText: 'Registered office, registered agent and statutory filings.' },
   { id: 14, slug: 'adgm-annual-filings-licence-renewal', page: 'FilingsRenewal', group: 'Corporate Services', short: 'Filings & Licence Renewal', cardText: 'Renewal, confirmation statement, accounts, data protection and amendments.' },
