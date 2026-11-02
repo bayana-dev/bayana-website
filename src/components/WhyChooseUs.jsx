@@ -3,7 +3,7 @@ import { reveal } from './Reveal'
 
 // The three proof points used on every service page (blueprint section 3)
 const points = [
-  { icon: Building2, title: 'On Al Reem Island', text: 'Our office is at 3812 Addax Tower, inside ADGM’s Al Reem Island jurisdiction.' },
+  { icon: Building2, title: 'On Al Reem Island', text: 'Our office is at Addax Tower, 3812, inside ADGM’s Al Reem Island jurisdiction.' },
   { icon: BadgeCheck, title: '500+ licence conversions', text: 'Hands-on experience with DED-to-ADGM conversions and related cases.' },
   { icon: Users, title: 'One point of contact', text: 'Licence, visas and office handled by one team — no chasing multiple providers.' },
 ]
