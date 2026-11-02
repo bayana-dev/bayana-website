@@ -4,7 +4,7 @@ import { WhatsAppIcon } from './Icons'
 import { business, whatsappLink } from '../siteConfig'
 
 // Top section of inner pages: breadcrumbs + H1 + intro (+ optional quick-contact card on desktop)
-function PageHero({ crumbs, title, eyebrow, children, aside = true, service }) {
+function PageHero({ crumbs, title, eyebrow, children, aside = false, service }) {
   return (
     <section className="relative isolate overflow-hidden border-b border-brand-100/70 bg-gradient-to-b from-brand-50 via-white to-white">
       <div className="bg-grid mask-fade absolute inset-0 -z-10" />
