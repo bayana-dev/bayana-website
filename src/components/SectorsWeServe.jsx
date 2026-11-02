@@ -13,7 +13,7 @@ const advantages = [
 ]
 
 const sectors = [
-  { icon: Landmark, title: 'Financial', text: 'Asset managers, advisers, brokers and fintech firms — alongside your FSRA consultant.', to: '/adgm-financial-services-company-setup' },
+  { icon: Landmark, title: 'Financial', text: 'Asset managers, advisers, brokers and fintech firms — through channel partners.', to: '/adgm-financial-services-company-setup' },
   { icon: Building2, title: 'Non-Financial', text: 'Consultancies, tech, holding, trading and professional services firms.', to: '/adgm-non-financial-company-setup' },
   { icon: ShoppingBag, title: 'Retail', text: 'Shops, restaurants, cafés and salons on Al Reem Island.', to: '/adgm-retail-licence' },
 ]
