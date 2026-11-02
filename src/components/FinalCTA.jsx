@@ -16,7 +16,7 @@ export default function FinalCTA({ service = '' }) {
           <p {...reveal(0)} className="eyebrow-dark"><span className="h-1.5 w-1.5 animate-pulse rounded-full bg-brand-400" /> We reply the same working day</p>
           <h2 id="cta-title" {...reveal(1)} className="section-title text-white">Talk to us on WhatsApp</h2>
           <p {...reveal(2)} className="mx-auto mt-4 max-w-2xl text-[17px] leading-relaxed text-brand-50/80 md:text-lg">
-            Tell us what you need{service ? ` with ${service}` : ''} and an ADGM specialist will reply the same working day. Or visit us at {business.street}, {business.area}.
+            Tell us what you need{service ? ` with ${service}` : ''} and an ADGM specialist will reply the same working day. Or visit us at {business.addressLine}.
           </p>
 
           <div {...reveal(3)} className="mx-auto mt-8 flex max-w-3xl flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
@@ -27,8 +27,8 @@ export default function FinalCTA({ service = '' }) {
           </div>
 
           <ul {...reveal(4)} className="mx-auto mt-10 flex max-w-3xl flex-col items-center justify-center gap-3 border-t border-white/10 pt-8 text-sm text-brand-50/80 md:flex-row md:gap-8">
-            <li className="flex items-center gap-2"><MapPin className="h-4 w-4 shrink-0 text-brand-400" /> {business.street}, {business.area}, {business.city}</li>
-            <li className="flex items-center gap-2"><Clock className="h-4 w-4 shrink-0 text-brand-400" /> Mon–Thu 9:00 AM – 5:00 PM · Fri 8:00–11:30</li>
+            <li className="flex items-center gap-2"><MapPin className="h-4 w-4 shrink-0 text-brand-400" /> {business.addressLine}</li>
+            <li className="flex items-center gap-2"><Clock className="h-4 w-4 shrink-0 text-brand-400" /> Mon–Fri 9:00 AM – 5:00 PM</li>
           </ul>
         </div>
       </div>
