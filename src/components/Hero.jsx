@@ -9,7 +9,7 @@ import heroImgMobile from '../assets/adgm-corporate-services-al-reem-island-960.
 const journey = [
   { icon: FileCheck2, title: 'Company registered', text: 'ADGM Registration Authority' },
   { icon: BadgeCheck, title: 'Commercial licence issued', text: 'Financial, non-financial or retail' },
-  { icon: Building2, title: 'Office & lease on AccessRP', text: 'Via Aegis Coworking, Addax Tower' },
+  { icon: Building2, title: 'Office & lease on AccessRP', text: <>Via <a href="https://www.aegiscoworking.ae/" target="_blank" rel="noopener" className="font-semibold text-brand-200 underline decoration-brand-400/50 underline-offset-4 hover:text-white">Aegis Coworking</a>, Addax Tower</> },
   { icon: Plane, title: 'Establishment card & visas', text: 'Director, employee & dependent' },
   
 ]
@@ -45,7 +45,7 @@ function Hero() {
             ADGM Corporate Services <span className="text-gradient-light">in Abu Dhabi</span>
           </h1>
           <p className="mt-6 max-w-xl animate-fade-up text-[17px] leading-relaxed text-brand-50/85 [animation-delay:160ms] md:text-xl">
-            Your trusted partner for ADGM company formation, licensing, visa processing, regulatory filings and office arrangements. From incorporation to ongoing corporate support, our dedicated team on Al Reem Island helps you manage your business requirements through one convenient point of contact, including office solutions and registered office arrangements.
+            Your trusted partner for ADGM company formation, licensing, visa processing, regulatory filings and office arrangements. From incorporation to ongoing corporate support, our dedicated team in Al Reem Island helps you manage your business requirements through one convenient point of contact, including office solutions and registered office arrangements.
           </p>
           <div className="mt-9 flex animate-fade-up flex-col gap-3 [animation-delay:240ms] sm:flex-row">
             <a href={whatsappLink()} target="_blank" rel="noopener" className="btn-whatsapp" data-track="whatsapp">
@@ -68,21 +68,23 @@ function Hero() {
             ))}
           </ul> */}
 
-                    <ul className="mt-10 grid max-w-2xl animate-fade-up gap-3 [animation-delay:320ms] sm:grid-cols-3">
+                          <ul className="mt-10 grid max-w-xs animate-fade-up gap-3 [animation-delay:320ms]">
             {[
               ['1000', '+', 'ADGM Incorporations & Migrations Experience', 'Including company migration between ADGM and Abu Dhabi DED'],
-              ['3', '', 'Sectors Covered', 'Financial, non-financial and retail'],
-              ['1', '', 'Partner for Licences, Visas & Office Solutions', 'One trusted partner. All your business support needs.'],
+              ['', '', 'Sectors Covered', 'Financial, non-financial and retail'],
+              ['', '', 'Partner for Licences, Visas & Office Solutions', 'One trusted partner. All your business support needs.'],
             ].map(([n, suffix, label, detail]) => (
               <li
                 key={label}
                 className="group relative flex items-center gap-4 overflow-hidden rounded-2xl border border-white/10 bg-white/[.06] p-4 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-brand-400/40 hover:bg-white/10 sm:flex-col sm:items-start sm:gap-0 sm:p-5"
               >
                 <span className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-gradient-to-r from-brand-400 to-brand-200 transition duration-500 group-hover:scale-x-100" />
-                <p className="w-20 shrink-0 font-display text-4xl font-extrabold leading-none text-white sm:w-auto md:text-[2.6rem]">
-                  {n}<span className="text-brand-400">{suffix}</span>
-                </p>
-                <div className="sm:mt-3">
+                                {n && (
+                  <p className="w-20 shrink-0 font-display text-4xl font-extrabold leading-none text-white sm:w-auto md:text-[2.6rem]">
+                    {n}<span className="text-brand-400">{suffix}</span>
+                  </p>
+                )}
+                <div className={n ? 'sm:mt-3' : ''}>
                   <p className="text-sm font-semibold leading-snug text-white">{label}</p>
                   <p className="mt-1 text-xs leading-relaxed text-brand-50/65">{detail}</p>
                 </div>
@@ -123,7 +125,7 @@ function Hero() {
               <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-brand-300" />
               <span>
                 <span className="block font-semibold">{business.unit}</span>
-                <span className="text-brand-50/80">Addax Tower, {business.area}, {business.city}, UAE</span>
+                               <span className="text-brand-50/80">{business.area}, RT3, {business.city}, {business.country}</span>
               </span>
             </a>
           </div>
