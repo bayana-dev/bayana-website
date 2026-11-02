@@ -15,13 +15,13 @@ export const business = {
   name: 'Bayana Global Limited',
   shortName: 'Bayana',
   tagline: 'Administrative & Documentation Services',
-  unit: 'Office No. 01 | Room No. 3812', // shown on its own line in address blocks
-  street: 'Office No. 01, Room No. 3812, Addax Tower',
+  unit: 'Addax Tower, 3812', // shown on its own line in address blocks
+  street: 'Addax Tower, 3812',
   area: 'Al Reem Island',
   city: 'Abu Dhabi',
   country: 'United Arab Emirates',
   countryCode: 'AE',
-  addressLine: 'Office No. 01, Room No. 3812, Addax Tower, Al Reem Island, Abu Dhabi, United Arab Emirates',
+  addressLine: 'Addax Tower, 3812, Al Reem Island, RT3, Abu Dhabi, United Arab Emirates',
   phone: '+971 50 107 4414',
   phoneHref: 'tel:+971501074414',
   whatsapp: '971501074414',
@@ -33,13 +33,11 @@ export const business = {
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3630.694171631932!2d54.4088597!3d24.4960512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e6700008b6ed5%3A0xf07ebccd7b5f5aa3!2sBAYANA%20GLOBAL%20LIMITED!5e0!3m2!1sen!2sin!4v1791443787084!5m2!1sen!2sin',
   mapLink: 'https://www.google.com/maps/place/BAYANA+GLOBAL+LIMITED/@24.4960512,54.4088597,17z',
   hours: [
-    { days: 'Mon – Thu', time: '9:00 AM – 5:00 PM' },
-    { days: 'Fri', time: '8:00 – 11:30' },
+    { days: 'Mon – Fri', time: '9:00 AM – 5:00 PM' },
     { days: 'Sat – Sun', time: 'Closed' },
   ],
   openingHoursSpec: [
-    { dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'], opens: '09:00', closes: '17:00' },
-    { dayOfWeek: ['Friday'], opens: '08:00', closes: '11:30' },
+    { dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '09:00', closes: '17:00' },
   ],
   social: {
     // TODO: paste real profile URLs
@@ -47,7 +45,7 @@ export const business = {
     instagram: 'https://www.instagram.com/bayana.global',
     facebook: 'https://www.facebook.com/bayana.global',
   },
-  partner: { name: 'Aegis Coworking Business Center', url: 'https://aegiscoworking.ae' },
+    partner: { name: 'Aegis Coworking Business Center', url: 'https://www.aegiscoworking.ae/' },
   director: 'Mohammed Swalih Kalippadath',
   logo: '/logo.png', // public/logo.png (used in schema)
   ogImage: '/og-image.jpg',
