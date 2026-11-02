@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
-import { Check, Info } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { ArrowRight, Check, Info, Phone } from 'lucide-react'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import SEO from './SEO'
@@ -9,11 +10,11 @@ import FinalCTA from './FinalCTA'
 import WhyChooseUs from './WhyChooseUs'
 import SectionHeader from './SectionHeader'
 import { CardGrid } from './ServiceCard'
-import { WhatsAppIcon } from './Icons'
+
 import { verifyText } from './Verify'
 import { reveal } from './Reveal'
 import { breadcrumbSchema, faqSchema, serviceSchema } from '../schema'
-import { CSP_LICENCE_CONFIRMED, DISCLAIMER, serviceBySlug, whatsappLink } from '../siteConfig'
+import { CSP_LICENCE_CONFIRMED, DISCLAIMER, business, serviceBySlug } from '../siteConfig'
 
 const slugify = (t) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
 
@@ -70,10 +71,10 @@ function ServiceLayout({ service }) {
         <PageHero crumbs={crumbs} title={s.h1} eyebrow={s.group === 'Other' ? 'UAE company setup' : s.group} service={s.short}>
           <div className="prose-bayana lead max-w-2xl">{verifyText(s.intro)}</div>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-            <a href={whatsappLink(`Hello Bayana, I need help with: ${s.short}`)} target="_blank" rel="noopener" className="btn-primary" data-track="whatsapp">
-              <WhatsAppIcon /> Talk to us on WhatsApp
-            </a>
-            <a href="#contact-form" className="btn-outline">Send an enquiry</a>
+                        <Link to="/contact" className="btn-primary" data-track="contact">
+              Contact us <ArrowRight className="h-4 w-4" />
+            </Link>
+            <a href={business.phoneHref} className="btn-outline" data-track="call"><Phone className="h-4 w-4" /> Call {business.phone}</a>
           </div>
           {cspPending && (
             <div className="mt-8 flex gap-3 rounded-2xl border border-amber-200 bg-amber-50/90 p-4 text-amber-900">
