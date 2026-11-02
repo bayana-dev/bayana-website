@@ -54,7 +54,7 @@ const service = {
         <p>
           Companies on Al Reem Island and Al Maryah Island need a suitable registered office — a desk or an office.
           See <L to="adgm-office-space-lease">ADGM office space on Al Reem Island</L>, available through our sister
-          company <Ext href="https://aegiscoworking.ae">Aegis Coworking Business Center</Ext> at Addax Tower.
+          company <Ext href="https://www.aegiscoworking.ae/">Aegis Coworking Business Center</Ext> at Addax Tower.
         </p>
       ),
     },
