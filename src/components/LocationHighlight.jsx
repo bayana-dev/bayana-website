@@ -1,6 +1,6 @@
-import { Clock, MapPin, Navigation, Phone } from 'lucide-react'
-import { business, whatsappLink } from '../siteConfig'
-import { WhatsAppIcon } from './Icons'
+import { Link } from 'react-router-dom'
+import { ArrowRight, Clock, MapPin, Navigation, Phone } from 'lucide-react'
+import { business } from '../siteConfig'
 import SectionHeader from './SectionHeader'
 import { reveal } from './Reveal'
 
@@ -18,7 +18,7 @@ function LocationHighlight() {
             <p className="flex gap-3"><Clock className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />Mon–Fri 9:00 AM – 5:00 PM · Sat–Sun closed</p>
           </address>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row lg:mt-auto lg:pt-8">
-            <a href={whatsappLink()} target="_blank" rel="noopener" className="btn-whatsapp" data-track="whatsapp"><WhatsAppIcon /> Chat on WhatsApp</a>
+                        <Link to="/contact" className="btn-primary" data-track="contact">Contact us <ArrowRight className="h-4 w-4" /></Link>
             <a href={business.mapLink} target="_blank" rel="noopener" className="btn-outline"><Navigation className="h-4 w-4" /> Get directions</a>
           </div>
         </div>
