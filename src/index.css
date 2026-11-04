@@ -7,7 +7,9 @@
   html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; scroll-padding-top: 96px; overflow-x: clip; }
   body { @apply bg-white font-sans text-body antialiased; text-rendering: optimizeLegibility; overflow-x: clip; }
   h1, h2, h3, h4 { @apply font-display font-bold tracking-tight text-ink; text-wrap: balance; }
-  p { text-wrap: pretty; }
+    p { text-wrap: pretty; text-align: justify; hyphens: auto; }
+  /* keep centred text centred (CTA band, section intros) */
+  .text-center p, p.text-center { text-align: center; }
   ::selection { @apply bg-brand-200 text-brand-950; }
   :focus-visible { @apply outline-none ring-4 ring-brand-300/60 ring-offset-2; }
 }
