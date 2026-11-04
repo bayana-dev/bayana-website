@@ -5,7 +5,7 @@ import { reveal } from './Reveal'
 
 const advantages = [
   ['Dedicated ADGM focus', 'Financial, non-financial and retail businesses in ADGM are our core work.'],
-  ['500+ licence conversion cases', 'Hands-on DED-to-ADGM conversion experience on Al Reem Island.'],
+  ['1000+ licence conversion cases', 'Hands-on DED-to-ADGM conversion experience on Al Reem Island.'],
   ['Incorporation to visa to office in one place', 'One team, one point of contact, no chasing providers.'],
   ['AccessRP and government-procedure support', 'Lease registration, establishment card and ACCESSADGM.'],
   ['Notary and court coordination', 'Documents prepared for the ADGM Courts Notary Public.'],
