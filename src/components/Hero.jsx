@@ -68,7 +68,7 @@ function Hero() {
             ))}
           </ul> */}
 
-                                         <ul className="no-scrollbar -mx-4 mt-10 flex max-w-2xl animate-fade-up snap-x gap-3 overflow-x-auto px-4 [animation-delay:320ms] sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0">
+                                         <ul className="no-scrollbar -mx-5 mt-10 flex max-w-2xl animate-fade-up snap-x gap-3 overflow-x-auto px-5 [animation-delay:320ms] sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0">
             {[
               { n: '1000', suffix: '+', label: 'ADGM Incorporations & Migrations Experience', detail: 'Including company migration between ADGM and Abu Dhabi DED' },
               { title: 'Sectors Covered', list: ['Financial', 'Non-financial', 'Retail'] },
