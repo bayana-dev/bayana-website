@@ -15,13 +15,13 @@ export const business = {
   name: 'Bayana Global Limited',
   shortName: 'Bayana',
   tagline: 'Administrative & Documentation Services',
-  unit: 'Addax Tower, 3812', // shown on its own line in address blocks
-  street: 'Addax Tower, 3812',
+  unit: 'Addax Tower, Office no 3812', // shown on its own line in address blocks
+  street: 'Addax Tower, Office no 3812',
   area: 'Al Reem Island',
   city: 'Abu Dhabi',
   country: 'United Arab Emirates',
   countryCode: 'AE',
-  addressLine: 'Addax Tower, 3812, Al Reem Island, RT3, Abu Dhabi, United Arab Emirates',
+  addressLine: 'Addax Tower, Office no 3812, Al Reem Island, Abu Dhabi, United Arab Emirates',
   phone: '+971 50 107 4414',
   phoneHref: 'tel:+971501074414',
   whatsapp: '971501074414',
