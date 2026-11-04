@@ -40,11 +40,11 @@ const service = {
       ],
     },
     {
-      h2: '500+ Cases Handled',
+      h2: '1000+ Cases Handled',
       // TODO: add 2–3 anonymised case examples (a café, a salon, a consultancy) and Google review snippets
       text: (
         <p>
-          Bayana has assisted with more than 500 licence conversions and related cases moving Al Reem Island businesses
+          Bayana has assisted with more than 1000 licence conversions and related cases moving Al Reem Island businesses
           from Abu Dhabi DED licensing to ADGM requirements — cafés, restaurants, salons, shops, service outlets and
           offices. That experience means we know which activities need mapping, which leases need registering on
           AccessRP and how to move visas without gaps.
