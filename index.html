@@ -48,8 +48,8 @@
     </div>
     <script>
       (function () {
-        var SHOW_AFTER_LOAD = 3100 // like the old site: hide 3.1 s after the page has loaded
-        var MAX = 5000 // never longer than 5 s, even on slow connections
+        var SHOW_AFTER_LOAD = 500
+        var MAX = 1500
         var s = document.getElementById('splash'), done = false
         if (location.pathname.indexOf('/admin') === 0) { s.parentNode.removeChild(s); return }
         function hide() {
