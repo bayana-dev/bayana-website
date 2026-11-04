@@ -111,7 +111,7 @@ export const services = [
   { id: 18, slug: 'adgm-courts-notary', page: 'CourtsNotary', group: 'Legal & Documents', short: 'Notary Services', cardText: 'Powers of attorney, resolutions and declarations at ADGM Courts.' },
   { id: 19, slug: 'adgm-non-muslim-will-registration', page: 'NonMuslimWills', group: 'Legal & Documents', short: 'Non-Muslim Wills', cardText: 'Register a will covering UAE assets and guardianship at ADGM Courts.' },
   { id: 20, slug: 'legal-translation-attestation-abu-dhabi', page: 'TranslationAttestation', group: 'Legal & Documents', short: 'Translation & Attestation', cardText: 'Certified translation, MOFA legalisation and ADGM certificates.' },
-  { id: 21, slug: 'adgm-aml-dnfbp-compliance', page: 'AmlCompliance', group: 'Corporate Services', short: 'AML & DNFBP Compliance', cardText: 'MLRO, AML/KYC policies and goAML registration through partners.' },
+  { id: 21, slug: 'adgm-aml-dnfbp-compliance', page: 'AmlCompliance', group: 'Corporate Services', short: 'AML & DNFBP Compliance', cardText: 'cardText: 'MLRO support, AML and KYC policies, and goAML registration through channel partners.' },
   { id: 22, slug: 'uae-free-zone-company-setup', page: 'OtherFreeZones', group: 'Other', short: 'Other UAE Free Zones', cardText: 'Abu Dhabi mainland, Meydan, Dubai South, Ajman and more.' },
 ]
 
