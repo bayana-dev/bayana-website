@@ -39,9 +39,9 @@ export const business = {
   openingHoursSpec: [
     { dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '09:00', closes: '17:00' },
   ],
-   social: {
+    social: {
     linkedin: 'https://www.linkedin.com/company/bayana-586/',
-    instagram: 'https://www.instagram.com/bayana_586/',
+    instagram: 'https://www.instagram.com/bayanaglobal/',
     facebook: 'https://www.facebook.com/profile.php?id=61583566598816',
   },
     partner: { name: 'Aegis Coworking Business Center', url: 'https://www.aegiscoworking.ae/' },
