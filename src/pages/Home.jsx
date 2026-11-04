@@ -21,7 +21,7 @@ const faqs = [
   { q: 'What does Bayana do in ADGM?', a: 'Bayana handles ADGM company formation, licensing, DED-to-ADGM conversions, visas, corporate filings, office space, notary and document services for financial, non-financial and retail businesses.' },
   { q: 'Can a foreigner own 100% of an ADGM company?', a: 'Yes, foreign investors can own 100% of an ADGM company, subject to applicable requirements.' },
   { q: 'Do I need an office to set up in ADGM?', a: <>A suitable registered office arrangement is required. See <L to="/adgm-office-space-lease">ADGM office space on Al Reem Island</L>.</> },
-  { q: 'Can Bayana convert my Abu Dhabi DED licence to ADGM?', a: <>Yes — we have assisted with 500+ conversions and related cases. See <L to="/ded-to-adgm-licence-conversion">DED to ADGM licence conversion</L>.</> },
+  { q: 'Can Bayana convert my Abu Dhabi DED licence to ADGM?', a: <>Yes — we have assisted with 1000+ conversions and related cases. See <L to="/ded-to-adgm-licence-conversion">DED to ADGM licence conversion</L>.</> },
   { q: 'Do you handle visas after the licence is issued?', a: <>Yes — establishment card, e-channel, director, employee and dependent visas. See <L to="/adgm-visa-work-permit">ADGM visa services</L>.</> },
 ]
 
