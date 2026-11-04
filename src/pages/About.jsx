@@ -163,7 +163,7 @@ function About() {
                 </p>
                 {director.experience && <p>{director.experience}</p>}
                 <p>
-                  Bayana has assisted with more than 500 licence conversions and related cases moving
+                  Bayana has assisted with more than 1000 licence conversions and related cases moving
                   Al Reem Island businesses from Abu Dhabi DED licensing to ADGM — and supports financial, non-financial and
                   retail companies from incorporation to visas, office and ongoing filings.
                 </p>
