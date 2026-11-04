@@ -16,7 +16,7 @@ const service = {
     <>
       <p>
         An ADGM retail licence is required for shops, restaurants, cafés, salons and other service outlets in ADGM
-        areas. Bayana has handled 500+ licence conversions and related cases.
+        areas. Bayana has handled 1000+ licence conversions and related cases.
       </p>
       <p>
         It is part of our wider <L to="adgm-company-formation">ADGM company setup</L> service, with lease
