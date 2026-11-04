@@ -10,7 +10,7 @@ const service = {
   keyword: 'Al Reem Island ADGM licence conversion',
   title: 'DED to ADGM Licence Conversion, Al Reem | Bayana',
   description:
-    'Bayana has handled 500+ DED-to-ADGM licence conversions for Al Reem Island businesses. Licence, lease, AccessRP, establishment card and visa transfer.',
+    'Bayana has handled 1000+ DED-to-ADGM licence conversions for Al Reem Island businesses. Licence, lease, AccessRP, establishment card and visa transfer.',
   h1: 'DED to ADGM Licence Conversion on Al Reem Island',
   intro: (
     <>
