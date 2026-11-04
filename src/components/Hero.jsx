@@ -125,7 +125,7 @@ function Hero() {
               <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-brand-300" />
               <span>
                 <span className="block font-semibold">{business.unit}</span>
-                               <span className="text-brand-50/80">{business.area}, RT3, {business.city}, {business.country}</span>
+                              <span className="text-brand-50/80">{business.area}, {business.city}, {business.country}</span>
               </span>
             </a>
           </div>
