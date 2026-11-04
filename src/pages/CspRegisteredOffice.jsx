@@ -11,7 +11,7 @@ const service = {
   keyword: 'ADGM company service provider',
   title: 'ADGM Company Service Provider (CSP) | Bayana',
   // Meta rule: only use the licence wording once CSP_LICENCE_CONFIRMED = true
-  description: 'Registered office and corporate filing support for ADGM companies, SPVs and foundations from Bayana on Al Reem Island.',
+   description: 'Registered office and corporate filing support for ADGM companies, SPVs and foundations from Bayana on Al Reem Island, through channel partners.',
   descriptionLicensed:
     'Bayana is an ADGM company service provider (activity 7025) offering registered office, registered agent and statutory filing services for SPVs and foundations.',
   h1: 'ADGM Company Service Provider and Registered Office Services',
@@ -19,7 +19,7 @@ const service = {
     <>
       <p>
         An ADGM company service provider (CSP) provides registered office and registered agent services. ADGM
-        requires non-exempt SPVs and foundations to appoint one.
+               requires non-exempt SPVs and foundations to appoint one. We provide these services through our channel partners.
       </p>
       <p>
         CSP services support every structure we set up through <L to="adgm-company-formation">ADGM company formation</L>.
