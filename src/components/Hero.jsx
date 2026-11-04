@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, BadgeCheck, Building2, Check, CircleCheck, FileCheck2, MapPin, Plane, Sparkles } from 'lucide-react'
+import { ArrowRight, BadgeCheck, Building2, CircleCheck, FileCheck2, MapPin, Plane, Sparkles } from 'lucide-react'
 import { business, whatsappLink } from '../siteConfig'
 import { WhatsAppIcon } from './Icons'
 import heroImg from '../assets/adgm-corporate-services-al-reem-island.webp'
@@ -93,9 +93,7 @@ function Hero() {
                   <ul className="mt-3 space-y-2">
                     {c.list.map((item) => (
                       <li key={item} className="flex items-center gap-2.5 text-sm font-medium text-brand-50/85">
-                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-500/20 text-brand-300 ring-1 ring-brand-400/30">
-                          <Check className="h-3 w-3" strokeWidth={3} />
-                        </span>
+                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand-400" />
                         {item}
                       </li>
                     ))}
