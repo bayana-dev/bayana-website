@@ -16,7 +16,7 @@ const service = {
     <>
       <p>
         Al Reem Island ADGM licence conversion is now required because Al Reem Island falls under ADGM. Businesses
-        previously licensed by Abu Dhabi DED need ADGM licensing — and Bayana has handled 500+ conversions and related
+        previously licensed by Abu Dhabi DED need ADGM licensing — and Bayana has handled 1000+ conversions and related
         cases.
       </p>
       <p>
