@@ -20,7 +20,7 @@ export default function ServiceCard({ slug, index = 0, number }) {
         {number && <span className="font-display text-sm font-bold text-gray-300 transition group-hover:text-brand-300">{String(number).padStart(2, '0')}</span>}
       </div>
       <h3 className="relative mb-2 text-lg transition group-hover:text-brand-800 md:text-xl">{s.short}</h3>
-      <p className="relative mb-6 flex-1 text-[15px] leading-relaxed text-body/90">{s.cardText}</p>
+           <p className="relative mb-6 flex-1 text-justify text-[15px] leading-relaxed text-body/90 [hyphens:auto]">{s.cardText}</p>
       <span className="relative inline-flex items-center gap-2 text-sm font-semibold text-brand-700">
         Learn more
         <span className="flex h-7 w-7 items-center justify-center rounded-full bg-brand-50 transition duration-300 group-hover:translate-x-1 group-hover:bg-brand-600 group-hover:text-white">
