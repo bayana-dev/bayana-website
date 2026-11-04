@@ -22,7 +22,7 @@ function Contact() {
     <div className="App">
       <SEO
         title="Contact Bayana | Addax Tower, Al Reem Island"
-        description="Visit Bayana Global at Addax Tower, 3812, Al Reem Island, RT3, Abu Dhabi, or WhatsApp +971 50 107 4414 for ADGM setup, visas and filings."
+        description="Visit Bayana Global at Addax Tower, Office no 3812, Al Reem Island, Abu Dhabi, or WhatsApp +971 50 107 4414 for ADGM setup, visas and filings."
         path="/contact"
         schema={[localBusinessSchema(), breadcrumbSchema(crumbs)]}
       />
@@ -67,7 +67,7 @@ function Contact() {
             <div {...reveal(1, 'left')} className="rounded-3xl bg-brand-950 p-6 text-brand-50/80 md:p-7">
               <h2 className="mb-2 text-xl text-white">How to Find Us</h2>
               {/* TODO: add parking and entrance details */}
-              <p>We are in Addax Tower on Al Reem Island, 38th floor, office 3812. Take the Addax Tower lifts to the 38th floor.</p>
+              <p>We are in Addax Tower on Al Reem Island, 38th floor, Office no 3812. Take the Addax Tower lifts to the 38th floor.</p>
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
                 <a href={whatsappLink()} target="_blank" rel="noopener" className="btn-whatsapp" data-track="whatsapp"><WhatsAppIcon /> WhatsApp</a>
                 <a href={business.phoneHref} className="btn-ghost-light" data-track="call"><Phone className="h-4 w-4" /> Call now</a>
