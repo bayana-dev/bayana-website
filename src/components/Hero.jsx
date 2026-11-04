@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, BadgeCheck, Building2, CircleCheck, FileCheck2, MapPin, Plane, Sparkles } from 'lucide-react'
+import { ArrowRight, BadgeCheck, Building2, Check, CircleCheck, FileCheck2, MapPin, Plane, Sparkles } from 'lucide-react'
 import { business, whatsappLink } from '../siteConfig'
 import { WhatsAppIcon } from './Icons'
 import heroImg from '../assets/adgm-corporate-services-al-reem-island.webp'
@@ -68,26 +68,40 @@ function Hero() {
             ))}
           </ul> */}
 
-                                <ul className="no-scrollbar -mx-4 mt-10 flex max-w-2xl animate-fade-up snap-x gap-3 overflow-x-auto px-4 [animation-delay:320ms] sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0">
+                                         <ul className="no-scrollbar -mx-4 mt-10 flex max-w-2xl animate-fade-up snap-x gap-3 overflow-x-auto px-4 [animation-delay:320ms] sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0">
             {[
-              ['1000', '+', 'ADGM Incorporations & Migrations Experience', 'Including company migration between ADGM and Abu Dhabi DED'],
-              ['', '', 'Sectors Covered', 'Financial, non-financial and retail'],
-              ['', '', 'Partner for Licences, Visas & Office Solutions', 'One trusted partner. All your business support needs.'],
-            ].map(([n, suffix, label, detail]) => (
+              { n: '1000', suffix: '+', label: 'ADGM Incorporations & Migrations Experience', detail: 'Including company migration between ADGM and Abu Dhabi DED' },
+              { title: 'Sectors Covered', list: ['Financial', 'Non-financial', 'Retail'] },
+              { title: 'Partner for Licences, Visas & Office Solutions', detail: 'One trusted partner. All your business support needs.' },
+            ].map((c) => (
               <li
-                key={label}
-                               className="group relative flex min-w-[230px] snap-start flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[.06] p-4 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-brand-400/40 hover:bg-white/10 sm:min-w-0 sm:p-5"
+                key={c.label || c.title}
+                className="group relative flex min-w-[230px] snap-start flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[.06] p-4 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-brand-400/40 hover:bg-white/10 sm:min-w-0 sm:p-5"
               >
                 <span className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-gradient-to-r from-brand-400 to-brand-200 transition duration-500 group-hover:scale-x-100" />
-                                {n && (
-                                   <p className="font-display text-4xl font-extrabold leading-none text-white md:text-[2.6rem]">
-                    {n}<span className="text-brand-400">{suffix}</span>
-                  </p>
+                {c.n ? (
+                  <>
+                    <p className="font-display text-4xl font-extrabold leading-none text-white md:text-[2.6rem]">
+                      {c.n}<span className="text-brand-400">{c.suffix}</span>
+                    </p>
+                    <p className="mt-3 text-sm font-semibold leading-snug text-white">{c.label}</p>
+                  </>
+                ) : (
+                  <p className="font-display text-lg font-extrabold leading-tight text-white md:text-xl">{c.title}</p>
                 )}
-                                <div className={n ? 'mt-3' : ''}>
-                  <p className="text-sm font-semibold leading-snug text-white">{label}</p>
-                  <p className="mt-1 text-xs leading-relaxed text-brand-50/65">{detail}</p>
-                </div>
+                {c.list && (
+                  <ul className="mt-3 space-y-2">
+                    {c.list.map((item) => (
+                      <li key={item} className="flex items-center gap-2.5 text-sm font-medium text-brand-50/85">
+                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-500/20 text-brand-300 ring-1 ring-brand-400/30">
+                          <Check className="h-3 w-3" strokeWidth={3} />
+                        </span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {c.detail && <p className={`${c.n ? 'mt-1 text-xs' : 'mt-3 text-sm'} leading-relaxed text-brand-50/70`}>{c.detail}</p>}
               </li>
             ))}
           </ul>
