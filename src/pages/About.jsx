@@ -9,7 +9,7 @@ import FinalCTA from '../components/FinalCTA'
 import { reveal } from '../components/Reveal'
 import { breadcrumbSchema } from '../schema'
 import { WhatsAppIcon } from '../components/Icons'
-import { business, CSP_LICENCE_CONFIRMED, SITE_URL, services, whatsappLink } from '../siteConfig'
+import { business, CSP_LICENCE_CONFIRMED, SITE_URL, whatsappLink } from '../siteConfig'
 import directorPhoto from '../assets/mohammed-swalih-kalippadath-director-bayana-720.webp'
 
 const crumbs = [{ name: 'Home', path: '/' }, { name: 'About', path: '/about' }]
@@ -26,11 +26,7 @@ const director = {
 // Areas the director leads (from the Bayana Website Doc)
 const expertise = ['ADGM registration', 'Corporate services', 'Government procedures', 'Immigration & visas', 'DED-to-ADGM conversions']
 
-const stats = [
-  ['500+', 'DED-to-ADGM conversions & related cases'],
-  ['3', 'sectors: financial, non-financial, retail'],
-  [String(services.length), 'corporate services under one roof'],
-]
+
 
 const focus = [
   { icon: Landmark, title: 'Financial', text: 'Corporate setup alongside your FSRA adviser.', to: '/adgm-financial-services-company-setup' },
@@ -78,17 +74,7 @@ function About() {
           </p>
         </PageHero>
 
-        {/* Key numbers */}
-        <section className="container -mt-px pt-10 md:pt-14" aria-label="Bayana in numbers">
-          <ul className="grid gap-3 sm:grid-cols-3 md:gap-4">
-            {stats.map(([n, t], i) => (
-              <li key={t} {...reveal(i)} className="card flex items-center gap-4 !p-5 md:!p-6">
-                <span className="font-display text-4xl font-extrabold text-gradient md:text-5xl">{n}</span>
-                <span className="text-sm leading-snug text-body/90">{t}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
+       
 
         {/* Who we are + meaning */}
         <section className="section" aria-labelledby="who-we-are">
