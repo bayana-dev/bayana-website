@@ -29,7 +29,7 @@ import AmlCompliance from './pages/AmlCompliance'
 import OtherFreeZones from './pages/OtherFreeZones'
 import ScrollToTop from './components/ScrollToTop'
 import WhatsAppButton from './components/WhatsAppButton'
-import MobileActionBar from './components/MobileActionBar'
+
 import ScrollProgress from './components/ScrollProgress'
 import { useReveal } from './components/Reveal'
 import { organizationSchema, websiteSchema } from './schema'
@@ -65,7 +65,7 @@ function App() {
       {/* Public-site extras are hidden on the admin page */}
       {!isAdmin && <ScrollProgress />}
       {!isAdmin && <WhatsAppButton />}
-      {!isAdmin && <MobileActionBar />}
+ 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
