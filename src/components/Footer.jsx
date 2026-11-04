@@ -70,7 +70,7 @@ function Footer() {
 
       {/* Bottom bar (extra bottom space on phones so the sticky WhatsApp/Call bar doesn't cover it) */}
       <div className="border-t border-white/10">
-        <div className="container flex flex-col gap-2 py-4 pb-24 text-xs text-brand-50/60 md:flex-row md:items-center md:justify-between md:pb-4">
+        <div className="container flex flex-col gap-2 py-4 pb-20 text-xs text-brand-50/60 md:flex-row md:items-center md:justify-between md:pb-4">
           <p>
             © {new Date().getFullYear()} {business.name}. Registered in Abu Dhabi Global Market (ADGM)
             {business.licenceNumber ? ` · Licence No. ${business.licenceNumber}` : ''}.
