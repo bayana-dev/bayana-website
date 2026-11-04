@@ -54,9 +54,9 @@ function Navbar() {
         ref={headerRef}
         className={`sticky top-0 z-50 transition-all duration-500 ${scrolled ? 'border-b border-gray-200/70 bg-white/85 shadow-[0_8px_30px_-12px_rgba(3,79,50,.18)] backdrop-blur-xl' : 'border-b border-transparent bg-white'}`}
       >
-        <div className={`container flex items-center justify-between gap-4 transition-all duration-500 ${scrolled ? 'h-[68px]' : 'h-[72px] lg:h-[84px]'}`}>
+        <div className={`container flex items-center justify-between gap-3 transition-all duration-500 ${scrolled ? 'h-[68px]' : 'h-[72px] lg:h-[84px]'}`}>
           <Link to="/" className="shrink-0" aria-label="Bayana Global – home">
-            <img src={logo} alt="Bayana Global Limited – ADGM corporate services" width="290" height="64" className={`w-auto transition-all duration-500 ${scrolled ? 'h-8 sm:h-10' : 'h-8 sm:h-10 2xl:h-12'}`} />
+            <img src={logo} alt="Bayana Global Limited – ADGM corporate services" width="290" height="64" className={`w-auto transition-all duration-500 ${scrolled ? 'h-8 sm:h-10' : 'h-8 sm:h-10'}`} />
           </Link>
 
           {/* Desktop menu */}
@@ -68,7 +68,7 @@ function Navbar() {
                     key={item.label}
                     to={item.to}
                     end
-                    className={({ isActive }) => `relative whitespace-nowrap rounded-full px-3 py-2.5 text-[15px] font-medium transition hover:bg-brand-50 hover:text-brand-700 ${isActive ? 'text-brand-700' : 'text-ink'}`}
+                    className={({ isActive }) => `relative whitespace-nowrap rounded-full px-2 py-2.5 text-[14px] font-medium min-[1440px]:px-3 min-[1440px]:text-[15px] transition hover:bg-brand-50 hover:text-brand-700 ${isActive ? 'text-brand-700' : 'text-ink'}`}
                   >
                     {item.label}
                   </NavLink>
@@ -81,7 +81,7 @@ function Navbar() {
                   <button
                     type="button"
                     onClick={() => setMenuOpen(isOpen ? null : item.label)}
-                    className={`flex items-center gap-1 whitespace-nowrap rounded-full px-3 py-2.5 text-[15px] font-medium transition hover:bg-brand-50 hover:text-brand-700 ${isOpen ? 'bg-brand-50 text-brand-700' : groupActive(item) ? 'text-brand-700' : 'text-ink'}`}
+                    className={`flex items-center gap-1 whitespace-nowrap rounded-full px-2 py-2.5 text-[14px] font-medium min-[1440px]:px-3 min-[1440px]:text-[15px] transition hover:bg-brand-50 hover:text-brand-700 ${isOpen ? 'bg-brand-50 text-brand-700' : groupActive(item) ? 'text-brand-700' : 'text-ink'}`}
                     aria-haspopup="true"
                     aria-expanded={isOpen}
                   >
@@ -128,7 +128,7 @@ function Navbar() {
               href={whatsappLink()}
               target="_blank"
               rel="noopener"
-              className="hidden whitespace-nowrap px-2 text-[15px] font-semibold tracking-wide text-ink transition hover:text-brand-700 md:inline"
+              className="hidden whitespace-nowrap px-2 text-[15px] font-semibold tracking-wide text-ink transition hover:text-brand-700 md:inline xl:hidden min-[1440px]:inline"
               aria-label={`WhatsApp Bayana on ${business.phone}`}
               data-track="whatsapp"
             >
