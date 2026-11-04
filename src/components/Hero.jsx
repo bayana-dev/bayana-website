@@ -36,8 +36,8 @@ function Hero() {
       <div className="absolute -left-32 top-10 -z-10 h-[420px] w-[420px] animate-drift rounded-full bg-brand-600/30 blur-[110px]" />
       <div className="absolute -bottom-40 right-0 -z-10 h-[460px] w-[460px] animate-drift rounded-full bg-brand-500/20 blur-[120px] [animation-delay:-6s]" />
 
-      <div className="container grid items-center gap-12 pb-16 pt-14 md:pb-24 md:pt-20 lg:grid-cols-[1.15fr_.85fr] lg:pb-28 lg:pt-24">
-        <div>
+           <div className="container grid items-center gap-12 pb-16 pt-14 md:pb-24 md:pt-20 lg:grid-cols-[1.15fr_.85fr] lg:pb-28 lg:pt-24">
+        <div className="min-w-0">
           <p className="eyebrow-dark animate-fade-up">
             <Sparkles className="h-3.5 w-3.5" /> Registered in Abu Dhabi Global Market
           </p>
