@@ -29,7 +29,7 @@ const service = {
       text: (
         <p>
           Coworking desks, dedicated desks and private offices through our sister company{' '}
-          <Ext href="https://www.aegiscoworking.ae/">Aegis Coworking Business Center</Ext>, Addax Tower, 3812 — plus
+          <Ext href="https://www.aegiscoworking.ae/">Aegis Coworking Business Center </Ext>, Addax Tower, Office no 3812 — plus
           registered office arrangements (subject to applicable ADGM requirements), office upgrades and relocation
           support.
         </p>
