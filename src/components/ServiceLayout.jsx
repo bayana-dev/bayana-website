@@ -7,7 +7,6 @@ import SEO from './SEO'
 import PageHero from './PageHero'
 import FAQ from './FAQ'
 import FinalCTA from './FinalCTA'
-import WhyChooseUs from './WhyChooseUs'
 import SectionHeader from './SectionHeader'
 import { CardGrid } from './ServiceCard'
 import { verifyText } from './Verify'
@@ -338,13 +337,12 @@ function ServiceLayout({ service }) {
 
             {/* 5–6. Who it's for + Why Bayana */}
             <section className="pt-14" aria-labelledby="who-it-is-for">
-              <div {...reveal(0)} className={`relative mb-14 overflow-hidden rounded-3xl p-6 md:p-9 ${t.audience}`}>
+             <div {...reveal(0)} className={`relative overflow-hidden rounded-3xl p-6 md:p-9 ${t.audience}`}>
                 <p className={`mb-2 font-display text-xs font-bold uppercase tracking-[.2em] ${t.label}`}>Who it is for</p>
                 <h2 id="who-it-is-for" className="mb-3 text-2xl md:text-[2rem]">Is This Service Right for You?</h2>
                 <p className="max-w-3xl text-[17px] leading-relaxed">{s.audience}</p>
               </div>
-              <h2 {...reveal(0)} className="mb-6 text-2xl md:text-[2rem]">Why Bayana</h2>
-              <WhyChooseUs />
+
               {(s.note || s.disclaimer) && (
                 <p className="mt-8 flex gap-3 rounded-2xl bg-gray-50 p-4 text-sm text-body/80">
                   <Info className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" />
