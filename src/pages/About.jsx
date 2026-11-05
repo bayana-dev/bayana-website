@@ -224,7 +224,7 @@ function About() {
           </div>
         </section>
 
-        <FinalCTA />
+               <FinalCTA page="about" />
       </main>
       <Footer />
     </div>
