@@ -211,9 +211,7 @@ export default function Testimonials() {
               >
                 <div>
                   <Stars n={r.rating} />
-                  {r.text
-                    ? <blockquote className="mt-3 text-lg font-semibold text-ink">“{r.text}”</blockquote>
-                    : <p className="mt-3 text-sm italic text-body/70">Rated {r.rating} stars on Google</p>}
+                                   {r.text && <blockquote className="mt-3 text-lg font-semibold text-ink">“{r.text}”</blockquote>}
                 </div>
                 <figcaption><Person name={r.name} i={i + 1} /></figcaption>
               </figure>
