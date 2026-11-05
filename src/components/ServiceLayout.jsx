@@ -365,7 +365,8 @@ function ServiceLayout({ service }) {
         </section>
 
         {/* 9. CTA + form */}
-        <FinalCTA service={s.short} />
+        {/* <FinalCTA service={s.short} /> */}
+                <FinalCTA service={s.short} variant={s.group} />
       </main>
       <Footer />
     </div>
