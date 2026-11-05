@@ -40,16 +40,40 @@
 
 
 
+
+
+
 import { Link } from 'react-router-dom'
-import { ArrowRight, Phone } from 'lucide-react'
-import { business } from '../siteConfig'
+import { ArrowRight } from 'lucide-react'
 import { reveal } from './Reveal'
+
+// Unique heading + line for each page's closing section (no repeated text across pages).
+const COPY = {
+  home: ['Ready to Start Your ADGM Business?', 'Tell us what you need and our ADGM specialists will guide you through every step — from setup to ongoing support.'],
+  about: ['Work With a Team That Keeps It Clear', 'Talk to Bayana about your plans in ADGM and get straightforward guidance from people who handle these processes every day.'],
+  'adgm-company-formation': ['Ready to Register Your ADGM Company?', 'Share your business idea and we will recommend the right structure, prepare your documents and handle the Registration Authority filing.'],
+  'adgm-financial-services-company-setup': ['Planning a Financial Services Firm in ADGM?', 'Tell us about your regulated activity and we will coordinate the corporate setup with our channel partners and your FSRA adviser.'],
+  'adgm-non-financial-company-setup': ['Set Up Your Non-Financial Company in ADGM', 'Consultancy, technology, holding or trading — tell us your activities and we will map out the licence and steps for you.'],
+  'adgm-retail-licence': ['Opening a Shop, Café or Salon on Al Reem Island?', 'Let us handle your ADGM retail licence, lease registration and visas so you can focus on opening your doors.'],
+  'ded-to-adgm-licence-conversion': ['Moving Your Licence From DED to ADGM?', 'With 1,000+ conversions and related cases handled, we can take you through the licence, lease, establishment card and visa transfer.'],
+  'adgm-spv-setup': ['Need an SPV to Hold Your Assets?', 'Tell us what the SPV will hold and we will arrange the incorporation, registered address and filings through our channel partners.'],
+  'adgm-foundation-setup': ['Protect Your Assets With an ADGM Foundation', 'Discuss your succession or asset-protection goals with us and we will guide you through setting up the right foundation.'],
+  'adgm-csp-registered-office': ['Need a Registered Office in ADGM?', 'We arrange registered office, registered agent and statutory filing support through our channel partners.'],
+  'adgm-annual-filings-licence-renewal': ['Keep Your ADGM Company Compliant', 'Hand over your renewals, confirmation statements and amendments to us and never miss an ADGM deadline.'],
+  'adgm-company-closure': ['Closing Your ADGM Company?', 'We manage visa cancellations, final filings and strike-off so your company closes cleanly and correctly.'],
+  'adgm-visa-work-permit': ['Get Your Team’s ADGM Visas Moving', 'From establishment card to employee and dependent visas, tell us who needs a visa and we will handle the process.'],
+  'adgm-office-space-lease': ['Looking for Office Space in ADGM?', 'Desks and offices at Addax Tower with AccessRP lease registration — tell us your team size and we will find the right fit.'],
+  'adgm-courts-notary': ['Need a Document Notarised at ADGM Courts?', 'Send us your document and we will prepare it, book the ADGM Courts appointment and follow up until it is certified.'],
+  'adgm-non-muslim-will-registration': ['Secure Your Family’s Future With a Registered Will', 'Talk to us about registering your non-Muslim will at ADGM Courts, covering your UAE assets and guardianship wishes.'],
+  'legal-translation-attestation-abu-dhabi': ['Need Documents Translated or Attested?', 'Share your documents and we will arrange certified legal translation and attestation in Abu Dhabi.'],
+  'adgm-aml-dnfbp-compliance': ['Get Your AML Compliance in Order', 'We help you put MLRO support, AML and KYC policies and goAML registration in place through our partners.'],
+  'uae-free-zone-company-setup': ['Considering Another UAE Jurisdiction?', 'Tell us where you want to set up — Abu Dhabi mainland, Meydan, Dubai South or Ajman — and we will connect you with the right partner.'],
+}
 
 // Closing contact band. Each service group gets its own look (variant = service group name).
 // Home and About use the default dark-green design.
-export default function FinalCTA({ service = '', variant = 'default' }) {
-  const title = 'Ready to Start Your ADGM Business?'
-  const text = `Tell us what you need${service ? ` with ${service}` : ''} and our ADGM specialists will guide you through every step — from setup to ongoing support.`
+export default function FinalCTA({ page = 'home', variant = 'default' }) {
+  const [title, text] = COPY[page] || COPY.home
 
   // Corporate Services: clean white panel, text left and button right
   if (variant === 'Corporate Services') return (
@@ -64,10 +88,7 @@ export default function FinalCTA({ service = '', variant = 'default' }) {
               <h2 id="cta-title" className="section-title">{title}</h2>
               <p className="mt-4 text-[17px] leading-relaxed">{text}</p>
             </div>
-            <div className="flex shrink-0 flex-col gap-3">
-              <Link to="/contact" className="btn-primary !px-8" data-track="contact">Contact us <ArrowRight className="h-4 w-4" /></Link>
-              <a href={business.phoneHref} className="btn-outline" data-track="call"><Phone className="h-4 w-4" /> Call {business.phone}</a>
-            </div>
+            <Link to="/contact" className="btn-primary shrink-0 !px-8" data-track="contact">Contact us <ArrowRight className="h-4 w-4" /></Link>
           </div>
         </div>
       </div>
@@ -89,7 +110,6 @@ export default function FinalCTA({ service = '', variant = 'default' }) {
             </div>
             <div {...reveal(3)} className="flex flex-col gap-3 lg:items-end">
               <Link to="/contact" className="btn bg-white !px-8 text-brand-900 hover:-translate-y-0.5 hover:bg-brand-50" data-track="contact">Contact us <ArrowRight className="h-4 w-4" /></Link>
-              <a href={business.phoneHref} className="btn-ghost-light" data-track="call"><Phone className="h-4 w-4" /> Call {business.phone}</a>
             </div>
           </div>
         </div>
@@ -111,7 +131,6 @@ export default function FinalCTA({ service = '', variant = 'default' }) {
           <p {...reveal(2)} className="mx-auto mt-4 max-w-2xl text-[17px] leading-relaxed">{text}</p>
           <div {...reveal(3)} className="mx-auto mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Link to="/contact" className="btn bg-brand-900 text-white hover:-translate-y-0.5 hover:bg-brand-950" data-track="contact">Contact us <ArrowRight className="h-4 w-4" /></Link>
-            <a href={business.phoneHref} className="btn border border-[#b8892d]/40 bg-white text-ink hover:-translate-y-0.5 hover:border-[#b8892d]" data-track="call"><Phone className="h-4 w-4 text-[#b8892d]" /> Call {business.phone}</a>
           </div>
         </div>
       </div>
@@ -130,10 +149,7 @@ export default function FinalCTA({ service = '', variant = 'default' }) {
               <h2 id="cta-title" {...reveal(0)} className="section-title">{title}</h2>
               <p {...reveal(1)} className="mt-4 max-w-2xl text-[17px] leading-relaxed">{text}</p>
             </div>
-            <div {...reveal(2)} className="flex flex-col gap-3">
-              <Link to="/contact" className="btn-primary !px-8" data-track="contact">Contact us <ArrowRight className="h-4 w-4" /></Link>
-              <a href={business.phoneHref} className="btn-outline" data-track="call"><Phone className="h-4 w-4" /> Call {business.phone}</a>
-            </div>
+            <Link to="/contact" {...reveal(2)} className="btn-primary !px-8" data-track="contact">Contact us <ArrowRight className="h-4 w-4" /></Link>
           </div>
         </div>
       </div>
@@ -157,7 +173,6 @@ export default function FinalCTA({ service = '', variant = 'default' }) {
             <Link to="/contact" className="btn-primary" data-track="contact">
               Contact us <ArrowRight className="h-4 w-4" />
             </Link>
-            <a href={business.phoneHref} className="btn-ghost-light" data-track="call"><Phone className="h-4 w-4" /> Call {business.phone}</a>
           </div>
         </div>
       </div>
