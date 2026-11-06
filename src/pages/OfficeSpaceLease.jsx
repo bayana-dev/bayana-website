@@ -12,16 +12,11 @@ const service = {
   description:
     'Coworking desks, dedicated desks and private offices at Addax Tower via Aegis Coworking, plus AccessRP lease registration and visa-quota upgrades.',
   h1: 'ADGM Office Space and Lease Upgrades on Al Reem Island',
-  intro: (
-    <>
-      <p>
-        ADGM office space on Al Reem Island decides more than where you work: the number of visas an ADGM company can
-        hold depends on its registered office arrangement.
-      </p>
-      <p>
-        A registered office is a required part of <L to="adgm-company-formation">ADGM company formation</L>.
-      </p>
-    </>
+    intro: (
+    <p>
+      ADGM office space at Addax Tower, Al Reem Island — your registered office sets your visa quota and is a required
+      part of <L to="adgm-company-formation">ADGM company formation</L>.
+    </p>
   ),
   sections: [
     {
