@@ -12,17 +12,11 @@ const service = {
   description:
     'Certified legal translation, MOFA legalisation, attestation, Arabic–English typing and ADGM corporate certificates from our office on Al Reem Island.',
   h1: 'Legal Translation, Attestation and Document Services',
-  intro: (
-    <>
-      <p>
-        Legal translation in Abu Dhabi, attestation and typing — arranged from our office on Al Reem Island, through
-        strategic partners and sister companies where needed.
-      </p>
-      <p>
-        Documents for <L to="adgm-company-formation">ADGM company registration</L> and court matters often need these
-        services first.
-      </p>
-    </>
+   intro: (
+    <p>
+      Legal translation and attestation in Abu Dhabi, arranged from Al Reem Island through trusted partners — often
+      needed first for <L to="adgm-company-formation">ADGM company registration</L> and court matters.
+    </p>
   ),
   sections: [
     { h2: 'Translation', bullets: ['Document translation', 'Certified legal translation', 'Arabic–English'] },
