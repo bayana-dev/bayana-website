@@ -12,17 +12,11 @@ const service = {
   description:
     'Register a non-Muslim will at ADGM Courts covering UAE assets and guardianship of children. Preparation, bilingual translation and appointment support.',
   h1: 'Non-Muslim Will Registration at ADGM Courts',
-  intro: (
-    <>
-      <p>
-        A non-Muslim will in Abu Dhabi can be registered through the ADGM Courts wills service, available to eligible
-        non-Muslims aged 21 and over who own assets in the UAE.
-      </p>
-      <p>
-        Bayana coordinates the process; where drafting is needed, we work with your lawyer. See also{' '}
-        <L to="adgm-courts-notary">ADGM notary public</L>.
-      </p>
-    </>
+   intro: (
+    <p>
+      Non-Muslim will registration at ADGM Courts for UAE residents aged 21+ with assets in the UAE — we coordinate the
+      process with your lawyer. See also <L to="adgm-courts-notary">ADGM notary public</L>.
+    </p>
   ),
   sections: [
     { h2: 'Who Can Register', text: <p>Eligible non-Muslims aged 21 and over with UAE assets. Check current rules on <Ext href="https://www.adgm.com/adgm-courts">ADGM Courts</Ext>.</p> },
