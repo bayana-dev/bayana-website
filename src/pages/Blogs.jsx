@@ -35,7 +35,7 @@ export function PostCard({ p }) {
         </h2>
         <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-body/80">{p.description}</p>
         <div className="mt-auto flex items-center justify-between pt-4">
-          <span className="text-[10.5px] font-bold uppercase tracking-[.14em] text-body/50">By Bayana Global</span>
+          <span className="text-[10.5px] font-bold uppercase tracking-[.14em] text-body/50">By Bayana Global Limited</span>
           <Link to={`/blog/${p.slug}`} className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-700 transition hover:text-brand-900">
             Read More <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
           </Link>
