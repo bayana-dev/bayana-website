@@ -240,11 +240,7 @@ function ServiceLayout({ service }) {
         {/* 1–2. H1 + intro (same header style on every service page) */}
         <PageHero crumbs={crumbs} title={s.h1} eyebrow={s.group === 'Other' ? 'UAE company setup' : s.group} service={s.short}>
           <div className="prose-bayana lead max-w-2xl">{verifyText(s.intro)}</div>
-          <div className="mt-7">
-            <Link to="/contact" className="btn-primary" data-track="contact">
-              Contact us <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
+         
           
         </PageHero>
 
