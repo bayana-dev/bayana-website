@@ -177,7 +177,7 @@ const journey = [
 ]
 
 // Counts up from 0 to `to` when the hero loads (shows the final number straight away for Google / no-JS)
-function CountUp({ to, duration = 1800 }) {
+function CountUp({ to, duration = 3500 }) {
   const [n, setN] = useState(to)
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
@@ -217,25 +217,28 @@ function Hero() {
       <div className="absolute -left-32 top-10 -z-10 h-[420px] w-[420px] animate-drift rounded-full bg-brand-600/30 blur-[110px]" />
       <div className="absolute -bottom-40 right-0 -z-10 h-[460px] w-[460px] animate-drift rounded-full bg-brand-500/20 blur-[120px] [animation-delay:-6s]" />
 
-      <div className="container grid items-center gap-x-12 gap-y-6 pb-16 pt-14 md:pb-24 md:pt-20 lg:grid-cols-[1.15fr_.85fr] lg:pb-28 lg:pt-24">
-        {/* Heading spans both columns so it fits on one line on laptops */}
-        <div className="lg:col-span-2">
+      <div className="container pb-16 pt-14 md:pb-20 md:pt-20 lg:pb-24">
+        {/* Centred heading block: eyebrow, H1, paragraph, button */}
+        <div className="mx-auto max-w-5xl text-center">
           <p className="eyebrow-dark animate-fade-up">
             <Sparkles className="h-3.5 w-3.5" /> Registered in Abu Dhabi Global Market
           </p>
           <h1 className="animate-fade-up text-[2.45rem] font-extrabold leading-[1.05] text-white [animation-delay:80ms] sm:text-6xl lg:whitespace-nowrap lg:text-[3.4rem] xl:text-[4.1rem]">
             ADGM Corporate Services <span className="text-gradient-light">in Abu Dhabi</span>
           </h1>
-        </div>
-        <div className="min-w-0">
-          <p className="max-w-xl animate-fade-up text-[17px] leading-relaxed text-brand-50/85 [animation-delay:160ms] md:text-xl">
+          <p className="mx-auto mt-6 max-w-3xl animate-fade-up !text-center text-[17px] leading-relaxed text-brand-50/85 [animation-delay:160ms] md:text-lg">
             Your trusted partner for ADGM company formation, licensing, visa processing, regulatory filings, office arrangements and affordable prices. From incorporation to ongoing corporate support, our dedicated team in Al Reem Island helps you manage your business requirements through one convenient point of contact, including office solutions and registered office arrangements.
           </p>
-          <div className="mt-9 flex animate-fade-up [animation-delay:240ms]">
+          <div className="mt-8 flex animate-fade-up justify-center [animation-delay:240ms]">
             <Link to="/contact" className="btn-primary !px-8 font-bold uppercase tracking-[.12em]" data-track="contact">
               Book a consultation
             </Link>
           </div>
+        </div>
+
+        {/* Below: stat cards (left) + ADGM journey card (right) */}
+        <div className="mt-12 grid items-center gap-10 md:mt-16 lg:grid-cols-[1.15fr_.85fr] lg:gap-12">
+        <div className="min-w-0">
           {/* <ul className="mt-10 grid max-w-xl animate-fade-up grid-cols-3 gap-3 border-t border-white/10 pt-8 [animation-delay:320ms]">
             {[
               ['1000+', 'ADGM Incorporations & Corporate Migration Experience-Including company migration between ADGM and Abu Dhabi DED.'],
@@ -249,7 +252,7 @@ function Hero() {
             ))}
           </ul> */}
 
-                                         <ul className="no-scrollbar -mx-5 mt-10 flex max-w-2xl animate-fade-up snap-x gap-3 overflow-x-auto px-5 [animation-delay:320ms] sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0">
+                                         <ul className="no-scrollbar -mx-5 flex animate-fade-up snap-x gap-3 overflow-x-auto px-5 [animation-delay:320ms] sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0">
             {[
               { n: '1000', suffix: '+', label: 'ADGM Incorporations & Migrations Experience', detail: 'Including company migration between ADGM and Abu Dhabi DED' },
               { title: 'Sectors Covered', list: ['Financial', 'Non-financial', 'Retail'] },
@@ -322,6 +325,7 @@ function Hero() {
               </span>
             </a>
           </div>
+        </div>
         </div>
       </div>
     </section>
