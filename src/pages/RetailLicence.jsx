@@ -12,17 +12,11 @@ const service = {
   description:
     'Retail licence support for shops, restaurants, cafés and salons on Al Reem Island: ADGM application, lease registration, AccessRP, visas and renewals.',
   h1: 'ADGM Retail Licence for Shops, Restaurants, Cafés and Salons',
-  intro: (
-    <>
-      <p>
-        An ADGM retail licence is required for shops, restaurants, cafés, salons and other service outlets in ADGM
-        areas. Bayana has handled 1000+ licence conversions and related cases.
-      </p>
-      <p>
-        It is part of our wider <L to="adgm-company-formation">ADGM company setup</L> service, with lease
-        registration and visas handled by the same team.
-      </p>
-    </>
+    intro: (
+    <p>
+      An ADGM retail licence for shops, restaurants, cafés and salons on Al Reem Island — with lease registration and
+      visas handled by the same team as your <L to="adgm-company-formation">ADGM company setup</L>.
+    </p>
   ),
   sections: [
     {
