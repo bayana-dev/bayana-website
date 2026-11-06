@@ -9,7 +9,7 @@ import heroImgMobile from '../assets/adgm-corporate-services-al-reem-island-960.
 const journey = [
   { icon: FileCheck2, title: 'Company registered', text: 'ADGM Registration Authority' },
   { icon: BadgeCheck, title: 'Commercial licence issued', text: 'Financial, non-financial or retail' },
-  { icon: Building2, title: 'Office & lease on AccessRP', text: <>Via <a href="https://www.aegiscoworking.ae/" target="_blank" rel="noopener" className="font-semibold text-brand-200 underline decoration-brand-400/50 underline-offset-4 hover:text-white">Aegis Coworking</a>, Addax Tower</> },
+  { icon: Building2, title: 'Office & lease on AccessRP', text: <>Via <a href="https://www.aegiscoworking.ae/" target="_blank" rel="noopener" className="font-semibold text-brand-200 transition hover:text-white">Aegis Coworking</a>, Addax Tower</> },
   { icon: Plane, title: 'Establishment card & visas', text: 'Director, employee & dependent' },
   
 ]
