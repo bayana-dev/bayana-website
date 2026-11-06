@@ -36,4 +36,4 @@ export const STATIC_ROUTES = [
   '/privacy-policy',
   '/terms',
 ]
-export const NOINDEX_ROUTES = ['/thank-you', '/admin/blog']
+   export const NOINDEX_ROUTES = ['/thank-you', '/admin', '/admin/blog']
