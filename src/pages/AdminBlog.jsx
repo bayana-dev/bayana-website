@@ -304,7 +304,7 @@ function PostEditor({ id, onDone }) {
             <span className={label}>Featured image</span>
             {f.cover_url ? (
               <div className="relative">
-                <img src={f.cover_url} alt="" className="aspect-[2/1] w-full rounded-xl object-cover" />
+                <img src={f.cover_url} alt="" className="aspect-square w-full rounded-xl bg-gray-100 object-contain" />
                 <button type="button" onClick={() => setF((s) => ({ ...s, cover_url: '' }))} className="absolute right-2 top-2 rounded-full bg-white/90 p-1.5 text-red-600 shadow" aria-label="Remove image"><X className="h-4 w-4" /></button>
               </div>
             ) : (
@@ -314,7 +314,7 @@ function PostEditor({ id, onDone }) {
               <ImagePlus className="h-4 w-4" /> {coverBusy ? 'Uploading…' : f.cover_url ? 'Change image' : 'Upload image'}
               <input type="file" accept="image/jpeg,image/png,image/webp" hidden onChange={pickCover} disabled={coverBusy} />
             </label>
-            <p className={hint}>Best size 1600 × 800 px. It is resized and converted to WebP automatically.</p>
+            <p className={hint}>Best size 1200 × 1200 px (square). The whole image is shown on the blog. It is resized and converted to WebP automatically.</p>
             <div>
               <label className={label} htmlFor="ca">Image alt text</label>
               <input id="ca" value={f.cover_alt} onChange={set('cover_alt')} className={input} placeholder="Describe the image for Google" />
