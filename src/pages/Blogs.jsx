@@ -86,7 +86,7 @@ function Blogs() {
           <div className="container py-12 text-center md:py-16">
             <h1 className="text-[1.9rem] font-extrabold uppercase leading-tight tracking-normal text-ink sm:text-4xl lg:whitespace-nowrap lg:text-[2.75rem]">The Bayana Global Limited Blogs</h1>
             <p className="mx-auto mt-4 max-w-2xl !text-center text-[15px] font-medium leading-relaxed text-brand-800 md:text-base">
-              ADGM made simple: clear, step-by-step guides on company setup, licences, visas and compliance — from the team that handles them every day on Al Reem Island.
+              Insights that keep your ADGM business licensed, compliant and ready to grow.
             </p>
           </div>
         </section>
