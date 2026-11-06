@@ -1,60 +1,57 @@
 import { useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import { ArrowLeft, Clock, Link2 } from 'lucide-react'
+import { Share2 } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import SEO from '../components/SEO'
-import FAQ from '../components/FAQ'
-import FinalCTA from '../components/FinalCTA'
-import { PostCard } from './Blogs'
 import NotFound from './NotFound'
 import { breadcrumbSchema, faqSchema } from '../schema'
 import { SITE_URL, business } from '../siteConfig'
-import { usePost, usePostList, formatDate, headingsFromHtml, absoluteUrl } from '../blog/blogData'
+import { usePost, usePostList, absoluteUrl } from '../blog/blogData'
 
-// Share buttons (WhatsApp, LinkedIn, X, copy link)
-function Share({ url, title }) {
-  const [copied, setCopied] = useState(false)
-  const u = encodeURIComponent(url)
-  const t = encodeURIComponent(title)
-  const btn = 'inline-flex h-10 items-center justify-center rounded-full border border-gray-200 bg-white px-4 text-sm font-semibold text-ink transition hover:border-brand-400 hover:text-brand-800'
-  return (
-    <div className="flex flex-wrap items-center gap-2">
-      <span className="mr-1 text-sm font-semibold text-body/70">Share this insight:</span>
-      <a className={btn} href={`https://wa.me/?text=${t}%20${u}`} target="_blank" rel="noopener">WhatsApp</a>
-      <a className={btn} href={`https://www.linkedin.com/sharing/share-offsite/?url=${u}`} target="_blank" rel="noopener">LinkedIn</a>
-      <a className={btn} href={`https://twitter.com/intent/tweet?url=${u}&text=${t}`} target="_blank" rel="noopener">X</a>
-      <button
-        type="button"
-        className={btn}
-        onClick={() => {
-          navigator.clipboard?.writeText(url)
-          setCopied(true)
-          setTimeout(() => setCopied(false), 2000)
-        }}
-      >
-        <Link2 className="mr-1.5 h-4 w-4" />
-        {copied ? 'Copied' : 'Copy link'}
-      </button>
-    </div>
-  )
+// Blog article page — same layout as the Aegis blog:
+// back link · category · title · meta · image · summary box · article · CTA box · share · related posts
+
+const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+const longDate = (d) => {
+  if (!d) return ''
+  const [y, m, day] = String(d).slice(0, 10).split('-')
+  return `${day} ${MONTHS[Number(m) - 1]} ${y}`
 }
 
-function Loading() {
+const Dot = () => <span className="h-[3px] w-[3px] shrink-0 rounded-full bg-body/40" aria-hidden="true" />
+
+function ShareButton({ title, text, url }) {
+  const [copied, setCopied] = useState(false)
+  const share = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({ title, text, url })
+      } catch {
+        /* user closed the share sheet */
+      }
+      return
+    }
+    try {
+      await navigator.clipboard.writeText(url)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch {
+      /* ignore */
+    }
+  }
   return (
-    <div className="App">
-      <Navbar />
-      <main id="main" className="container max-w-3xl py-16" aria-busy="true">
-        <div className="mx-auto h-4 w-32 animate-pulse rounded bg-gray-100" />
-        <div className="mx-auto mt-6 h-10 w-4/5 animate-pulse rounded bg-gray-100" />
-        <div className="mt-10 aspect-[2/1] animate-pulse rounded-[2rem] bg-gray-100" />
-        <div className="mt-10 space-y-3">
-          <div className="h-4 animate-pulse rounded bg-gray-100" />
-          <div className="h-4 animate-pulse rounded bg-gray-100" />
-          <div className="h-4 w-2/3 animate-pulse rounded bg-gray-100" />
-        </div>
-      </main>
-      <Footer />
+    <div className="mt-10 flex items-center gap-3.5 border-y border-gray-200 py-6">
+      <span className="text-xs font-bold uppercase tracking-[.05em] text-body/50">Share this insight:</span>
+      <button
+        type="button"
+        onClick={share}
+        aria-label="Share this post"
+        className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-body/70 transition hover:-translate-y-0.5 hover:border-brand-600 hover:text-brand-700"
+      >
+        <Share2 className="h-4 w-4" />
+      </button>
+      {copied && <span className="text-[13px] font-semibold text-brand-700">Link copied!</span>}
     </div>
   )
 }
@@ -65,14 +62,23 @@ function BlogDetail() {
   const p = usePost(slug)
   const { list } = usePostList()
 
-  if (p === undefined) return <Loading />
+  if (p === undefined) {
+    return (
+      <div className="App">
+        <Navbar />
+        <main id="main" className="mx-auto max-w-[800px] px-5 pb-24 pt-10 md:pt-14">
+          <p className="text-body/60">Loading post…</p>
+        </main>
+        <Footer />
+      </div>
+    )
+  }
   if (p === null) return <NotFound />
 
   const url = `${SITE_URL}/blog/${p.slug}`
   const crumbs = [{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blogs' }, { name: p.title, path: `/blog/${p.slug}` }]
   const others = list.filter((x) => x.slug !== p.slug)
-  const related = [...others.filter((x) => x.category === p.category), ...others.filter((x) => x.category !== p.category)].slice(0, 2)
-  const toc = headingsFromHtml(p.content)
+  const related = [...others.filter((x) => x.category === p.category), ...others.filter((x) => x.category !== p.category)].slice(0, 3)
 
   const articleSchema = {
     '@context': 'https://schema.org',
@@ -84,7 +90,7 @@ function BlogDetail() {
     dateModified: p.updated || p.date,
     author: { '@type': 'Organization', name: business.name, url: SITE_URL },
     publisher: { '@type': 'Organization', name: business.name, url: SITE_URL },
-    mainEntityOfPage: url,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
     articleSection: p.category,
   }
 
@@ -104,6 +110,7 @@ function BlogDetail() {
         description={p.description}
         path={`/blog/${p.slug}`}
         image={p.image}
+        type="article"
         noindex={!p.published}
         schema={[articleSchema, breadcrumbSchema(crumbs), p.faqs.length ? faqSchema(p.faqs) : null]}
       />
@@ -112,71 +119,80 @@ function BlogDetail() {
         {!p.published && (
           <p className="bg-amber-100 py-2 text-center text-sm font-semibold text-amber-900">Draft preview — only you can see this page until it is published.</p>
         )}
-        <article>
-          {/* Header */}
-          <header className="bg-gradient-to-b from-brand-50 via-white to-white">
-            <div className="container max-w-4xl pb-8 pt-10 text-center md:pt-14">
-              <Link to="/blogs" className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 transition hover:text-brand-900">
-                <ArrowLeft className="h-4 w-4" /> Back to Blog
-              </Link>
-              <p className="mt-6">
-                <span className="inline-block rounded-full bg-brand-100 px-3 py-1 text-xs font-bold uppercase tracking-[.12em] text-brand-800">{p.category}</span>
-              </p>
-              <h1 className="mt-4 text-[1.9rem] font-extrabold leading-tight sm:text-4xl lg:text-[2.75rem]">{p.title}</h1>
-              <p className="mt-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm text-body/70">
-                <span className="font-semibold text-ink">Bayana Global</span>
-                <span aria-hidden="true">·</span>
-                <time dateTime={p.date}>{formatDate(p.date)}</time>
-                <span aria-hidden="true">·</span>
-                <span className="inline-flex items-center gap-1"><Clock className="h-3.5 w-3.5" /> {p.readMinutes} min read</span>
-              </p>
-            </div>
-            <figure className="container max-w-5xl">
-              <img src={p.image} alt={p.imageAlt} width="1280" height="640" fetchPriority="high" decoding="async" className="aspect-[2/1] w-full rounded-[2rem] object-cover shadow-xl" />
-              {p.caption && <figcaption className="mt-3 text-center text-sm text-body/70">{p.caption}</figcaption>}
-            </figure>
-          </header>
 
-          {/* Body */}
-          <div className={`container grid max-w-6xl gap-10 py-10 md:py-14 ${toc.length > 1 ? 'lg:grid-cols-[220px_1fr] lg:gap-14' : ''}`}>
-            {toc.length > 1 && (
-              <aside className="hidden lg:block" aria-label="In this article">
-                <nav className="sticky top-28">
-                  <p className="mb-4 text-xs font-bold uppercase tracking-[.16em] text-body/60">In this article</p>
-                  <ul className="space-y-2 border-l border-gray-200">
-                    {toc.map((h) => (
-                      <li key={h.id}>
-                        <a href={`#${h.id}`} className="-ml-px block border-l-2 border-transparent py-1 pl-4 text-sm text-body/80 transition hover:border-brand-500 hover:text-ink">{h.text}</a>
-                      </li>
-                    ))}
-                  </ul>
-                </nav>
-              </aside>
-            )}
-            <div className={`min-w-0 ${toc.length > 1 ? '' : 'mx-auto w-full max-w-3xl'}`}>
-              {p.standfirst && <p className="mb-8 border-l-4 border-brand-500 pl-5 text-lg font-medium leading-relaxed text-ink/90 md:text-xl">{p.standfirst}</p>}
-              {/* Article body written in the admin editor (cleaned before saving) */}
-              <div className="blog-content" onClick={onContentClick} dangerouslySetInnerHTML={{ __html: p.content }} />
-              <div className="mt-10 border-t border-gray-100 pt-6"><Share url={url} title={p.title} /></div>
-            </div>
+        <article className="mx-auto max-w-[800px] px-5 pb-20 pt-10 md:pb-24 md:pt-14">
+          <Link to="/blogs" className="mb-6 inline-block text-sm font-semibold text-brand-700 hover:text-brand-900">← Back to Blog</Link>
+
+          <div>
+            <span className="inline-block rounded-full bg-brand-50 px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-[.04em] text-brand-800 ring-1 ring-brand-100">{p.category}</span>
           </div>
-        </article>
 
-        {p.faqs.length > 0 && <FAQ faqs={p.faqs} />}
+          <h1 className="mb-[18px] mt-4 text-[24px] font-extrabold leading-[1.2] text-ink sm:text-[28px] md:text-[38px]">{p.title}</h1>
 
-        {/* Related posts */}
-        {related.length > 0 && (
-          <section className="py-10 md:py-14" aria-labelledby="related-posts">
-            <div className="container">
-              <h2 id="related-posts" className="mb-7 text-center text-2xl md:text-[2rem]">Related Posts</h2>
-              <div className="mx-auto grid max-w-4xl gap-6 sm:grid-cols-2">
-                {related.map((r) => <PostCard key={r.slug} p={r} />)}
-              </div>
+          <div className="mb-8 flex flex-wrap items-center gap-2.5 text-[13.5px] text-body/60">
+            <span className="font-bold text-ink">Bayana Global</span>
+            <Dot />
+            <time dateTime={p.date}>{longDate(p.date)}</time>
+            <Dot />
+            <span>{p.readMinutes} min read</span>
+          </div>
+
+          <figure className="mb-10">
+            <div className="h-[240px] w-full overflow-hidden rounded-2xl shadow-md md:h-[400px]">
+              <img src={p.image} alt={p.imageAlt} width="800" height="400" fetchPriority="high" decoding="async" className="h-full w-full object-cover" />
             </div>
-          </section>
-        )}
+            {p.caption && <figcaption className="mt-2.5 text-center text-sm text-body/60">{p.caption}</figcaption>}
+          </figure>
 
-        <FinalCTA page="home" />
+          {p.standfirst && (
+            <p className="mb-9 rounded-lg border-l-4 border-brand-600 bg-brand-50 px-[22px] py-[18px] text-[17px] font-medium leading-[1.65] text-ink md:text-lg">{p.standfirst}</p>
+          )}
+
+          {/* Article body written in the admin editor (cleaned before saving) */}
+          <div className="blog-content" onClick={onContentClick} dangerouslySetInnerHTML={{ __html: p.content }} />
+
+          {/* FAQs — same look as the article headings */}
+          {p.faqs.length > 0 && (
+            <section className="blog-content mt-2" aria-labelledby="faq-title">
+              <h2 id="faq-title">Frequently Asked Questions</h2>
+              {p.faqs.map((f) => (
+                <div key={f.q}>
+                  <h3>{f.q}</h3>
+                  <p>{f.a}</p>
+                </div>
+              ))}
+            </section>
+          )}
+
+          {/* CTA box */}
+          <div className="mb-10 mt-14 rounded-lg border-l-4 border-brand-600 bg-gray-50 px-5 py-[22px] md:px-8 md:py-7">
+            <h2 className="mb-2.5 text-xl font-extrabold uppercase tracking-[.02em] text-ink">Start Your ADGM Business With Confidence</h2>
+            <p className="mb-5 text-[14.5px] text-body/70">Company setup, licences, visas and office space — handled by one team on Al Reem Island.</p>
+            <Link to="/contact" className="btn-primary !min-h-0 !px-6 !py-2.5 !text-[13px] font-bold uppercase tracking-[.12em]">Book a consultation</Link>
+          </div>
+
+          <ShareButton title={p.title} text={p.description} url={url} />
+
+          {/* Related posts */}
+          {related.length > 0 && (
+            <section className="pt-10" aria-labelledby="related-posts">
+              <h2 id="related-posts" className="mb-7 text-2xl font-extrabold uppercase tracking-[.02em] text-ink">Related Posts</h2>
+              <div className="grid gap-5 md:grid-cols-3">
+                {related.map((r) => (
+                  <Link key={r.slug} to={`/blog/${r.slug}`} className="group block overflow-hidden rounded-2xl border border-gray-200 bg-white transition duration-300 hover:-translate-y-1.5 hover:border-brand-600 hover:shadow-lg">
+                    <div className="h-40 overflow-hidden">
+                      <img src={r.image} alt={r.imageAlt} loading="lazy" decoding="async" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                    </div>
+                    <div className="px-[18px] py-4">
+                      <h3 className="mb-2 text-[14.5px] font-extrabold uppercase leading-[1.35] text-ink">{r.title}</h3>
+                      <p className="line-clamp-2 text-[12.5px] leading-[1.55] text-body/70">{r.description}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
+        </article>
       </main>
       <Footer />
     </div>
