@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { ArrowLeft, Eye, ImagePlus, LogOut, Pencil, Plus, Trash2, X } from 'lucide-react'
 import SEO from '../components/SEO'
 import logo from '../assets/bayana-logo.png'
-import { supabase } from '../supabaseClient'
 import RichEditor, { cleanArticleHtml, loadPurifier } from '../blog/RichEditor'
 import { DEFAULT_CATEGORIES, formatDate, readMinutes, slugify, stripTags } from '../blog/blogData'
 
@@ -13,6 +12,8 @@ import { DEFAULT_CATEGORIES, formatDate, readMinutes, slugify, stripTags } from 
 // ─────────────────────────────────────────────────────────────────────────────
 
 const BUCKET = 'blog-images'
+// Supabase is loaded when this page opens (keeps it out of the public pages' main file)
+let supabase = null
 const today = () => new Date().toISOString().slice(0, 10)
 const EMPTY = { id: null, title: '', slug: '', category: DEFAULT_CATEGORIES[0], published_at: today(), description: '', cover_url: '', cover_alt: '', caption: '', standfirst: '', content: '', faqs: [], published: false }
 
@@ -337,13 +338,22 @@ function AdminBlog() {
   const [view, setView] = useState({ name: 'list' })
 
   useEffect(() => {
-    if (!supabase) return setReady(true)
-    supabase.auth.getSession().then(({ data }) => {
-      setSession(data.session)
-      setReady(true)
+    let sub = null
+    let live = true
+    import('../supabaseClient').then((m) => {
+      if (!live) return
+      supabase = m.supabase
+      if (!supabase) return setReady(true)
+      supabase.auth.getSession().then(({ data }) => {
+        setSession(data.session)
+        setReady(true)
+      })
+      sub = supabase.auth.onAuthStateChange((_e, s) => setSession(s)).data.subscription
     })
-    const { data: sub } = supabase.auth.onAuthStateChange((_e, s) => setSession(s))
-    return () => sub.subscription.unsubscribe()
+    return () => {
+      live = false
+      sub?.unsubscribe()
+    }
   }, [])
 
   useEffect(() => {
