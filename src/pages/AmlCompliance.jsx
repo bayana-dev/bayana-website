@@ -12,16 +12,11 @@ const service = {
   description:
     'Need an MLRO, AML policies or goAML registration for your ADGM business? Bayana coordinates compliance services through experienced UAE providers.',
   h1: 'AML and DNFBP Compliance Support for ADGM Businesses',
-  intro: (
-    <>
-      <p>
-        ADGM DNFBP compliance applies to some ADGM businesses under AML rules. Bayana coordinates the right compliance
-        services through experienced providers and strategic partners.
-      </p>
-      <p>
-        Compliance is often set up straight after <L to="adgm-company-formation">ADGM company formation</L>.
-      </p>
-    </>
+   intro: (
+    <p>
+      ADGM AML and DNFBP compliance — MLRO support, AML and KYC policies and goAML registration through trusted partners,
+      often set up straight after <L to="adgm-company-formation">ADGM company formation</L>.
+    </p>
   ),
   sections: [
     { h2: 'Who Is a DNFBP?', text: <p>Designated Non-Financial Businesses and Professions — for example real estate agents, dealers in precious metals and stones, and company service providers. See <Ext href="https://www.adgm.com">ADGM guidance</Ext>. (VERIFY list)</p> },
