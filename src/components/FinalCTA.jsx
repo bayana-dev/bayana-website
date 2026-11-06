@@ -88,7 +88,7 @@ export default function FinalCTA({ page = 'home', variant = 'default' }) {
               <h2 id="cta-title" className="section-title">{title}</h2>
               <p className="mt-4 text-[17px] leading-relaxed">{text}</p>
             </div>
-            <Link to="/contact" className="btn-primary shrink-0 !px-8" data-track="contact">Contact us <ArrowRight className="h-4 w-4" /></Link>
+            <Link to="/contact" className="btn-primary shrink-0 !px-8" data-track="contact">Contact  <ArrowRight className="h-4 w-4" /></Link>
           </div>
         </div>
       </div>
