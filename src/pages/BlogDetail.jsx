@@ -121,23 +121,32 @@ function BlogDetail() {
           <p className="bg-amber-100 py-2 text-center text-sm font-semibold text-amber-900">Draft preview — only you can see this page until it is published.</p>
         )}
 
-        <article className="mx-auto max-w-[800px] px-5 pb-20 pt-10 md:pb-24 md:pt-14">
-          <Link to="/blogs" className="mb-6 inline-block text-sm font-semibold text-brand-700 hover:text-brand-900">← Back to Blog</Link>
+        <article className="pb-20 pt-10 md:pb-24 md:pt-14">
+          {/* Header: wider than the text so the title fits on one line on laptops */}
+          <header className="mx-auto max-w-[1100px] px-5 text-center">
+            <Link to="/blogs" className="mb-6 inline-block text-sm font-semibold text-brand-700 hover:text-brand-900">← Back to Blog</Link>
 
-          <div>
-            <span className="inline-block rounded-full bg-brand-50 px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-[.04em] text-brand-800 ring-1 ring-brand-100">{p.category}</span>
-          </div>
+            <div>
+              <span className="inline-block rounded-full bg-brand-50 px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-[.04em] text-brand-800 ring-1 ring-brand-100">{p.category}</span>
+            </div>
 
-          <h1 className="mb-[18px] mt-4 text-[24px] font-extrabold leading-[1.2] text-ink sm:text-[28px] md:text-[38px]">{p.title}</h1>
+            <h1
+              style={{ '--fit': `calc(min(100vw - 5.5rem, 1060px) / ${(p.title.length * 0.56).toFixed(2)})` }}
+              className="mb-[18px] mt-4 text-[24px] font-extrabold leading-[1.2] text-ink sm:text-[28px] lg:whitespace-nowrap lg:text-[length:min(38px,var(--fit))]"
+            >
+              {p.title}
+            </h1>
 
-          <div className="mb-8 flex flex-wrap items-center gap-2.5 text-[13.5px] text-body/60">
-            <span className="font-bold text-ink">Bayana Global</span>
-            <Dot />
-            <time dateTime={p.date}>{longDate(p.date)}</time>
-            <Dot />
-            <span>{p.readMinutes} min read</span>
-          </div>
+            <div className="mb-8 flex flex-wrap items-center justify-center gap-2.5 text-[13.5px] text-body/60">
+              <span className="font-bold text-ink">Bayana Global</span>
+              <Dot />
+              <time dateTime={p.date}>{longDate(p.date)}</time>
+              <Dot />
+              <span>{p.readMinutes} min read</span>
+            </div>
+          </header>
 
+          <div className="mx-auto max-w-[800px] px-5">
           <figure className="mb-10">
             <Cover src={p.image} alt={p.imageAlt} eager className="aspect-square w-full rounded-2xl shadow-md sm:aspect-[4/3]" />
             {p.caption && <figcaption className="mt-2.5 text-center text-sm text-body/60">{p.caption}</figcaption>}
@@ -189,6 +198,7 @@ function BlogDetail() {
               </div>
             </section>
           )}
+          </div>
         </article>
       </main>
       <Footer />
