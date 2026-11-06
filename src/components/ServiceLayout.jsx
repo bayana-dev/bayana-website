@@ -352,13 +352,13 @@ function ServiceLayout({ service }) {
         {/* 7. FAQ */}
         <FAQ faqs={s.faqs} />
 
-        {/* 8. Related services */}
+        /* {/* 8. Related services */}
         <section className="section pb-0" aria-labelledby="related">
           <div className="container">
             <SectionHeader eyebrow="Keep exploring" title="Related Services" id="related" />
             <CardGrid slugs={s.related} />
           </div>
-        </section>
+        </section> */
 
         {/* 9. CTA + form */}
         {/* <FinalCTA service={s.short} /> */}
