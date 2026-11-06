@@ -76,7 +76,7 @@ function ContactForm({ defaultService = '' }) {
       <button disabled={status === 'sending'} className="btn-primary w-full sm:col-span-2 disabled:opacity-60">
         <Send className="h-4 w-4" /> {status === 'sending' ? 'Sending…' : 'Send enquiry'}
       </button>
-      <p className="text-center text-xs text-body/70 sm:col-span-2">By sending, you agree to our <a href="/privacy-policy" className="underline hover:text-brand-700">privacy policy</a>.</p>
+      <p className="text-center text-xs text-body/70 sm:col-span-2">By sending, you agree to our <a href="/privacy-policy" className="font-semibold text-brand-700 hover:text-brand-900">privacy policy</a>.</p>
     </form>
   )
 }
