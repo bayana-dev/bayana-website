@@ -30,8 +30,9 @@
       #splash{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:#fff;transition:opacity .8s cubic-bezier(.25,.46,.45,.94),visibility .8s}
       #splash.sp-hide{opacity:0;visibility:hidden;pointer-events:none}
       #splash .sp-in{display:flex;flex-direction:column;align-items:center;width:100%}
-      #splash video{display:block;width:320px;height:240px;object-fit:cover;background:#fff;border:0;outline:0;clip-path:inset(2px)}
-      @media (min-width:480px){#splash video{width:400px;height:300px}}
+      #splash .sp-frame{width:320px;height:240px;overflow:hidden;background:#fff;position:relative;isolation:isolate}
+      #splash video{position:absolute;left:-6px;top:-6px;width:calc(100% + 12px);height:calc(100% + 12px);object-fit:cover;background:#fff;border:0;outline:0}
+      @media (min-width:480px){#splash .sp-frame{width:400px;height:300px}}
       #splash .sp-dots{display:flex;gap:8px;margin-top:1.5rem}
       #splash .sp-dots i{display:block;width:8px;height:8px;border-radius:50%;background:#16a34a;animation:spDot 1.4s ease-in-out infinite both}
       #splash .sp-dots i:nth-child(1){animation-delay:-.32s}
