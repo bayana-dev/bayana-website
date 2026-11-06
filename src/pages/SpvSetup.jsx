@@ -14,16 +14,10 @@ const service = {
     'Set up an ADGM SPV to hold shares, property or investments. Incorporation, registered address, CSP appointment and filings through channel partners.',
   h1: 'ADGM SPV Setup',
   intro: (
-    <>
-      <p>
-        ADGM SPV setup gives you a company used to hold assets — shares, property or investments — and ring-fence
-        liabilities.
-      </p>
-      <p>
-        An SPV is one of the structures covered by our <L to="adgm-company-formation">ADGM company formation</L>{' '}
-       service, provided through our channel partners.
-      </p>
-    </>
+    <p>
+      ADGM SPV setup to hold shares, property or investments and ring-fence liabilities — arranged through channel
+      partners as part of our <L to="adgm-company-formation">ADGM company formation</L> service.
+    </p>
   ),
   sections: [
     { h2: 'What an ADGM SPV Can Be Used For', bullets: ['Holding shares', 'Holding property', 'Joint ventures', 'Investment holding'] },
