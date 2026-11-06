@@ -16,7 +16,7 @@ export default function LegalPage({ title, path, description, updated, children 
           {updated && <p className="text-sm text-body/70">Last updated: {updated}</p>}
         </PageHero>
         <div className="container max-w-3xl py-12 md:py-16">
-          <div className="prose-bayana space-y-8 text-[17px] [&_h2]:mb-3 [&_h2]:text-2xl [&_a]:font-semibold [&_a]:text-brand-700 [&_a]:underline">{children}</div>
+          <div className="prose-bayana space-y-8 text-[17px] [&_h2]:mb-3 [&_h2]:text-2xl [&_a]:font-semibold [&_a]:text-brand-700">{children}</div>
         </div>
       </main>
       <Footer />
