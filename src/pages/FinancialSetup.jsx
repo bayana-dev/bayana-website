@@ -12,17 +12,11 @@ const service = {
   description:
     'Corporate setup support for asset managers, advisers and brokers in ADGM: incorporation, office and visas, through channel partners.',
   h1: 'ADGM Financial Services Company Setup',
-  intro: (
-    <>
-      <p>
-        ADGM financial services company setup involves more than a commercial licence. Asset managers, investment
-        advisers, brokers and other regulated financial businesses may also need permission from the FSRA.
-      </p>
-      <p>
-        Bayana handles the corporate side of your <L to="adgm-company-formation">ADGM company formation</L> while
-        your regulatory adviser handles the FSRA application. This service is provided through our channel partners.
-      </p>
-    </>
+    intro: (
+    <p>
+      ADGM financial services company setup for asset managers, advisers and brokers — we handle the corporate side of your{' '}
+      <L to="adgm-company-formation">ADGM company formation</L> through channel partners, alongside your FSRA application.
+    </p>
   ),
   sections: [
     {
