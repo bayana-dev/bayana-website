@@ -61,7 +61,7 @@ function Home() {
           eyebrow="Visas & office"
           title="Visas and Office Space in ADGM"
           intro={<>Office facilities are available through our sister company{' '}
-            <a href={business.partner.url} target="_blank" rel="noopener" className="font-semibold text-brand-700 underline decoration-brand-200 underline-offset-4 hover:decoration-brand-600">{business.partner.name}</a> at Addax Tower — so your licence, lease and visa quota line up from day one.</>}
+            <a href={business.partner.url} target="_blank" rel="noopener" className="font-semibold text-brand-700 transition hover:text-brand-900">{business.partner.name}</a> at Addax Tower — so your licence, lease and visa quota line up from day one.</>}
           slugs={['adgm-visa-work-permit', 'adgm-office-space-lease']}
           cols="lg:grid-cols-2"
         />
