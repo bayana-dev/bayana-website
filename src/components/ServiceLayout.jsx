@@ -273,8 +273,8 @@ function ServiceLayout({ service }) {
 
           <div className="min-w-0">
             {s.sections.map((sec, si) => (
-              <section key={sec.h2} className="border-b border-gray-100 py-12 first:pt-0 last:border-0 md:py-14" aria-labelledby={slugify(sec.h2)}>
-                <div {...reveal(0)} className="mb-7">
+                            <section key={sec.h2} className="border-b border-gray-100 py-8 first:pt-0 last:border-0 md:py-9" aria-labelledby={slugify(sec.h2)}>
+                <div {...reveal(0)} className="mb-5">
                   <p className={`mb-2 flex items-center gap-3 font-display text-xs font-bold uppercase tracking-[.2em] ${t.label}`}>
                     <span className={`h-px w-8 ${t.bar}`} />{String(si + 1).padStart(2, '0')}
                   </p>
@@ -332,7 +332,7 @@ function ServiceLayout({ service }) {
             )}
 
             {/* 5–6. Who it's for + Why Bayana */}
-            <section className="pt-14" aria-labelledby="who-it-is-for">
+                     <section className="pt-9" aria-labelledby="who-it-is-for">
              <div {...reveal(0)} className={`relative overflow-hidden rounded-3xl p-6 md:p-9 ${t.audience}`}>
                 <p className={`mb-2 font-display text-xs font-bold uppercase tracking-[.2em] ${t.label}`}>Who it is for</p>
                 <h2 id="who-it-is-for" className="mb-3 text-2xl md:text-[2rem]">Is This Service Right for You?</h2>
