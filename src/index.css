@@ -9,7 +9,7 @@
   h1, h2, h3, h4 { @apply font-display font-bold tracking-tight text-ink; text-wrap: balance; }
     p { text-wrap: pretty; }
   /* Justify only long paragraphs (hero intro, page text, intros) — never short card text */
-  .lead, .prose-bayana p, p[class*="text-[17px]"] { text-align: justify; hyphens: auto; }
+   .lead, .prose-bayana p, p[class*="text-[17px]"] { text-align: justify; hyphens: manual; }
   .text-center p, p.text-center { text-align: center; }
   ::selection { @apply bg-brand-200 text-brand-950; }
   :focus-visible { @apply outline-none ring-4 ring-brand-300/60 ring-offset-2; }
