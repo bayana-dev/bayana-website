@@ -12,17 +12,11 @@ const service = {
   description:
     'Closing your ADGM company? Bayana handles licence cancellation, visa cancellations, final filings and strike-off with the Registration Authority.',
   h1: 'ADGM Company Closure and Strike-Off',
-  intro: (
-    <>
-      <p>
-        ADGM company strike off needs to be done in the right order so no fines or open visas remain. Bayana closes
-        ADGM entities properly.
-      </p>
-      <p>
-        If you formed your company with us through <L to="adgm-company-formation">ADGM company formation</L>, we
-        already hold your records.
-      </p>
-    </>
+    intro: (
+    <p>
+      ADGM company strike-off done in the right order — visa cancellations, final filings and licence cancellation —
+      so no fines remain. Ideal if you used our <L to="adgm-company-formation">ADGM company formation</L> service.
+    </p>
   ),
   sections: [
     { h2: 'What Closure Involves', bullets: ['Visa cancellations first', 'Lease closure on AccessRP', 'Final filings', 'Licence cancellation', 'Strike-off / deregistration'] },
