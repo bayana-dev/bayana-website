@@ -12,17 +12,11 @@ const service = {
   description:
     'Notarise powers of attorney, board resolutions, declarations and contracts at the ADGM Courts Notary Public. Preparation, translation and eCourts booking.',
   h1: 'ADGM Courts Notary Public Assistance',
-  intro: (
-    <>
-      <p>
-        The ADGM notary public at ADGM Courts notarises documents for companies and individuals. Bayana prepares and
-        coordinates your documents for notarisation.
-      </p>
-      <p>
-        Many clients use this alongside <L to="adgm-company-formation">ADGM company formation</L> and{' '}
-        <L to="legal-translation-attestation-abu-dhabi">legal translation in Abu Dhabi</L>.
-      </p>
-    </>
+   intro: (
+    <p>
+      ADGM Courts notary public services — we prepare and coordinate your powers of attorney, resolutions and
+      declarations, often alongside <L to="legal-translation-attestation-abu-dhabi">legal translation in Abu Dhabi</L>.
+    </p>
   ),
   sections: [
     { h2: 'Documents We Prepare for Notarisation', bullets: ['Powers of attorney', 'Board resolutions', 'Memoranda of association', 'Declarations', 'Contracts', 'Specimen signatures', 'Other documents'] },
