@@ -106,7 +106,7 @@ function About() {
         {/* ADGM focus */}
         <section className="section bg-gradient-to-b from-brand-50/70 to-white" aria-labelledby="our-focus">
           <div className="container">
-            <SectionHeader eyebrow="Our ADGM focus" title="Our ADGM Focus" id="our-focus" intro={<>We support financial, non-financial and retail businesses — start with <Link to="/adgm-company-formation" className="font-semibold text-brand-700 underline decoration-brand-200 underline-offset-4">ADGM company formation</Link> or choose your sector.</>} />
+            <SectionHeader eyebrow="Our ADGM focus" title="Our ADGM Focus" id="our-focus" intro={<>We support financial, non-financial and retail businesses — start with <Link to="/adgm-company-formation" className="font-semibold text-brand-700 transition hover:text-brand-900">ADGM company formation</Link> or choose your sector.</>} />
             <div className="grid gap-4 md:grid-cols-3">
               {focus.map(({ icon: Icon, title, text, to }, i) => (
                 <Link key={title} to={to} {...reveal(i)} className="card card-hover spotlight group">
@@ -193,7 +193,7 @@ function About() {
                 <h2 id="network" className="mb-3 text-2xl text-white md:text-3xl">Our Network</h2>
                 <p className="text-[17px] leading-relaxed text-brand-50/80">
                   Office space is provided through our sister company{' '}
-                  <a href={business.partner.url} target="_blank" rel="noopener" className="font-semibold text-brand-300 underline decoration-brand-500/50 underline-offset-4 hover:text-white">{business.partner.name}</a>{' '}
+                  <a href={business.partner.url} target="_blank" rel="noopener" className="font-semibold text-brand-300 transition hover:text-white">{business.partner.name}</a>{' '}
                   at Addax Tower. We also work with strategic partners for AML compliance, legal translation and attestation.
                 </p>
                 <p className="mt-4 flex items-center gap-2 text-sm text-brand-50/70"><MapPin className="h-4 w-4 text-brand-400" /> {business.addressLine}</p>
