@@ -239,7 +239,7 @@ function ServiceLayout({ service }) {
 
         {/* 1–2. H1 + intro (same header style on every service page) */}
         <PageHero crumbs={crumbs} title={s.h1} eyebrow={s.group === 'Other' ? 'UAE company setup' : s.group} service={s.short}>
-                   <div className="prose-bayana text-[15px] font-medium leading-relaxed text-brand-800 md:text-base [&_p]:mb-2">{verifyText(s.intro)}</div>
+                           <div className="prose-bayana text-[15px] font-medium leading-relaxed text-brand-800 md:text-base [&_p]:!mb-0 [&_p]:inline [&_p:not(:last-child)]:after:content-['_']">{verifyText(s.intro)}</div>
          
           
         </PageHero>
@@ -252,7 +252,7 @@ function ServiceLayout({ service }) {
         </nav>
 
         {/* 3. What we handle — sections from data, with a sticky "On this page" menu on desktop */}
-        <div className="container grid gap-10 py-10 md:py-16 lg:grid-cols-[230px_1fr] lg:gap-14">
+                <div className="container grid gap-10 pt-6 pb-10 md:pt-8 md:pb-16 lg:grid-cols-[230px_1fr] lg:gap-14">
           <aside className="hidden lg:block" aria-label="On this page">
             <nav className="sticky top-28">
               <p className="mb-4 text-xs font-bold uppercase tracking-[.16em] text-body/60">On this page</p>
