@@ -30,7 +30,7 @@ export const business = {
   // Exact Google Maps pin of the "BAYANA GLOBAL LIMITED" Google Business Profile listing
    geo: { lat: 24.4991239, lng: 54.4031629 },
   mapEmbed:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3630.605448374266!2d54.4031629!3d24.499123899999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e6700008b6ed5%3A0xf07ebccd7b5f5aa3!2sBAYANA%20GLOBAL%20LIMITED!5e0!3m2!1sen!2s!4v1793793662492!5m2!1sen!2s',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3630.605448374266!2d54.4031629!3d24.499123899999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e6700008b6ed5%3A0xf07ebccd7b5f5aa3!2sBAYANA%20GLOBAL%20LIMITED!5e0!3m2!1sen!2s!4v1793940981338!5m2!1sen!2s',
   mapLink: 'https://www.google.com/maps/place/BAYANA+GLOBAL+LIMITED/@24.4991239,54.4031629,17z',
   hours: [
     { days: 'Mon – Fri', time: '9:00 AM – 5:00 PM' },
