@@ -7,7 +7,7 @@ import { SITE_URL, business } from '../siteConfig'
  */
 function SEO({ title, description, path = '/', schema = [], noindex = false, image, imageAlt, type = 'website' }) {
   const url = SITE_URL + (path === '/' ? '/' : path.replace(/\/$/, ''))
-  const img = SITE_URL + (image || business.ogImage)
+      const img = /^https?:\/\//.test(image || '') ? image : SITE_URL + (image || business.ogImage)
   const blocks = (Array.isArray(schema) ? schema : [schema]).filter(Boolean)
   return (
     <Helmet>
