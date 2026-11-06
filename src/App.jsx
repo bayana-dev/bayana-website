@@ -29,6 +29,8 @@ import AmlCompliance from './pages/AmlCompliance'
 import OtherFreeZones from './pages/OtherFreeZones'
 import ScrollToTop from './components/ScrollToTop'
 import WhatsAppButton from './components/WhatsAppButton'
+import Blogs from './pages/Blogs'
+import BlogDetail from './pages/BlogDetail'
 
 import ScrollProgress from './components/ScrollProgress'
 import { useReveal } from './components/Reveal'
@@ -88,6 +90,8 @@ function App() {
         <Route path="/legal-translation-attestation-abu-dhabi" element={<TranslationAttestation />} />
         <Route path="/adgm-aml-dnfbp-compliance" element={<AmlCompliance />} />
         <Route path="/uae-free-zone-company-setup" element={<OtherFreeZones />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/blog/:slug" element={<BlogDetail />} />
 
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<Terms />} />
