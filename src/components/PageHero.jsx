@@ -65,7 +65,7 @@ function PageHero({ title, children, aside = false, service }) {
       <div className={`container grid gap-10 pt-10 pb-6 md:pt-16 md:pb-8 ${aside ? 'lg:grid-cols-[1fr_340px] lg:items-end lg:gap-14' : ''}`}>
         <div className="w-full py-4 text-center md:py-8">
           <h1 style={fit} className="animate-fade-up text-[1.7rem] font-extrabold uppercase leading-tight tracking-normal text-ink [-webkit-text-stroke:0.6px_currentColor] sm:text-4xl lg:whitespace-nowrap lg:text-[length:min(2.75rem,var(--fit))]">{title}</h1>
-          <div className="mx-auto mt-5 max-w-4xl animate-fade-up [animation-delay:120ms]">{children}</div>
+                  <div className="mx-auto mt-5 max-w-4xl animate-fade-up [animation-delay:120ms] [&>*]:mx-auto">{children}</div>
         </div>
         {aside && (
           <aside className="hidden animate-fade-up rounded-3xl border border-brand-100 bg-white/80 p-6 shadow-lift backdrop-blur [animation-delay:260ms] lg:block" aria-label="Quick contact">
