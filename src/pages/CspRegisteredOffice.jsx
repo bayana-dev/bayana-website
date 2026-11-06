@@ -15,16 +15,11 @@ const service = {
   descriptionLicensed:
     'Bayana is an ADGM company service provider (activity 7025) offering registered office, registered agent and statutory filing services for SPVs and foundations.',
   h1: 'ADGM Company Service Provider and Registered Office Services',
-  intro: (
-    <>
-      <p>
-        An ADGM company service provider (CSP) provides registered office and registered agent services. ADGM
-               requires non-exempt SPVs and foundations to appoint one. We provide these services through our channel partners.
-      </p>
-      <p>
-        CSP services support every structure we set up through <L to="adgm-company-formation">ADGM company formation</L>.
-      </p>
-    </>
+   intro: (
+    <p>
+      ADGM registered office and registered agent services for SPVs, foundations and companies — provided through
+      channel partners for structures set up via <L to="adgm-company-formation">ADGM company formation</L>.
+    </p>
   ),
   sections: [
     { h2: 'Our CSP Services', bullets: ['Registered office address', 'Registered agent', 'Statutory registers', 'UBO records', 'Filings with the Registration Authority', 'Licence renewal'] },
