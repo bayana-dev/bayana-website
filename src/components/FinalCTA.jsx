@@ -77,7 +77,7 @@ export default function FinalCTA({ page = 'home', variant = 'default' }) {
 
   // Corporate Services: clean white panel, text left and button right
   if (variant === 'Corporate Services') return (
-    <section className="section" id="contact-form" aria-labelledby="cta-title">
+    <section className="pb-16 pt-6 md:pb-20 md:pt-8" id="contact-form" aria-labelledby="cta-title">
       <div className="container">
         <div {...reveal(0)} className="relative overflow-hidden rounded-[2rem] border border-gray-200 bg-white p-7 shadow-lift md:p-12">
           <span className="absolute inset-y-0 left-0 w-2 bg-gradient-to-b from-brand-500 to-brand-800" />
