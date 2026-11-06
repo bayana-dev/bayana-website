@@ -53,10 +53,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
 import { useState } from 'react'
 import { Plus } from 'lucide-react'
 import { verifyText } from './Verify'
-import SectionHeader from './SectionHeader'
 
 // Animated accordion. Answers stay in the HTML (only visually collapsed) so Google reads them;
 // FAQPage schema is added by the page via faqSchema().
@@ -64,11 +72,15 @@ export default function FAQ({ faqs, title = 'Frequently Asked Questions' }) {
   const [open, setOpen] = useState(0)
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-white via-brand-50/60 to-white py-10 md:py-14" aria-labelledby="faq-title">
-      <div className="container grid gap-6 lg:grid-cols-[.75fr_1.25fr] lg:gap-12">
-        <div className="lg:sticky lg:top-28 lg:self-start">
-          <SectionHeader eyebrow="FAQ" title={title} id="faq-title" intro="Short answers to the questions clients ask us most. Need more detail? Message us on WhatsApp." />
+      <div className="container">
+        {/* Heading: centred, one line on tablet and desktop */}
+        <div className="mx-auto mb-7 max-w-3xl text-center md:mb-8">
+          <p className="eyebrow"><span className="h-1.5 w-1.5 rounded-full bg-brand-500" />FAQ</p>
+          <h2 id="faq-title" className="text-[1.75rem] leading-tight sm:text-4xl md:whitespace-nowrap md:text-[2.4rem]">{title}</h2>
         </div>
-        <div className="space-y-2">
+
+        {/* Questions */}
+        <div className="mx-auto max-w-4xl space-y-2">
           {faqs.map((f, i) => {
             const isOpen = open === i
             return (
