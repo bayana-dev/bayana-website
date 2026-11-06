@@ -106,7 +106,7 @@ function About() {
         {/* ADGM focus */}
         <section className="section bg-gradient-to-b from-brand-50/70 to-white" aria-labelledby="our-focus">
           <div className="container">
-            <SectionHeader eyebrow="Our ADGM focus" title="Our ADGM Focus" id="our-focus" intro={<>We support financial, non-financial and retail businesses — start with <Link to="/adgm-company-formation" className="font-semibold text-brand-700 transition hover:text-brand-900">ADGM company formation</Link> or choose your sector.</>} />
+            <SectionHeader eyebrow="Our ADGM focus" title="Our ADGM Focus" id="our-focus" intro={<>We support financial, non-financial and retail businesses — start with <Link to="/adgm-company-formation" className="font-semibold text-brand-800 transition hover:text-brand-950">ADGM company formation</Link> or choose your sector.</>} />
             <div className="grid gap-4 md:grid-cols-3">
               {focus.map(({ icon: Icon, title, text, to }, i) => (
                 <Link key={title} to={to} {...reveal(i)} className="card card-hover spotlight group">
