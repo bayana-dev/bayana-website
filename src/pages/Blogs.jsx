@@ -75,9 +75,7 @@ function Blogs() {
         <section className="relative isolate overflow-hidden border-b border-brand-100/70 bg-gradient-to-b from-brand-50 via-white to-white">
           <div className="container py-12 text-center md:py-16">
             <h1 className="text-[1.9rem] font-extrabold uppercase leading-tight tracking-normal text-ink sm:text-4xl lg:text-[2.75rem]">The Bayana Blog</h1>
-            <p className="mx-auto mt-4 max-w-2xl !text-center text-[15px] font-medium leading-relaxed text-brand-800 md:text-base">
-              Practical guides on ADGM company formation, licensing, visas and compliance — written by the team that handles them every day on Al Reem Island.
-            </p>
+           
           </div>
         </section>
 
