@@ -14,15 +14,10 @@ const service = {
     'Set up an ADGM foundation for asset protection and succession planning. Charter support, registration, registered address and annual compliance.',
   h1: 'ADGM Foundation Setup',
   intro: (
-    <>
-      <p>
-        ADGM foundation setup creates a separate legal entity with no shareholders, used for asset holding, family
-        succession and wealth protection.
-      </p>
-      <p>
-        A foundation sits alongside SPVs as a special structure within <L to="adgm-company-formation">ADGM company formation</L>.
-      </p>
-    </>
+    <p>
+      ADGM foundation setup for asset holding, family succession and wealth protection — a separate legal entity with
+      no shareholders, set up within <L to="adgm-company-formation">ADGM company formation</L>.
+    </p>
   ),
   sections: [
     { h2: 'Why Families Use an ADGM Foundation', bullets: ['Asset protection', 'Succession planning', 'Governance', 'Holding SPVs'] },
