@@ -6,10 +6,10 @@ import SEO from '../components/SEO'
 import FinalCTA from '../components/FinalCTA'
 import { breadcrumbSchema } from '../schema'
 import { SITE_URL, business } from '../siteConfig'
-import { sortedPosts, formatDate, readTime } from '../blogPosts'
+import { usePostList, formatDate } from '../blog/blogData'
 
-// Blog listing page (/blogs): centred hero + grid of article cards + closing CTA
-export function PostCard({ p, i = 0 }) {
+// One article card (also used for "Related Posts" on the article page)
+export function PostCard({ p }) {
   return (
     <article className="group flex flex-col overflow-hidden rounded-3xl border border-gray-200/80 bg-white shadow-sm transition duration-500 hover:-translate-y-1 hover:border-brand-200 hover:shadow-xl">
       <Link to={`/blog/${p.slug}`} className="relative block aspect-[16/9] overflow-hidden bg-brand-900" tabIndex={-1} aria-hidden="true">
@@ -18,7 +18,7 @@ export function PostCard({ p, i = 0 }) {
       </Link>
       <div className="flex flex-1 flex-col p-6">
         <p className="text-xs font-semibold text-body/60">
-          <time dateTime={p.date}>{formatDate(p.date)}</time> · {readTime(p)} min read
+          <time dateTime={p.date}>{formatDate(p.date)}</time> · {p.readMinutes} min read
         </p>
         <h2 className="mt-2 text-xl leading-snug transition group-hover:text-brand-800">
           <Link to={`/blog/${p.slug}`}>{p.title}</Link>
@@ -35,7 +35,22 @@ export function PostCard({ p, i = 0 }) {
   )
 }
 
+export function CardSkeleton() {
+  return (
+    <div className="overflow-hidden rounded-3xl border border-gray-100 bg-white" aria-hidden="true">
+      <div className="aspect-[16/9] animate-pulse bg-gray-100" />
+      <div className="space-y-3 p-6">
+        <div className="h-3 w-1/3 animate-pulse rounded bg-gray-100" />
+        <div className="h-5 w-4/5 animate-pulse rounded bg-gray-100" />
+        <div className="h-3 w-full animate-pulse rounded bg-gray-100" />
+        <div className="h-3 w-2/3 animate-pulse rounded bg-gray-100" />
+      </div>
+    </div>
+  )
+}
+
 function Blogs() {
+  const { list, loading } = usePostList()
   const crumbs = [{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blogs' }]
   const blogSchema = {
     '@context': 'https://schema.org',
@@ -43,12 +58,7 @@ function Blogs() {
     name: 'The Bayana Blog',
     url: `${SITE_URL}/blogs`,
     publisher: { '@type': 'Organization', name: business.name, url: SITE_URL },
-    blogPost: sortedPosts.map((p) => ({
-      '@type': 'BlogPosting',
-      headline: p.title,
-      url: `${SITE_URL}/blog/${p.slug}`,
-      datePublished: p.date,
-    })),
+    blogPost: list.map((p) => ({ '@type': 'BlogPosting', headline: p.title, url: `${SITE_URL}/blog/${p.slug}`, datePublished: p.date })),
   }
 
   return (
@@ -74,9 +84,17 @@ function Blogs() {
         {/* Posts */}
         <section className="py-10 md:py-14" aria-label="Articles">
           <div className="container">
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {sortedPosts.map((p, i) => <PostCard key={p.slug} p={p} i={i} />)}
-            </div>
+            {loading ? (
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <CardSkeleton /><CardSkeleton /><CardSkeleton />
+              </div>
+            ) : list.length ? (
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {list.map((p) => <PostCard key={p.slug} p={p} />)}
+              </div>
+            ) : (
+              <p className="py-10 text-center text-body/70">New articles are on the way. Please check back soon.</p>
+            )}
           </div>
         </section>
 
