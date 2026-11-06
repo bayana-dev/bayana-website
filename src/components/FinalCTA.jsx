@@ -187,7 +187,7 @@ export default function FinalCTA({ page = 'home', variant = 'default' }) {
               <h2 id="cta-title" className="section-title">{title}</h2>
               <p className="mt-4 text-[17px] leading-relaxed">{text}</p>
             </div>
-            <Link to="/contact" className="btn-primary shrink-0 !min-h-0 !px-6 !py-2.5 !text-[13px] font-bold uppercase tracking-[.12em] shadow-[0_8px_20px_-10px_rgba(22,163,74,.8)] hover:scale-[1.03]" data-track="contact">Contact</Link>
+            <Link to="/contact" className="btn-primary shrink-0 !min-h-0 !px-6 !py-2.5 !text-[13px] font-bold uppercase tracking-[.12em] shadow-[0_8px_20px_-10px_rgba(22,163,74,.8)] hover:scale-[1.03]" data-track="contact">BOOK A CONSULTATION</Link>
           </div>
         </div>
       </div>
@@ -208,7 +208,7 @@ export default function FinalCTA({ page = 'home', variant = 'default' }) {
               <p {...reveal(2)} className="mt-4 max-w-2xl text-[17px] leading-relaxed text-white/85">{text}</p>
             </div>
             <div {...reveal(3)} className="flex flex-col gap-3 lg:items-end">
-              <Link to="/contact" className="btn bg-white text-brand-900 hover:-translate-y-0.5 hover:bg-brand-50 !min-h-0 !px-6 !py-2.5 !text-[13px] font-bold uppercase tracking-[.12em] shadow-[0_8px_20px_-10px_rgba(22,163,74,.8)] hover:scale-[1.03]" data-track="contact">Contact</Link>
+              <Link to="/contact" className="btn bg-white text-brand-900 hover:-translate-y-0.5 hover:bg-brand-50 !min-h-0 !px-6 !py-2.5 !text-[13px] font-bold uppercase tracking-[.12em] shadow-[0_8px_20px_-10px_rgba(22,163,74,.8)] hover:scale-[1.03]" data-track="contact">BOOK A CONSULTATION</Link>
             </div>
           </div>
         </div>
@@ -229,7 +229,7 @@ export default function FinalCTA({ page = 'home', variant = 'default' }) {
           <h2 id="cta-title" {...reveal(1)} className="section-title">{title}</h2>
           <p {...reveal(2)} className="mx-auto mt-4 max-w-2xl text-[17px] leading-relaxed">{text}</p>
           <div {...reveal(3)} className="mx-auto mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <Link to="/contact" className="btn bg-brand-900 text-white hover:-translate-y-0.5 hover:bg-brand-950 !min-h-0 !px-6 !py-2.5 !text-[13px] font-bold uppercase tracking-[.12em] shadow-[0_8px_20px_-10px_rgba(22,163,74,.8)] hover:scale-[1.03]" data-track="contact">Contact</Link>
+            <Link to="/contact" className="btn bg-brand-900 text-white hover:-translate-y-0.5 hover:bg-brand-950 !min-h-0 !px-6 !py-2.5 !text-[13px] font-bold uppercase tracking-[.12em] shadow-[0_8px_20px_-10px_rgba(22,163,74,.8)] hover:scale-[1.03]" data-track="contact">BOOK A CONSULTATION</Link>
           </div>
         </div>
       </div>
@@ -248,7 +248,7 @@ export default function FinalCTA({ page = 'home', variant = 'default' }) {
               <h2 id="cta-title" {...reveal(0)} className="section-title">{title}</h2>
               <p {...reveal(1)} className="mt-4 max-w-2xl text-[17px] leading-relaxed">{text}</p>
             </div>
-            <Link to="/contact" {...reveal(2)} className="btn-primary !min-h-0 !px-6 !py-2.5 !text-[13px] font-bold uppercase tracking-[.12em] shadow-[0_8px_20px_-10px_rgba(22,163,74,.8)] hover:scale-[1.03]" data-track="contact">Contact</Link>
+            <Link to="/contact" {...reveal(2)} className="btn-primary !min-h-0 !px-6 !py-2.5 !text-[13px] font-bold uppercase tracking-[.12em] shadow-[0_8px_20px_-10px_rgba(22,163,74,.8)] hover:scale-[1.03]" data-track="contact">BOOK A CONSULTATION</Link>
           </div>
         </div>
       </div>
