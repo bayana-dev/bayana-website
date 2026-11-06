@@ -48,7 +48,7 @@ function Hero() {
         </div>
         <div className="min-w-0">
           <p className="max-w-xl animate-fade-up text-[17px] leading-relaxed text-brand-50/85 [animation-delay:160ms] md:text-xl">
-            Your trusted partner for ADGM company formation, licensing, visa processing, regulatory filings , office arrangements and affordable prices. From incorporation to ongoing corporate support, our dedicated team in Al Reem Island helps you manage your business requirements through one convenient point of contact, including office solutions and registered office arrangements.
+            Your trusted partner for ADGM company formation, licensing, visa processing, regulatory filings and office arrangements at affordable prices. From incorporation to ongoing corporate support, our dedicated team in Al Reem Island helps you manage your business requirements through one convenient point of contact, including office solutions and registered office arrangements.
           </p>
           <div className="mt-9 flex animate-fade-up flex-col gap-3 [animation-delay:240ms] sm:flex-row">
             <a href={whatsappLink()} target="_blank" rel="noopener" className="btn-whatsapp" data-track="whatsapp">
