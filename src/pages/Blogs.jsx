@@ -22,20 +22,20 @@ export function Cover({ src, alt = '', className = '', eager = false }) {
 // One article card (also used for "Related Posts" on the article page)
 export function PostCard({ p }) {
   return (
-    <article className="group flex flex-col overflow-hidden rounded-3xl border border-gray-200/80 bg-white shadow-sm transition duration-500 hover:-translate-y-1 hover:border-brand-200 hover:shadow-xl">
+    <article className="group flex flex-col overflow-hidden rounded-2xl border border-gray-200/80 bg-white shadow-sm transition duration-500 hover:-translate-y-1 hover:border-brand-200 hover:shadow-lg">
       <Link to={`/blog/${p.slug}`} className="block" tabIndex={-1} aria-hidden="true">
-        <Cover src={p.image} className="aspect-square transition duration-700 group-hover:opacity-95" />
+        <Cover src={p.image} className="aspect-[4/3]" />
       </Link>
-      <div className="flex flex-1 flex-col p-6">
-        <p className="text-xs font-semibold text-body/60">
-          <span className="font-bold uppercase tracking-[.08em] text-brand-700">{p.category}</span> · <time dateTime={p.date}>{formatDate(p.date)}</time> · {p.readMinutes} min read
+      <div className="flex flex-1 flex-col p-5">
+        <p className="truncate text-[11.5px] font-semibold text-body/60">
+          <span className="font-bold uppercase tracking-[.08em] text-brand-700">{p.category}</span> · <time dateTime={p.date}>{formatDate(p.date)}</time>
         </p>
-        <h2 className="mt-2 text-xl leading-snug transition group-hover:text-brand-800">
+        <h2 className="mt-2 line-clamp-2 text-[17px] leading-snug transition group-hover:text-brand-800">
           <Link to={`/blog/${p.slug}`}>{p.title}</Link>
         </h2>
-        <p className="mt-3 line-clamp-3 text-[15px] leading-relaxed text-body/90">{p.description}</p>
-        <div className="mt-auto flex items-center justify-between pt-6">
-          <span className="text-[11px] font-bold uppercase tracking-[.14em] text-body/60">By Bayana Global</span>
+        <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-body/80">{p.description}</p>
+        <div className="mt-auto flex items-center justify-between pt-4">
+          <span className="text-[10.5px] font-bold uppercase tracking-[.14em] text-body/50">By Bayana Global</span>
           <Link to={`/blog/${p.slug}`} className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-700 transition hover:text-brand-900">
             Read More <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
           </Link>
@@ -48,7 +48,7 @@ export function PostCard({ p }) {
 export function CardSkeleton() {
   return (
     <div className="overflow-hidden rounded-3xl border border-gray-100 bg-white" aria-hidden="true">
-      <div className="aspect-square animate-pulse bg-gray-100" />
+      <div className="aspect-[4/3] animate-pulse bg-gray-100" />
       <div className="space-y-3 p-6">
         <div className="h-3 w-1/3 animate-pulse rounded bg-gray-100" />
         <div className="h-5 w-4/5 animate-pulse rounded bg-gray-100" />
@@ -65,7 +65,7 @@ function Blogs() {
   const blogSchema = {
     '@context': 'https://schema.org',
     '@type': 'Blog',
-    name: 'The Bayana Blog',
+    name: 'The Bayana Global Limited Blogs',
     url: `${SITE_URL}/blogs`,
     publisher: { '@type': 'Organization', name: business.name, url: SITE_URL },
     blogPost: list.map((p) => ({ '@type': 'BlogPosting', headline: p.title, url: `${SITE_URL}/blog/${p.slug}`, datePublished: p.date })),
@@ -84,9 +84,9 @@ function Blogs() {
         {/* Hero */}
         <section className="relative isolate overflow-hidden border-b border-brand-100/70 bg-gradient-to-b from-brand-50 via-white to-white">
           <div className="container py-12 text-center md:py-16">
-            <h1 className="text-[1.9rem] font-extrabold uppercase leading-tight tracking-normal text-ink sm:text-4xl lg:text-[2.75rem]">The Bayana Blog</h1>
+            <h1 className="text-[1.9rem] font-extrabold uppercase leading-tight tracking-normal text-ink sm:text-4xl lg:whitespace-nowrap lg:text-[2.75rem]">The Bayana Global Limited Blogs</h1>
             <p className="mx-auto mt-4 max-w-2xl !text-center text-[15px] font-medium leading-relaxed text-brand-800 md:text-base">
-              Practical guides on ADGM company formation, licensing, visas and compliance — written by the team that handles them every day on Al Reem Island.
+              ADGM made simple: clear, step-by-step guides on company setup, licences, visas and compliance — from the team that handles them every day on Al Reem Island.
             </p>
           </div>
         </section>
@@ -95,11 +95,11 @@ function Blogs() {
         <section className="py-10 md:py-14" aria-label="Articles">
           <div className="container">
             {loading ? (
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 <CardSkeleton /><CardSkeleton /><CardSkeleton />
               </div>
             ) : list.length ? (
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {list.map((p) => <PostCard key={p.slug} p={p} />)}
               </div>
             ) : (
