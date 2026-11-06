@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import SEO from '../components/SEO'
 import NotFound from './NotFound'
+import { Cover } from './Blogs'
 import { breadcrumbSchema, faqSchema } from '../schema'
 import { SITE_URL, business } from '../siteConfig'
 import { usePost, usePostList, absoluteUrl } from '../blog/blogData'
@@ -138,9 +139,7 @@ function BlogDetail() {
           </div>
 
           <figure className="mb-10">
-            <div className="h-[240px] w-full overflow-hidden rounded-2xl shadow-md md:h-[400px]">
-              <img src={p.image} alt={p.imageAlt} width="800" height="400" fetchPriority="high" decoding="async" className="h-full w-full object-cover" />
-            </div>
+            <Cover src={p.image} alt={p.imageAlt} eager className="aspect-square w-full rounded-2xl shadow-md sm:aspect-[4/3]" />
             {p.caption && <figcaption className="mt-2.5 text-center text-sm text-body/60">{p.caption}</figcaption>}
           </figure>
 
@@ -180,9 +179,7 @@ function BlogDetail() {
               <div className="grid gap-5 md:grid-cols-3">
                 {related.map((r) => (
                   <Link key={r.slug} to={`/blog/${r.slug}`} className="group block overflow-hidden rounded-2xl border border-gray-200 bg-white transition duration-300 hover:-translate-y-1.5 hover:border-brand-600 hover:shadow-lg">
-                    <div className="h-40 overflow-hidden">
-                      <img src={r.image} alt={r.imageAlt} loading="lazy" decoding="async" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
-                    </div>
+                    <Cover src={r.image} alt={r.imageAlt} className="aspect-square" />
                     <div className="px-[18px] py-4">
                       <h3 className="mb-2 text-[14.5px] font-extrabold uppercase leading-[1.35] text-ink">{r.title}</h3>
                       <p className="line-clamp-2 text-[12.5px] leading-[1.55] text-body/70">{r.description}</p>
