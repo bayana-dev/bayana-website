@@ -12,18 +12,11 @@ const service = {
   description:
     'Bayana has handled 1000+ DED-to-ADGM licence conversions for Al Reem Island businesses. Licence, lease, AccessRP, establishment card and visa transfer.',
   h1: 'DED to ADGM Licence Conversion on Al Reem Island',
-  intro: (
-    <>
-      <p>
-        Al Reem Island ADGM licence conversion is now required because Al Reem Island falls under ADGM. Businesses
-        previously licensed by Abu Dhabi DED need ADGM licensing — and Bayana has handled 1000+ conversions and related
-        cases.
-      </p>
-      <p>
-        Conversion is a specialised form of <L to="adgm-company-formation">ADGM company registration</L>; we map your
-        existing activities and move your lease and visas across.
-      </p>
-    </>
+    intro: (
+    <p>
+      DED to ADGM licence conversion is required for Al Reem Island businesses. With 1,000+ conversions handled, we
+      move your licence, lease and visas across as a specialised <L to="adgm-company-formation">ADGM company registration</L>.
+    </p>
   ),
   sections: [
     { h2: 'Who Needs to Convert', text: <p>Retail outlets, service businesses and offices on Al Reem Island that hold an Abu Dhabi DED licence.</p> },
