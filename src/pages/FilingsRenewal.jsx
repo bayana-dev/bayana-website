@@ -12,17 +12,11 @@ const service = {
   description:
     'Keep your ADGM company compliant: licence renewal, confirmation statement, annual accounts, data protection renewal, UBO records and company changes.',
   h1: 'ADGM Licence Renewal and Annual Corporate Filings',
-  intro: (
-    <>
-      <p>
-        ADGM licence renewal is one of several yearly filings every ADGM company must make, alongside event-driven
-        changes. Missing them can trigger late-filing penalties.
-      </p>
-      <p>
-        We look after your company from <L to="adgm-company-formation">ADGM company registration</L> onwards, so
-        nothing is missed.
-      </p>
-    </>
+   intro: (
+    <p>
+      ADGM licence renewal, confirmation statements, accounts and amendments handled on time to avoid late-filing
+      penalties — from your <L to="adgm-company-formation">ADGM company registration</L> onwards.
+    </p>
   ),
   sections: [
     { h2: 'Annual Filings We Handle', bullets: ['Licence renewal', 'Confirmation statement', 'Annual accounts filing', 'Data protection registration and renewal'] },
