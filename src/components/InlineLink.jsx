@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export const L = ({ to, children }) => (
   <Link
     to={to.startsWith('/') ? to : `/${to}`}
-    className="font-semibold text-brand-800 transition hover:text-brand-950"
+      className="font-bold text-brand-800 transition hover:text-brand-950"
   >
     {children}
   </Link>
@@ -16,7 +16,7 @@ export const Ext = ({ href, children }) => (
     href={href}
     target="_blank"
     rel="noopener"
-    className="font-semibold text-brand-700 underline decoration-brand-200 underline-offset-4 hover:decoration-brand-600"
+        className="font-bold text-brand-800 transition hover:text-brand-950"
   >
     {children}
   </a>
