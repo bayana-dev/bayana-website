@@ -239,7 +239,7 @@ function ServiceLayout({ service }) {
 
         {/* 1–2. H1 + intro (same header style on every service page) */}
         <PageHero crumbs={crumbs} title={s.h1} eyebrow={s.group === 'Other' ? 'UAE company setup' : s.group} service={s.short}>
-                           <div className="prose-bayana text-[15px] font-medium leading-relaxed text-brand-800 md:text-base [&_p]:!mb-0 [&_p]:inline [&_p:not(:last-child)]:after:content-['_']">{verifyText(s.intro)}</div>
+               <div className="prose-bayana text-[15px] font-medium leading-relaxed text-brand-800 md:text-base [&_p]:!mb-0 [&_p]:inline [&_p:not(:last-child)]:after:content-['_'] [&_a]:!text-brand-950">{verifyText(s.intro)}</div>
          
           
         </PageHero>
