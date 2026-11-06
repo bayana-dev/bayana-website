@@ -12,17 +12,11 @@ const service = {
   description:
     'Director, employee and dependent visas plus ADGM work permits for golden-visa and family-visa holders. Establishment card, e-channel, medical and Emirates ID.',
   h1: 'ADGM Visa and Work Permit Services',
-  intro: (
-    <>
-      <p>
-        ADGM visa services start after your licence is issued: the company needs an establishment card and e-channel
-        before it can sponsor employees.
-      </p>
-      <p>
-        Visas are the final stage of <L to="adgm-company-formation">ADGM company formation</L>, and we handle them from
-        start to finish.
-      </p>
-    </>
+    intro: (
+    <p>
+      ADGM visa services from establishment card and e-channel to director, employee and dependent visas — the final
+      stage of <L to="adgm-company-formation">ADGM company formation</L>, handled start to finish.
+    </p>
   ),
   sections: [
     { h2: 'Step 1 — Establishment Card and E-Channel', text: <p>The establishment card registers your company with immigration, and e-channel lets it apply for visas. Both come before any visa application.</p> },
