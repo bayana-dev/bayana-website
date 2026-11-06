@@ -10,11 +10,11 @@ function PageHero({ crumbs, title, eyebrow, children, aside = false, service }) 
       <div className="bg-grid mask-fade absolute inset-0 -z-10" />
       <div className="absolute -right-24 -top-32 -z-10 h-[420px] w-[420px] animate-drift rounded-full bg-brand-200/60 blur-[110px]" />
       <div className="absolute -left-40 bottom-0 -z-10 h-[300px] w-[300px] animate-drift rounded-full bg-brand-100/80 blur-[100px] [animation-delay:-5s]" />
-      <div className={`container grid gap-10 py-10 md:py-16 ${aside ? 'lg:grid-cols-[1fr_340px] lg:items-end lg:gap-14' : ''}`}>
+            <div className={`container grid gap-10 pt-10 pb-6 md:pt-16 md:pb-8 ${aside ? 'lg:grid-cols-[1fr_340px] lg:items-end lg:gap-14' : ''}`}>
         <div className="max-w-3xl">
           {crumbs && <div className="animate-fade-in"><Breadcrumbs items={crumbs} /></div>}
           {eyebrow && <p className="eyebrow mt-6 animate-fade-up"><span className="h-1.5 w-1.5 rounded-full bg-brand-500" />{eyebrow}</p>}
-          <h1 className={`${eyebrow ? '' : 'mt-6'} mb-5 animate-fade-up text-[2rem] font-extrabold leading-[1.1] [animation-delay:80ms] sm:text-5xl lg:text-[3.4rem]`}>{title}</h1>
+          <h1 className={`${eyebrow ? '' : 'mt-6'} mb-5 animate-fade-up text-[2rem] font-extrabold leading-[1.1] [animation-delay:80ms] sm:text-5xl lg:whitespace-nowrap lg:text-[2.25rem] xl:text-[2.75rem]`}>{title}</h1>
           <div className="animate-fade-up [animation-delay:160ms]">{children}</div>
         </div>
         {aside && (
