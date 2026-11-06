@@ -9,6 +9,7 @@ import Terms from './pages/Terms'
 import ThankYou from './pages/ThankYou'
 import NotFound from './pages/NotFound'
 import Admin from './pages/Admin'
+import AdminBlog from './pages/AdminBlog'
 // Service pages (one file each, blueprint pages 6–22)
 import CompanyFormation from './pages/CompanyFormation'
 import FinancialSetup from './pages/FinancialSetup'
@@ -97,6 +98,7 @@ function App() {
         <Route path="/terms" element={<Terms />} />
         <Route path="/thank-you" element={<ThankYou />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/admin/blog" element={<AdminBlog />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
