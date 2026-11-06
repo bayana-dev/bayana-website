@@ -55,7 +55,7 @@ import { business, whatsappLink } from '../siteConfig'
 // Top section of inner pages: centred H1 + intro (+ optional quick-contact card on desktop)
 function PageHero({ title, children, aside = false, service }) {
   // Heading size adapts to its length so it always fits on one line on laptops
-  const fit = typeof title === 'string' ? { '--fit': `calc((min(100vw, 1320px) - 80px) / ${(title.length * 0.63).toFixed(1)})` } : undefined
+  const fit = typeof title === 'string' ? { '--fit': `calc((min(100vw, 1320px) - 80px) / ${(title.length * 0.66).toFixed(1)})` } : undefined
 
   return (
     <section className="relative isolate overflow-hidden border-b border-brand-100/70 bg-gradient-to-b from-brand-50 via-white to-white">
@@ -64,8 +64,8 @@ function PageHero({ title, children, aside = false, service }) {
       <div className="absolute -left-40 bottom-0 -z-10 h-[300px] w-[300px] animate-drift rounded-full bg-brand-100/80 blur-[100px] [animation-delay:-5s]" />
       <div className={`container grid gap-10 pt-10 pb-6 md:pt-16 md:pb-8 ${aside ? 'lg:grid-cols-[1fr_340px] lg:items-end lg:gap-14' : ''}`}>
         <div className="w-full py-4 text-center md:py-8">
-          <h1 style={fit} className="animate-fade-up text-[1.7rem] font-extrabold uppercase leading-tight tracking-tight text-ink [-webkit-text-stroke:0.6px_currentColor] sm:text-4xl lg:whitespace-nowrap lg:text-[length:min(2.75rem,var(--fit))]">{title}</h1>
-          <div className="mx-auto mt-4 max-w-4xl animate-fade-up [animation-delay:120ms]">{children}</div>
+          <h1 style={fit} className="animate-fade-up text-[1.7rem] font-extrabold uppercase leading-tight tracking-normal text-ink [-webkit-text-stroke:0.6px_currentColor] sm:text-4xl lg:whitespace-nowrap lg:text-[length:min(2.75rem,var(--fit))]">{title}</h1>
+          <div className="mx-auto mt-5 max-w-4xl animate-fade-up [animation-delay:120ms]">{children}</div>
         </div>
         {aside && (
           <aside className="hidden animate-fade-up rounded-3xl border border-brand-100 bg-white/80 p-6 shadow-lift backdrop-blur [animation-delay:260ms] lg:block" aria-label="Quick contact">
