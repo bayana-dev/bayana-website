@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export const L = ({ to, children }) => (
   <Link
     to={to.startsWith('/') ? to : `/${to}`}
-    className="font-semibold text-brand-700 transition hover:text-brand-900"
+    className="font-semibold text-brand-800 transition hover:text-brand-950"
   >
     {children}
   </Link>
