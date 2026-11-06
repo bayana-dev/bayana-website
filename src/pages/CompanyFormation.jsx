@@ -13,19 +13,11 @@ const service = {
     'Set up your ADGM company with Bayana: structure advice, name reservation, documents, KYC, Registration Authority filing, licence and establishment card.',
   h1: 'ADGM Company Formation and Registration',
   intro: (
-    <>
-      <p>
-        Bayana handles ADGM company formation from choosing the right legal structure to receiving your commercial
-        licence and establishment card. One team on Al Reem Island manages the documents, the filings and the
-        follow-up with the ADGM Registration Authority.
-      </p>
-      <p>
-        Whether you are a <L to="adgm-financial-services-company-setup">financial services firm</L>, a{' '}
-        <L to="adgm-non-financial-company-setup">consultancy or tech company</L> or a{' '}
-        <L to="adgm-retail-licence">shop or restaurant</L>, the process starts the same way: a free consultation on
-        your structure and activities.
-      </p>
-    </>
+    <p>
+      Bayana handles <strong>ADGM company formation</strong> end to end — structure, documents, Registration Authority filing,
+      licence and establishment card — for <L to="adgm-financial-services-company-setup">financial</L>,{' '}
+      <L to="adgm-non-financial-company-setup">non-financial</L> and <L to="adgm-retail-licence">retail</L> businesses.
+    </p>
   ),
   sections: [
     {
