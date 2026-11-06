@@ -413,7 +413,7 @@ function Navbar() {
 
       {/* Mobile / tablet drawer */}
       {open && (
-               <div className="fixed inset-0 z-[70] min-[1440px]:hidden" id="mobile-menu">
+        <div className="fixed inset-0 z-[70] xl:hidden" id="mobile-menu">
           <button aria-label="Close menu" onClick={() => setOpen(false)} className="absolute inset-0 animate-fade-in bg-brand-950/50 backdrop-blur-sm" />
           <div className="absolute inset-y-0 right-0 flex w-full max-w-[420px] animate-slide-in flex-col bg-white shadow-2xl">
             <div className="flex h-[72px] items-center justify-between border-b border-gray-100 px-5">
