@@ -12,17 +12,11 @@ const service = {
   description:
     'Set up a consultancy, tech, holding, trading or professional services company in ADGM. Licence, office, establishment card, visas and renewals.',
   h1: 'ADGM Non-Financial Company Setup',
-  intro: (
-    <>
-      <p>
-        An ADGM non-financial licence (Category B) covers businesses such as consultancies, technology companies,
-        holding companies, trading companies and professional services firms.
-      </p>
-      <p>
-        It follows the same path as every <L to="adgm-company-formation">ADGM company registration</L>, and Bayana
-        takes you from activity selection to visas.
-      </p>
-    </>
+   intro: (
+    <p>
+      An ADGM non-financial licence (Category B) for consultancies, tech, holding, trading and professional services
+      firms — from activity selection to visas, as part of your <L to="adgm-company-formation">ADGM company registration</L>.
+    </p>
   ),
   sections: [
     {
