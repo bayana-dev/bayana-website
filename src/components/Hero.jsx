@@ -51,7 +51,7 @@ function Hero() {
             Your trusted partner for ADGM company formation, licensing, visa processing, regulatory filings and office arrangements at affordable prices. From incorporation to ongoing corporate support, our dedicated team in Al Reem Island helps you manage your business requirements through one convenient point of contact, including office solutions and registered office arrangements.
           </p>
                    <div className="mt-9 flex animate-fade-up [animation-delay:240ms]">
-            <Link to="/contact" className="btn-primary !px-8 font-bold uppercase tracking-[.12em]" data-track="contact">
+                       <Link to="/contact" className="btn-primary text-[14px] uppercase tracking-wide" data-track="contact">
               Book a consultation
             </Link>
           </div>
