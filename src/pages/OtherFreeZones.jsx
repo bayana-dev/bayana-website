@@ -12,16 +12,11 @@ const service = {
   description:
     'Beyond ADGM, Bayana coordinates company setup in Abu Dhabi mainland, Meydan, Dubai South, Ajman and other UAE free zones with trusted partners.',
   h1: 'Company Setup in Other UAE Free Zones and Mainland',
-  intro: (
-    <>
-      <p>
-        UAE free zone company setup outside ADGM is something many of our clients need. ADGM is our main focus, but we
-        coordinate broader UAE setup and immigration support with trusted partners.
-      </p>
-      <p>
-        Not sure which to choose? Start with <L to="adgm-company-formation">ADGM company formation</L> and ask us for a side-by-side comparison for your activity.
-      </p>
-    </>
+   intro: (
+    <p>
+      UAE free zone company setup in Abu Dhabi mainland, Meydan, Dubai South and Ajman with trusted partners. ADGM is
+      our focus — start with <L to="adgm-company-formation">ADGM company formation</L>.
+    </p>
   ),
   sections: [
     {
