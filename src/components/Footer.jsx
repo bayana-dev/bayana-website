@@ -11,7 +11,7 @@ const columns = [
   { title: 'Corporate & Legal', links: [...byGroup('Corporate Services'), ...byGroup('Legal & Documents')] },
   {
     title: 'Visa, Office & Company',
-    links: [...byGroup('Visa & Office'), { to: '/about', label: 'About Bayana' }, { to: '/contact', label: 'Contact Us' }],
+        links: [...byGroup('Visa & Office'), { to: '/about', label: 'About Bayana' }, { to: '/blogs', label: 'Blog' }, { to: '/contact', label: 'Contact Us' }],
   },
 ]
 
