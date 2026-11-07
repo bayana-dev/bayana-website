@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import SEO from './SEO'
@@ -6,16 +7,33 @@ import { breadcrumbSchema } from '../schema'
 
 // Shared layout for the Privacy Policy and Terms of Use.
 // sections = [{ id, title, body }] → numbered headings + "On this page" list
-export default function LegalPage({ title, path, description, updated, intro, sections }) {
+export default function LegalPage({ title, path, description, intro, sections }) {
   const crumbs = [{ name: 'Home', path: '/' }, { name: title, path }]
+  const [active, setActive] = useState(sections[0]?.id)
+
+  // Highlight the section the reader is currently looking at
+  useEffect(() => {
+    const onScroll = () => {
+      const line = window.innerHeight * 0.35 // "reading line" a third of the way down the screen
+      let current = sections[0]?.id
+      for (const s of sections) {
+        const el = document.getElementById(s.id)
+        if (el && el.getBoundingClientRect().top <= line) current = s.id
+      }
+      // at the very bottom of the page, highlight the last section
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) current = sections[sections.length - 1]?.id
+      setActive(current)
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [sections])
   return (
     <div className="App">
       <SEO title={`${title} | Bayana Global Limited`} description={description} path={path} schema={breadcrumbSchema(crumbs)} />
       <Navbar />
       <main id="main">
-        <PageHero title={title}>
-          <p className="!text-center text-sm font-medium text-body/70">Last updated: {updated}</p>
-        </PageHero>
+        <PageHero title={title} />
 
         <div className="container grid max-w-6xl gap-10 py-10 md:py-14 lg:grid-cols-[240px_1fr] lg:gap-14">
           {/* On this page */}
@@ -25,7 +43,11 @@ export default function LegalPage({ title, path, description, updated, intro, se
               <ol className="space-y-1.5 text-sm">
                 {sections.map((s, i) => (
                   <li key={s.id}>
-                    <a href={`#${s.id}`} className="flex gap-2 rounded-md py-0.5 text-body/80 transition hover:text-brand-800">
+                    <a
+                      href={`#${s.id}`}
+                      aria-current={active === s.id ? 'true' : undefined}
+                      className={`flex gap-2 rounded-lg px-2 py-1 transition ${active === s.id ? 'bg-brand-50 font-semibold text-brand-800' : 'text-body/80 hover:text-brand-800'}`}
+                    >
                       <span className="w-5 shrink-0 font-semibold text-brand-700">{i + 1}.</span>
                       {s.title}
                     </a>
