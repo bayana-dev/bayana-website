@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom'
 import LegalPage from '../components/LegalPage'
 import { business, DISCLAIMER } from '../siteConfig'
 
-const UPDATED = '7 November 2026'
-
 function Terms() {
   const email = <a href={`mailto:${business.email}`}>{business.email}</a>
 
@@ -54,11 +52,6 @@ function Terms() {
       body: <p>The Bayana name, logo and website content belong to {business.name} and may not be copied without our permission.</p>,
     },
     {
-      id: 'other-websites',
-      title: 'Other websites',
-      body: <p>Links to other websites are provided for convenience. We are not responsible for their content.</p>,
-    },
-    {
       id: 'contact',
       title: 'Contact us',
       body: (
@@ -76,7 +69,6 @@ function Terms() {
     <LegalPage
       title="Terms of Use"
       path="/terms"
-      updated={UPDATED}
       description="Terms of use for the Bayana Global Limited website: general information only, services, fees and contact details."
       sections={sections}
     />
