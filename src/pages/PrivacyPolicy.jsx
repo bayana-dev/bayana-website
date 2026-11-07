@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom'
 import LegalPage from '../components/LegalPage'
 import { business } from '../siteConfig'
 
-const UPDATED = '7 November 2026'
-
 function PrivacyPolicy() {
   const email = <a href={`mailto:${business.email}`}>{business.email}</a>
 
@@ -68,11 +66,6 @@ function PrivacyPolicy() {
       ),
     },
     {
-      id: 'other-websites',
-      title: 'Other websites',
-      body: <p>Our website links to other websites and uses Google Maps. We are not responsible for the privacy practices of other websites.</p>,
-    },
-    {
       id: 'contact',
       title: 'Contact us',
       body: (
@@ -90,7 +83,6 @@ function PrivacyPolicy() {
     <LegalPage
       title="Privacy Policy"
       path="/privacy-policy"
-      updated={UPDATED}
       description="How Bayana Global Limited collects, uses and protects the personal data you share through this website."
       sections={sections}
     />
