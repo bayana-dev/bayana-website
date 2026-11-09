@@ -244,12 +244,7 @@ function ServiceLayout({ service }) {
           
         </PageHero>
 
-        {/* Mobile: "On this page" chips */}
-        <nav className="no-scrollbar -mb-4 flex gap-2 overflow-x-auto px-4 pt-6 lg:hidden" aria-label="On this page">
-          {toc.map((x) => (
-            <a key={x.id} href={`#${x.id}`} className="shrink-0 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-body transition hover:border-brand-400 hover:text-brand-800">{x.label}</a>
-          ))}
-        </nav>
+       
 
         {/* 3. What we handle — sections from data, with a sticky "On this page" menu on desktop */}
                 <div className="container grid gap-10 pt-6 pb-10 md:pt-8 md:pb-16 lg:grid-cols-[230px_1fr] lg:gap-14">
