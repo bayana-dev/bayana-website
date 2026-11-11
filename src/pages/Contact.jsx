@@ -22,7 +22,7 @@ function Contact() {
     <div className="App">
       <SEO
         title="Contact Bayana | Addax Tower, Al Reem Island"
-        description="Visit Bayana Global at Addax Tower, Office no 3812, Al Reem Island, Abu Dhabi, or WhatsApp +971 50 107 4414 for ADGM setup, visas and filings."
+        description="Visit Bayana Global at Addax Tower, Office no 3812, Al Reem Island, Abu Dhabi, or WhatsApp +971 50 199 5259 for ADGM setup, visas and filings."
         path="/contact"
         schema={[localBusinessSchema(), breadcrumbSchema(crumbs)]}
       />
