@@ -43,11 +43,7 @@ function App() {
   useReveal(pathname) // scroll-in animations site-wide
   const isAdmin = pathname.startsWith('/admin')
 
-  // Google Analytics (if the gtag snippet is added to index.html):
-  // page views + clicks on WhatsApp / Call buttons (elements with data-track)
-  useEffect(() => {
-    if (window.gtag) window.gtag('event', 'page_view', { page_path: pathname })
-  }, [pathname])
+    // Google Analytics: page views are counted automatically (Enhanced measurement). This tracks WhatsApp / Call clicks.
   useEffect(() => {
     const onClick = (e) => {
       const el = e.target.closest('[data-track]')
