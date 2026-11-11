@@ -1,4 +1,4 @@
-import { Clock, Mail, MapPin, Navigation, Phone } from 'lucide-react'
+import { Clock, Mail, MapPin, Phone } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import SEO from '../components/SEO'
@@ -12,12 +12,7 @@ import { business, whatsappLink } from '../siteConfig'
 const crumbs = [{ name: 'Home', path: '/' }, { name: 'Contact', path: '/contact' }]
 
 function Contact() {
-  const cards = [
-    { icon: WhatsAppIcon, title: 'WhatsApp', value: business.phone, href: whatsappLink(), ext: true, track: 'whatsapp' },
-    { icon: Phone, title: 'Call us', value: business.phone, href: business.phoneHref, track: 'call' },
-    { icon: Mail, title: 'Email', value: business.email, href: `mailto:${business.email}` },
-    { icon: Navigation, title: 'Directions', value: 'Addax Tower, Al Reem Island', href: business.mapLink, ext: true },
-  ]
+ 
   return (
     <div className="App">
       <SEO
@@ -32,25 +27,7 @@ function Contact() {
           <p className="lead max-w-2xl">Corporate services at Addax Tower, Al Reem Island. WhatsApp, call, send the form or visit us — we reply the same working day.</p>
         </PageHero>
 
-        {/* Quick contact cards */}
-        <section className="container -mt-2 pt-10 md:pt-14">
-          <div className="grid grid-cols-2 gap-3 md:gap-4 lg:grid-cols-4">
-            {cards.map(({ icon: Icon, title, value, href, ext, track }, i) => (
-              <a
-                key={title}
-                href={href}
-                {...(ext ? { target: '_blank', rel: 'noopener' } : {})}
-                {...(track ? { 'data-track': track } : {})}
-                {...reveal(i)}
-                className="card card-hover spotlight group !p-5 md:!p-6"
-              >
-                <span className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-50 text-brand-700 transition group-hover:bg-brand-600 group-hover:text-white"><Icon className="h-5 w-5" /></span>
-                <p className="text-xs font-bold uppercase tracking-[.14em] text-body/60">{title}</p>
-                <p className="mt-1 break-words text-sm font-semibold text-ink md:text-base">{value}</p>
-              </a>
-            ))}
-          </div>
-        </section>
+
 
         <section className="section container grid gap-8 lg:grid-cols-5 lg:gap-12">
           <div className="space-y-6 lg:col-span-2">
