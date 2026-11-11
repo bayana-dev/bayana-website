@@ -17,13 +17,20 @@
     <link rel="apple-touch-icon" href="/favicon.png" />
     <link rel="manifest" href="/site.webmanifest" />
    
-       <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESN7L958X4"></script>
+       <!-- Google Analytics 4: loads 1.5 s after the page has shown, so it doesn't slow the site -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-ESN7L958X4');
+      window.addEventListener('load', function () {
+        setTimeout(function () {
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-ESN7L958X4';
+          document.head.appendChild(s);
+        }, 1500);
+      });
     </script>
     <!-- Loading screen (same as the old bayana.ae): animated Bayana logo video + 3 bouncing dots.
          Shown every time the site is opened or refreshed, for about 3 seconds. -->
