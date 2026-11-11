@@ -149,7 +149,7 @@ const COLORS = ['bg-brand-700', 'bg-brand-900', 'bg-brand-600', 'bg-[#b8892d]']
 
 function Stars({ n = 5, size = 'h-4 w-4' }) {
   return (
-    <span className="flex gap-0.5" aria-label={`${n} out of 5 stars`}>
+        <span className="flex gap-0.5" role="img" aria-label={`${n} out of 5 stars`}>
       {Array.from({ length: 5 }).map((_, i) => (
         <Star key={i} className={`${size} ${i < n ? 'fill-[#fbbc04] text-[#fbbc04]' : 'text-gray-300'} transition duration-300 group-hover:scale-110`} style={{ transitionDelay: `${i * 40}ms` }} />
       ))}
