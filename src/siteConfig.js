@@ -22,11 +22,11 @@ export const business = {
   country: 'United Arab Emirates',
   countryCode: 'AE',
   addressLine: 'Addax Tower, Office no 3812, Al Reem Island, Abu Dhabi, United Arab Emirates',
-  phone: '+971 50 107 4414',
-  phoneHref: 'tel:+971501074414',
-  whatsapp: '971501074414',
-  email: 'info@bayana.ae', // TODO: confirm (hidden by Cloudflare on the old site)
-  licenceNumber: '', // TODO: add ADGM licence number
+  phone: '+971 50 199 5259',
+  phoneHref: 'tel:+971501995259',
+  whatsapp: '971501995259',
+  email: 'hello@bayana.ae',
+  licenceNumber: '31942', // ADGM licence number
   // Exact Google Maps pin of the "BAYANA GLOBAL LIMITED" Google Business Profile listing
    geo: { lat: 24.4991239, lng: 54.4031629 },
   mapEmbed:
