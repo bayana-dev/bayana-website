@@ -38,7 +38,7 @@ const service = {
     { q: 'What is a CSP in ADGM?', a: 'A licensed firm that provides registered office, registered agent and related corporate services.' },
     { q: 'Who must appoint one?', a: 'Non-exempt SPVs and foundations, among others. (VERIFY)' },
     { q: 'What is the difference between a registered office and a registered agent?', a: 'The registered office is the official address recorded for the entity on the ADGM register. A registered agent is the licensed CSP appointed to act for the entity and keep its records and filings up to date. For non-exempt SPVs and foundations, the CSP provides both. (VERIFY)' },
-    { q: 'Can I change my CSP?', a: 'Yes. See the switching steps above.' },
+        { q: 'Can I change my CSP?', a: 'Yes. See the steps for moving your registered office above.' },
   ],
   related: ['adgm-spv-setup', 'adgm-foundation-setup', 'adgm-annual-filings-licence-renewal'],
   disclaimer: true,
