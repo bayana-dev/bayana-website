@@ -102,7 +102,7 @@ export const services = [
   { id: 10, slug: 'ded-to-adgm-licence-conversion', page: 'DedToAdgmConversion', group: 'Company Setup', short: 'DED to ADGM Conversion', cardText: '1000+ conversions handled for Al Reem Island businesses.' },
   { id: 11, slug: 'adgm-spv-setup', page: 'SpvSetup', group: 'Company Setup', short: 'SPV Setup', cardText: 'Special purpose vehicles to hold shares, property or investments, through channel partners.' },
   { id: 12, slug: 'adgm-foundation-setup', page: 'FoundationSetup', group: 'Company Setup', short: 'Foundation Setup', cardText: 'Foundations for asset protection and family succession.' },
-  { id: 13, slug: 'adgm-csp-registered-office', page: 'CspRegisteredOffice', group: 'Corporate Services', short: 'CSP & Registered Office', cardText: 'Registered office, registered agent and statutory filings through channel partners.' },
+  { id: 13, slug: 'adgm-csp-registered-office', page: 'CspRegisteredOffice', group: 'Corporate Services', short: 'Registered Office & Agent', cardText: 'Registered office, registered agent and statutory filings through channel partners.' },
   { id: 14, slug: 'adgm-annual-filings-licence-renewal', page: 'FilingsRenewal', group: 'Corporate Services', short: 'Filings & Licence Renewal', cardText: 'Renewal, confirmation statement, accounts, data protection and amendments.' },
   { id: 15, slug: 'adgm-company-closure', page: 'CompanyClosure', group: 'Corporate Services', short: 'Company Closure', cardText: 'Visa cancellations, final filings, licence cancellation and strike-off.' },
   { id: 16, slug: 'adgm-visa-work-permit', page: 'VisaWorkPermit', group: 'Visa & Office', short: 'Visa & Work Permits', cardText: 'Establishment card, director, employee and dependent visas, work permits.' },
