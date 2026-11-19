@@ -16,8 +16,8 @@
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-   
-       <!-- Google Analytics 4: loads 1.5 s after the page has shown, so it doesn't slow the site -->
+
+    <!-- Google Analytics 4: loads 1.5 s after the page has shown, so it doesn't slow the site -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -33,7 +33,7 @@
       });
     </script>
     <!-- Loading screen (same as the old bayana.ae): animated Bayana logo video + 3 bouncing dots.
-         Shown every time the site is opened or refreshed, for about 3 seconds. -->
+         Shown only on a visitor's first visit, for about 1 second. -->
     <link rel="preload" href="/load-poster.webp" as="image" />
     <style>
       #splash{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:#fff;transition:opacity .8s cubic-bezier(.25,.46,.45,.94),visibility .8s}
@@ -53,16 +53,21 @@
   <body>
     <div id="splash" aria-hidden="true">
       <div class="sp-in">
-                <div class="sp-frame"><video src="/load.mp4" poster="/load-poster.webp" autoplay loop muted playsinline preload="auto" width="640" height="480"></video></div>
+        <div class="sp-frame"><video src="/load.mp4" poster="/load-poster.webp" autoplay loop muted playsinline preload="auto" width="640" height="480"></video></div>
         <div class="sp-dots"><i></i><i></i><i></i></div>
       </div>
     </div>
     <script>
       (function () {
-        var SHOW_AFTER_LOAD = 500
-        var MAX = 1500
+        var SHOW_AFTER_LOAD = 300
+        var MAX = 1200
         var s = document.getElementById('splash'), done = false
         if (location.pathname.indexOf('/admin') === 0) { s.parentNode.removeChild(s); return }
+        // Show the loading screen only on a visitor's first visit
+        try {
+          if (localStorage.getItem('bayanaSplashSeen')) { s.parentNode.removeChild(s); return }
+          localStorage.setItem('bayanaSplashSeen', '1')
+        } catch (e) {}
         function hide() {
           if (done) return; done = true
           s.className = 'sp-hide'
