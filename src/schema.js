@@ -22,7 +22,9 @@ export const organizationSchema = () => ({
   '@type': 'Organization',
   '@id': `${SITE_URL}/#organization`,
   name: business.name,
+  legalName: business.name,
   alternateName: 'Bayana',
+  identifier: { '@type': 'PropertyValue', name: 'ADGM Licence No.', value: business.licenceNumber },
   description: 'ADGM-registered corporate services firm on Al Reem Island, Abu Dhabi — company formation, licensing, visas, filings and office space for ADGM businesses.',
   url: SITE_URL,
   logo: { '@type': 'ImageObject', url: SITE_URL + business.logo, width: 290, height: 64 },
@@ -39,7 +41,7 @@ export const organizationSchema = () => ({
     areaServed: 'AE',
     availableLanguage: ['English', 'Arabic'],
   },
-  sameAs: Object.values(business.social),
+   sameAs: [...Object.values(business.social), business.googleBusinessProfile],
 })
 
 export const websiteSchema = () => ({
@@ -78,7 +80,7 @@ export const localBusinessSchema = () => ({
       itemOffered: { '@type': 'Service', name: s.short, url: `${SITE_URL}/${s.slug}` },
     })),
   },
-  sameAs: Object.values(business.social),
+  sameAs: [...Object.values(business.social), business.googleBusinessProfile],
 })
 
 export const breadcrumbSchema = (items) => ({
