@@ -8,7 +8,7 @@ const service = {
   id: 7,
   slug: 'adgm-financial-services-company-setup',
   keyword: 'ADGM financial services company setup',
-  title: 'ADGM Financial Services Company Setup | Bayana',
+    title: 'ADGM Financial Services Company Setup (FSRA) | Bayana',
   description:
     'Corporate setup support for asset managers, advisers and brokers in ADGM: incorporation, office and visas, through channel partners.',
   h1: 'ADGM Financial Services Company Setup',
