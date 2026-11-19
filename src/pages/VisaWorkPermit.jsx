@@ -8,7 +8,7 @@ const service = {
   id: 16,
   slug: 'adgm-visa-work-permit',
   keyword: 'ADGM visa services',
-  title: 'ADGM Visa & Work Permit Services | Bayana Al Reem',
+   title: 'ADGM Visa & Work Permit via AccessADGM | Bayana',
   description:
     'Director, employee and dependent visas plus ADGM work permits for golden-visa and family-visa holders. Establishment card, e-channel, medical and Emirates ID.',
   h1: 'ADGM Visa and Work Permit Services',
