@@ -8,7 +8,7 @@ const service = {
   id: 6,
   slug: 'adgm-company-formation',
   keyword: 'ADGM company formation',
-  title: 'ADGM Company Formation & Registration | Bayana',
+    title: 'ADGM Company Formation Abu Dhabi: Steps & Costs | Bayana',
   description:
     'Set up your ADGM company with Bayana: structure advice, name reservation, documents, KYC, Registration Authority filing, licence and establishment card.',
   h1: 'ADGM Company Formation and Registration',
