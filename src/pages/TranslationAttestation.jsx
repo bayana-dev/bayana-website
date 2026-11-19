@@ -8,7 +8,7 @@ const service = {
   id: 20,
   slug: 'legal-translation-attestation-abu-dhabi',
   keyword: 'legal translation Abu Dhabi',
-  title: 'Legal Translation & MOFA Attestation Abu Dhabi | Bayana',
+    title: 'Legal Translation & Attestation Abu Dhabi | Bayana',
   description:
     'Certified legal translation, MOFA legalisation, attestation, Arabic–English typing and ADGM corporate certificates from our office on Al Reem Island.',
   h1: 'Legal Translation, Attestation and Document Services',
