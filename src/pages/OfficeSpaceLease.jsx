@@ -8,7 +8,7 @@ const service = {
   id: 17,
   slug: 'adgm-office-space-lease',
   keyword: 'ADGM office space Al Reem Island',
-  title: 'ADGM Office Space & Lease Upgrade, Al Reem | Bayana',
+  title: 'Office Space in ADGM, Al Reem Island | Bayana',
   description:
     'Coworking desks, dedicated desks and private offices at Addax Tower via Aegis Coworking, plus AccessRP lease registration and visa-quota upgrades.',
   h1: 'ADGM Office Space and Lease Upgrades on Al Reem Island',
