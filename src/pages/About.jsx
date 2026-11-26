@@ -16,7 +16,7 @@ const crumbs = [{ name: 'Home', path: '/' }, { name: 'About', path: '/about' }]
 
 // TODO (issues #3 and #4): confirm director name spelling, experience figure and photo
 const director = {
-  name: business.director,
+   name: business.ceo
  role: 'CEO',
   experience: '', // e.g. 'X years of experience in ADGM registration, corporate services and government procedures'
   linkedin: '',
