@@ -17,7 +17,7 @@ const crumbs = [{ name: 'Home', path: '/' }, { name: 'About', path: '/about' }]
 // TODO (issues #3 and #4): confirm director name spelling, experience figure and photo
 const director = {
   name: business.director,
-  role: 'Director',
+ role: 'CEO',
   experience: '', // e.g. 'X years of experience in ADGM registration, corporate services and government procedures'
   linkedin: '',
   photo: directorPhoto, // src/assets/mohammed-swalih-kalippadath-director-bayana-720.webp (WebP)
@@ -155,10 +155,10 @@ function About() {
 
             {/* Bio */}
             <div>
-              <SectionHeader eyebrow="Leadership" title="Meet Our Director" id="leadership" />
+               <SectionHeader eyebrow="Leadership" title="Meet Our CEO" id="leadership" />
               <div {...reveal(1)} className="prose-bayana -mt-4 text-[17px]">
                 <p>
-                  Bayana Global Limited is led by its Director, <strong className="text-ink">{director.name}</strong>, who
+                 Bayana Global Limited is led by its CEO, <strong className="text-ink">{director.name}</strong>, who
                   oversees ADGM registration, corporate services and government-related procedures for our clients.
                 </p>
                 {director.experience && <p>{director.experience}</p>}
