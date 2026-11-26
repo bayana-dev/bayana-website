@@ -46,7 +46,7 @@ export const business = {
     facebook: 'https://www.facebook.com/profile.php?id=61583566598816',
   },
     partner: { name: 'Aegis Coworking Business Center', url: 'https://www.aegiscoworking.ae/' },
-  director: 'Mohammed Swalih Kalippadath',
+ ceo: 'Mohammed Swalih',
   logo: '/logo.png', // public/logo.png (used in schema)
   ogImage: '/og-image.jpg',
 }
